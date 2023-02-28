@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestApp", "UnitTestApp\UnitTestApp.csproj", "{1A664C40-A069-474D-A508-3152C9CEAC2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestApp", "UnitTestApp\UnitTestApp.csproj", "{1A664C40-A069-474D-A508-3152C9CEAC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTest", "UnitTestTest\UnitTestTest.csproj", "{8E565668-802B-476C-907D-8C195A569C05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestTest", "UnitTestTest\UnitTestTest.csproj", "{8E565668-802B-476C-907D-8C195A569C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLab", "UnitTestLab\UnitTestLab.csproj", "{6D09A5B7-E606-4EA3-9C96-ABD77C67F94F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestLab", "UnitTestLab\UnitTestLab.csproj", "{6D09A5B7-E606-4EA3-9C96-ABD77C67F94F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLabTest", "UnitTestLabTest\UnitTestLabTest.csproj", "{7211C3E0-33EC-49C1-8C15-D5B3D7F30BF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6D09A5B7-E606-4EA3-9C96-ABD77C67F94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D09A5B7-E606-4EA3-9C96-ABD77C67F94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D09A5B7-E606-4EA3-9C96-ABD77C67F94F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7211C3E0-33EC-49C1-8C15-D5B3D7F30BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7211C3E0-33EC-49C1-8C15-D5B3D7F30BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7211C3E0-33EC-49C1-8C15-D5B3D7F30BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7211C3E0-33EC-49C1-8C15-D5B3D7F30BF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
