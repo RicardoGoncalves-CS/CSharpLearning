@@ -27,7 +27,7 @@ namespace UnitTestTest
             Assert.That(result, Is.EqualTo(expected));
         }
 
-        // Testing the Equivalence partition 
+        // Testing the Equivalence partition of "Good morning"
         [Test]
         public void Given8_MyMethod_ReturnGoodMorning()
         {
@@ -146,6 +146,24 @@ namespace UnitTestTest
 
             string result = Program.MyMethod(input);
 
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        // TestCases
+        [TestCase(12)]
+        [TestCase(16)]
+        [TestCase(18)]
+        public void GivenTimes_MyMethod_ReturnGoodMorning(int input)
+        {
+            // 3 A's of Unit Testing
+
+            // Arrange
+            string expected = "Good afternoon!";
+
+            // Act
+            string result = Program.MyMethod(input);
+
+            // Assert
             Assert.That(result, Is.EqualTo(expected));
         }
     }
