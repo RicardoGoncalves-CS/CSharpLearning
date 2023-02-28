@@ -4,31 +4,40 @@ public class Program
 {
     static void Main()
     {
-        /*
         int inputValue = Int32.Parse(Console.ReadLine());
         string output = MyMethod(inputValue);
-        Console.WriteLine(output);
+        Console.WriteLine(output);  
+    }
+    
+    public static string MyMethod(int timeOfDay)
+    {
+        /*
+        Assuming timeOfDay is valid and 0-23 we should create 3 tests for each band
+        Band1 = 0-5
+        Band2 = 5-12
+        Band3 = 12-18
+        Band4 = 18-23
         */
 
-        int result = SumEvenFive(9);
-        Console.WriteLine(result);
-    }
+        string greeting;
 
-    public static int SumEvenFive(int max)
-    {
-        int current = 1;
-        int sum = 0;
-
-        while (current < max)
+        if (timeOfDay < 5)
         {
-            if ((current % 2 == 0) || (current % 5 == 0))
-            {
-                sum += current;
-            }
-            current++;
+            greeting = "Good morning!";
         }
-        return sum;
-    }
+        else if (timeOfDay < 12)
+        {
+            greeting = "Good morning!";
+        }
+        else if (timeOfDay <= 18)
+        {
+            greeting = "Good afternoon!";
+        }
+        else
+        {
+            greeting = "Good evening!";
+        }
 
-    
+        return greeting;
+    }
 }
