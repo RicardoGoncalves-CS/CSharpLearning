@@ -9,7 +9,7 @@ public class Program
         Console.WriteLine(output);
     }
 
-    static string MyMethod(int timeOfDay)
+    public static string MyMethod(int timeOfDay)
     {
         string greeting;
 
