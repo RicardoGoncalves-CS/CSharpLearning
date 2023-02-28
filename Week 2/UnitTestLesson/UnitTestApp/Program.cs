@@ -11,9 +11,17 @@ public class Program
 
     public static string MyMethod(int timeOfDay)
     {
+        /*
+        Assuming timeOfDay is valid and 0-23 we should create 3 tests for each band
+        Band1 = 0-5
+        Band2 = 5-12
+        Band3 = 12-18
+        Band4 = 18-23
+        */
+
         string greeting;
 
-        if (timeOfDay >= 5 && timeOfDay <= 12)
+        if (timeOfDay >= 5 && timeOfDay < 12)
         {
             greeting = "Good morning!";
         }
