@@ -4,6 +4,8 @@ public class Program
 {
     static void Main()
     {
+        // OPERATORS
+
         int x = 5;
         int y = 5;
 
@@ -27,6 +29,26 @@ public class Program
 
         Console.WriteLine(stones);
         Console.WriteLine(poundsLeft);
+
+        bool apples = false;
+        bool oranges = true;
+
+        // difference between & / && (logical AND). Same reason applies to logical OR
+        // Single & always checks both sides of the logical operation.
+        // Double && (shortcut) doesn't continue the checks if it identifies that the overall logical operation will evaluate in a certain way.
+        // For example false && true -> doesn't evaluate the second part because the first part is false thus will not be able to evaluate to true.
+        bool fruit = apples & oranges;
+
+        /* Example
+        string luke = "luke";
+        string alin = null;
+
+        The following example will evaluate both condition
+        bool bothStartWithA = luke.StartsWith('a') & alin.StartsWith('a');
+
+        The following example will not evaluate the second condition because it asserts that the first condition is false thus the overall evaluation defaults to false
+        bool bothStartWithA = luke.StartsWith('a') && alin.StartsWith('a');
+        */
     }
 
     public static int GetStones(int totalPounds)
