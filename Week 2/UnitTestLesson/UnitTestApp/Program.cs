@@ -4,18 +4,28 @@ public class Program
 {
     static void Main()
     {
-        int timeOfDay = 21;
+        int inputValue = Int32.Parse(Console.ReadLine());
+        string output = MyMethod(inputValue);
+        Console.WriteLine(output);
+    }
+
+    static string MyMethod(int timeOfDay)
+    {
+        string greeting;
+
         if (timeOfDay >= 5 && timeOfDay <= 12)
         {
-            Console.WriteLine("Good morning!");
+            greeting = "Good morning!";
         }
         else if (timeOfDay >= 12 && timeOfDay <= 18)
         {
-            Console.WriteLine("Good afternoon!");
+            greeting = "Good afternoon!";
         }
         else
         {
-            Console.WriteLine("Good evening!");
+            greeting = "Good evening!";
         }
+
+        return greeting;
     }
 }
