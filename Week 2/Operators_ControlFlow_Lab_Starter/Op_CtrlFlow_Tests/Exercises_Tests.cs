@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
 using Op_CtrlFlow;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using Op_CtrlFlow;
 
 namespace Op_CtrlFlow_Tests
 {
@@ -29,10 +30,19 @@ namespace Op_CtrlFlow_Tests
         }
 
         [Test]
-        public void WhenListIsEmpty_Average_ReturnsZero()
+        public void AverageOfTotalSumOfZero_ThrowsDivideByZeroException()
+        {
+            var myList = new List<int>() { 0, 0, 0, 0, 0 };
+            Assert.That(() => Exercises.Average(myList), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        [Test]
+        public void WhenListIsEmpty_Average_ThrowsDivideByZeroException()
         {
             var myList = new List<int>() {};
-            Assert.That(Exercises.Average(myList), Is.EqualTo(0));
+            Assert.That(() => Exercises.Average(myList), Throws.TypeOf<DivideByZeroException>());
+
+            // Assert.That(Exercises.Average(myList), Is.EqualTo(0));
         }
 
         [TestCase(100, "OAP")]
@@ -49,6 +59,12 @@ namespace Op_CtrlFlow_Tests
         {
             var result = Exercises.TicketType(age);
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(-5)]
+        public void TicketTypeArgumentExceptionTest(int age)
+        {
+            Assert.That(() => Exercises.TicketType(age), Throws.TypeOf<ArgumentException>());
         }
 
         [TestCase(0, "Fail")]
@@ -69,16 +85,30 @@ namespace Op_CtrlFlow_Tests
             Assert.That(result, Is.EqualTo(expected));
         }
 
+        [TestCase(101)]
+        [TestCase(-1)]
+        public void GradeArgumentExceptionTest(int mark)
+        {
+            Assert.That(() => Exercises.Grade(mark), Throws.TypeOf<ArgumentException>());
+        }
+
         [TestCase(0, 200)]
         [TestCase(1, 100)]
         [TestCase(2, 50)]
         [TestCase(3, 50)]
         [TestCase(4, 20)]
-        [TestCase(5, -1)]
+        // [TestCase(5, -1)]
         public void GetScottishMaxWeddingNumbersTest(int covidLevel, int expected)
         {
             var result = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(-1)]
+        [TestCase(5)]
+        public void GetScottishMaxWeddingNumbersArgumentExceptionTest(int covidLevel)
+        {
+            Assert.That(() => Exercises.GetScottishMaxWeddingNumbers(covidLevel), Throws.TypeOf<ArgumentException>());
         }
     }
 }

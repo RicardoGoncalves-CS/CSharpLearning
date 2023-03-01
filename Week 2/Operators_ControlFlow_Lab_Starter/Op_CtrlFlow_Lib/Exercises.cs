@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace Op_CtrlFlow
 {
@@ -14,11 +15,12 @@ namespace Op_CtrlFlow
         public static double Average(List<int> nums)
         {
             double total = 0;
-            if (nums.Count == 0) return 0;
+            if (nums.Count == 0) throw new DivideByZeroException("The list is empty.");
             else
             {
                 foreach (int num in nums) total += num;
-                return total / nums.Count;
+                if (total == 0) throw new DivideByZeroException("The sum of all numbers in the list is 0.");
+                else return total / nums.Count;
             }
         }
 
@@ -31,6 +33,7 @@ namespace Op_CtrlFlow
         public static string TicketType(int age)
         {
             //string ticketType = string.Empty;
+            if (age < 0) throw new ArgumentException("Age must be positive");
 
             if (age >= 60) return "OAP";
             else if (age >= 18) return "Standard";
@@ -43,6 +46,8 @@ namespace Op_CtrlFlow
 
         public static string Grade(int mark)
         {
+            if (mark < 0 || mark > 100) throw new ArgumentException("Mark must be between 0 and 100");
+
             if (mark >= 75) return "Pass with Distinction";
             else if (mark >= 60) return "Pass with Merit";
             else if (mark >= 40) return "Pass";
@@ -51,6 +56,8 @@ namespace Op_CtrlFlow
 
         public static int GetScottishMaxWeddingNumbers(int covidLevel)
         {
+            if (covidLevel < 0 || covidLevel > 4) throw new ArgumentException("Covid level should be between 0 and 4.");
+
             switch (covidLevel)
             {
                 case 0:
