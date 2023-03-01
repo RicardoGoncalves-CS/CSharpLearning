@@ -1,9 +1,13 @@
-﻿namespace OperatorsAndControlFlow;
+﻿using System.Diagnostics.Contracts;
+
+namespace OperatorsAndControlFlow;
 
 public class Program
 {
     static void Main()
     {
+        #region Operators Lesson
+
         // OPERATORS
 
         int x = 5;
@@ -49,6 +53,76 @@ public class Program
         The following example will not evaluate the second condition because it asserts that the first condition is false thus the overall evaluation defaults to false
         bool bothStartWithA = luke.StartsWith('a') && alin.StartsWith('a');
         */
+
+        #endregion
+
+        // Ternary statement -> a ? b : c
+        // bool expression ? executed if true : executed if false
+        int mark = 33;
+        string grade = mark >= 65 ? "Pass" : "Fail";
+        Console.WriteLine(grade);
+
+        // Ternary statements can take more than 2 bool expressions
+        // if > 85 then "Distinction"
+        int mark2 = 85;
+        string betterGrade = mark2 >= 65 ? mark2 >= 85 ? "Distinction" : "Pass" : "Fail";
+        Console.WriteLine(betterGrade);
+
+        // Challenge: using a series of ternary operations, write a method that returns
+        // "Distinction" if given above 80
+        // "Pass" if given above 65
+        // "Resit" if given above 35
+        // "Fail" otherwise
+
+        // int givenMark = 100;
+        // string ternaryChallenge = givenMark >= 35 ? givenMark >= 65 ? givenMark >= 80 ? "Distinction" : "Pass" : "Resit" : "Fail";
+
+        // Switch statements
+        string currentCode = Priority(3);
+    }
+
+    private static string Priority(int level)
+    {
+        string priority = "DEFCON: ";
+
+        switch(level)
+        {
+            case 0:
+                priority += "Green";
+                break;
+            case 1:
+                priority += "Amber";
+                break;
+            case 2:
+            case 3:
+                priority += "Red";
+                break;
+            default:
+                priority = "Error";
+                break;
+        }
+        return priority;
+    }
+
+    // Lesson Ternary Challenge
+    public static string GetGrade(int givenMark)
+    {
+        return givenMark >= 35 ? givenMark >= 65 ? givenMark >= 80 ? "Distinction" : "Pass" : "Resit" : "Fail";
+    }
+
+    public static string GetGradeSwitch(int givenMark)
+    {
+        switch (givenMark)
+        {
+            case >= 80:
+                return "Distinction";
+            case >= 65:
+                return "Pass";
+            case >= 35:
+                return "Resit";
+            default:
+                return "Fail";
+        }
     }
 
     public static int GetStones(int totalPounds)

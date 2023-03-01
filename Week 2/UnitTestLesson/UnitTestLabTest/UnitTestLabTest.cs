@@ -4,6 +4,9 @@ namespace UnitTestLabTest
 {
     public class Classification_Tests
     {
+        /*
+         * Test Version 1
+         * 
         [TestCase(1)]
         [TestCase(4)]
         [TestCase(7)]
@@ -58,6 +61,21 @@ namespace UnitTestLabTest
         public void GivenAge_AvailableClassifications_ReturnAllFilmsAreAvailable(int input)
         {
             string expected = "All films are available.";
+
+            string result = Program.AvailableClassifications(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+        */
+
+        // Test Version 2
+
+        [TestCase(1)]
+        [TestCase(4)]
+        [TestCase(7)]
+        public void GivenAge_AvailableClassifications_ReturnExpectedMessage(int input, string expected)
+        {
+            string expected = "U films are available.";
 
             string result = Program.AvailableClassifications(input);
 
