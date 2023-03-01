@@ -13,6 +13,7 @@
              * but is described as suitable for audiences aged 4 or above. For this implementation U rating will be
              * considered as "Suitable for all", including children younger than 4.
              */
+            if (ageOfViewer <= 0) throw new ArgumentException("Age must be greater than 0.");
 
             if (ageOfViewer < 8) return "U films are available.";
             else if (ageOfViewer < 12) return "U and PG films are available.";

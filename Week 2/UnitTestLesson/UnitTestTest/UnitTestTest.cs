@@ -166,5 +166,12 @@ namespace UnitTestTest
             // Assert
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [TestCase(-10)]
+        [TestCase(25)]
+        public void GivenOutOfBoundTimes_MyMethod_ThrowsArgumentOutOfRangeException(int input)
+        {
+            Assert.That(() => Program.MyMethod(input), Throws.TypeOf<ArgumentOutOfRangeException>());
+        }
     }
 }

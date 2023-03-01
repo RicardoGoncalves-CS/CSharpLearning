@@ -70,16 +70,21 @@ namespace UnitTestLabTest
 
         // Test Version 2
 
-        [TestCase(1)]
-        [TestCase(4)]
-        [TestCase(7)]
+        [TestCase(1, "U films are available.")]
+        [TestCase(4, "U films are available.")]
+        [TestCase(7, "U films are available.")]
         public void GivenAge_AvailableClassifications_ReturnExpectedMessage(int input, string expected)
         {
-            string expected = "U films are available.";
-
             string result = Program.AvailableClassifications(input);
 
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(-10)]
+        [TestCase(0)]
+        public void GivenNegativeAge_AvailableClassifications_ThrowsArgumenException(int input)
+        {
+            Assert.That(() => Program.AvailableClassifications(input), Throws.TypeOf<ArgumentException>());
         }
     }
 }

@@ -6,7 +6,7 @@ public class Program
     {
         int inputValue = Int32.Parse(Console.ReadLine());
         string output = MyMethod(inputValue);
-        Console.WriteLine(output);  
+        Console.WriteLine(output);
     }
     
     public static string MyMethod(int timeOfDay)
@@ -18,6 +18,8 @@ public class Program
         Band3 = 12-18
         Band4 = 18-23
         */
+
+        if (timeOfDay < 0 || timeOfDay > 24) throw new ArgumentOutOfRangeException("Time of day should be between 0 and 24");
 
         string greeting;
 
