@@ -79,6 +79,17 @@ public class Program
 
         // Switch statements
         string currentCode = Priority(3);
+
+        #region Iterations
+
+        List<int> nums = new() { 42, 6, 74, -8, 0, -15 };
+
+        Console.WriteLine("Highest foreach loop: " + LoopTypes.HighestForeachLoop(nums));
+        Console.WriteLine("Highest for loop: " + LoopTypes.HighestForLoop(nums));
+        Console.WriteLine("Highest while loop: " + LoopTypes.HighestWhileLoop(nums));
+        Console.WriteLine("Highest do-while loop: " + LoopTypes.HighestDoWhileLoop(nums));
+
+        #endregion
     }
 
     private static string Priority(int level)
@@ -133,5 +144,61 @@ public class Program
     public static int GetPoundsLeft(int totalPounds)
     {
         return totalPounds % 14;
+    }
+}
+
+public static class LoopTypes
+{
+    internal static string HighestDoWhileLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+        int counter = 0;
+
+        do
+        {
+            if (nums[counter] > max) max = nums[counter];
+            counter++;
+        } while (counter < nums.Count);
+
+        return max.ToString();
+    }
+
+    internal static string HighestForeachLoop(List<int> nums)
+    {
+        // find the highest number in nums
+        int max = Int32.MinValue;
+
+        foreach(int num in nums)
+        {
+            if (num > max) max = num;
+        }
+
+        return max.ToString();
+    }
+
+    internal static string HighestForLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+
+        for(int i = 0; i < nums.Count; i++)
+        {
+            if (nums[i] > max) max = nums[i];
+        }
+
+        return max.ToString();
+    }
+
+    internal static string HighestWhileLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+        int counter = 0;
+
+        while (counter < nums.Count)
+        {
+            if (nums[counter] > max) max = nums[counter];
+            counter++;
+        }
+
+        return max.ToString();
     }
 }
