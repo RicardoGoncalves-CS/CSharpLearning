@@ -90,6 +90,9 @@ public class Program
         Console.WriteLine("Highest do-while loop: " + LoopTypes.HighestDoWhileLoop(nums));
 
         #endregion
+
+        // Lab test
+        Console.WriteLine(10 % 5);
     }
 
     private static string Priority(int level)
@@ -118,6 +121,7 @@ public class Program
     // Lesson Ternary Challenge
     public static string GetGrade(int givenMark)
     {
+        if (givenMark < 0 || givenMark > 100) throw new ArgumentException("Mark must be between 0 to 100.");    // Will throw an exception if the condition is met. The type of Exception gives the developer an indication of what might be wrong.
         return givenMark >= 35 ? givenMark >= 65 ? givenMark >= 80 ? "Distinction" : "Pass" : "Resit" : "Fail";
     }
 

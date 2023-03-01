@@ -6,6 +6,7 @@ namespace OperatorsAndControlFlowTest
     {
         public class TernaryChallengeTests
         {
+            // arrange
             [TestCase(1, "Fail")]   // Upper band
             [TestCase(20, "Fail")]  // Middle band
             [TestCase(34, "Fail")]  // Lower band
@@ -20,8 +21,24 @@ namespace OperatorsAndControlFlowTest
             [TestCase(100, "Distinction")]
             public void GivenMark_TernaryChallenge_ReturnResult(int input, string expected)
             {
+                // act
                 string result = Program.GetGrade(input);
+
+                // assert
                 Assert.That(result, Is.EqualTo(expected));
+            }
+
+            [TestCase(-99)]
+            [TestCase(-1)]
+            [TestCase(101)]
+            [TestCase(9999)]
+            public void GivenInvalidMark_GetGrade_ThrowsArgumentException(int mark)
+            {
+                // Test Exceptions
+                Assert.That(() => Program.GetGrade(mark), Throws.TypeOf<ArgumentException>());
+
+                // Test Exception with message
+                Assert.That(() => Program.GetGrade(mark), Throws.TypeOf<ArgumentException>().With.Message.Contain("Mark must be between 0 to 100."));
             }
         }
     }
