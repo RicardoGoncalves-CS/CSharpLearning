@@ -41,5 +41,22 @@ namespace OperatorsAndControlFlowTest
                 Assert.That(() => Program.GetGrade(mark), Throws.TypeOf<ArgumentException>().With.Message.Contain("Mark must be between 0 to 100."));
             }
         }
+
+        public class PoundsToStonesTest
+        {
+            [TestCase(-111)]
+            [TestCase(0)]
+            public void GivenNegativePounds_GetStones_ThrowsArgumentException(int pounds)
+            {
+                Assert.That(() => Program.GetStones(pounds), Throws.TypeOf<ArgumentException>());
+            }
+
+            [TestCase(-111)]
+            [TestCase(0)]
+            public void GivenNegativePounds_GetPoundsLeft_ThrowsArgumentException(int pounds)
+            {
+                Assert.That(() => Program.GetPoundsLeft(pounds), Throws.TypeOf<ArgumentException>());
+            }
+        }
     }
 }

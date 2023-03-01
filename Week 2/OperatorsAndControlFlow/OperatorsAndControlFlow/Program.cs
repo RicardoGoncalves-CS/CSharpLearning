@@ -91,8 +91,6 @@ public class Program
 
         #endregion
 
-        // Lab test
-        Console.WriteLine(10 % 5);
     }
 
     private static string Priority(int level)
@@ -142,11 +140,13 @@ public class Program
 
     public static int GetStones(int totalPounds)
     {
+        if (totalPounds <= 0) throw new ArgumentException("The weight must be greater than 0");
         return totalPounds / 14;
     }
 
     public static int GetPoundsLeft(int totalPounds)
     {
+        if (totalPounds <= 0) throw new ArgumentException("The weight must be greater than 0");
         return totalPounds % 14;
     }
 }
