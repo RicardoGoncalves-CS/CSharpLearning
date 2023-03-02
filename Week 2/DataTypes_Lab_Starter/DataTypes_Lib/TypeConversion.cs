@@ -6,12 +6,12 @@ namespace DataTypes_Lib
     {
         public static short UIntToShort(uint num)
         {
-            return (short)num;
+            return Convert.ToInt16(num); ;
         }
 
         public static long FloatToLong(float num)
         {
-            return (long)num;
+            return Convert.ToInt64(num);
         }
     }
 }
