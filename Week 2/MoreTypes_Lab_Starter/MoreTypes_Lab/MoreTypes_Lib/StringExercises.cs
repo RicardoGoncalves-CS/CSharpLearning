@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace MoreTypes_Lib
 {
@@ -7,14 +9,16 @@ namespace MoreTypes_Lib
         // manipulates and returns a string - see the unit test for requirements
         public static string ManipulateString(string input, int num)
         {
-            string numericString = "";
+            string numericString = input.Trim().ToUpper();
+
+            StringBuilder sb = new StringBuilder(numericString);
 
             for (int i = 0; i < num; i++)
             {
-                numericString += i;
+                sb.Append(i);
             }
 
-            return input.Trim().ToUpper() + numericString;
+            return sb.ToString();
         }
 
         // returns a formatted address string given its components
@@ -45,14 +49,12 @@ namespace MoreTypes_Lib
             int countC = 0;
             int countD = 0;
 
-            input = input.ToUpper();
-
-            foreach(char letter in input)
+            foreach(char letter in input.ToUpper())
             {
-                if (letter == 'A') countA += 1;
-                if (letter == 'B') countB += 1;
-                if (letter == 'C') countC += 1;
-                if (letter == 'D') countD += 1;
+                if (letter == 'A') countA++;
+                if (letter == 'B') countB++;
+                if (letter == 'C') countC++;
+                if (letter == 'D') countD++;
             }
 
             return $"A:{countA} B:{countB} C:{countC} D:{countD}";

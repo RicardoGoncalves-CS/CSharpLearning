@@ -21,62 +21,52 @@ namespace MoreTypes_Lib
         // returns a 3D array containing the contents of a given List
         public static string[,,] Make3DArray(int length1, int length2, int length3, List<string> contents)
         {
-            try
+            if (length1 * length2 * length3 != contents.Count) throw new ArgumentException("Number of elements in list must match array size");
+            
+            int counter = 0;
+
+            string[,,] str3D = new string[length1, length2, length3];
+
+            for (int i = 0; i < length1; i++)
             {
-                int counter = 0;
-
-                string[,,] str3D = new string[length1, length2, length3];
-
-                for (int i = 0; i < length1; i++)
+                for (int j = 0; j < length2; j++)
                 {
-                    for (int j = 0; j < length2; j++)
+                    for (int k = 0; k < length3; k++)
                     {
-                        for (int k = 0; k < length3; k++)
-                        {
-                            str3D[i, j, k] = contents[counter];
-                            counter++;
-                        }
+                        str3D[i, j, k] = contents[counter];
+                        counter++;
                     }
                 }
+            }
 
-                return str3D;
-            }
-            catch
-            {
-                throw new ArgumentException("Number of elements in list must match array size");
-            }
+            return str3D;
         }
 
         // returns a jagged array containing the contents of a given List
         public static string[][] MakeJagged2DArray(int countRow1, int countRow2, List<string> contents)
         {
-            try
+            if(countRow1 + countRow2 != contents.Count) throw new ArgumentException("Number of elements in list must match array size");
+
+            int contentsCounter = 0;
+            int index = 0;
+            int rowCounter = countRow1;
+
+            string[][] jaggedArr = new string[2][];
+
+            jaggedArr[0] = new string[countRow1];
+            jaggedArr[1] = new string[countRow2];
+
+            for (int i = 0; i < 2; i++)
             {
-                int contentsCounter = 0;
-                int index = 0;
-                int rowCounter = countRow1;
-
-                string[][] jaggedArr = new string[2][];
-
-                jaggedArr[0] = new string[countRow1];
-                jaggedArr[1] = new string[countRow2];
-
-                for (int i = 0; i < 2; i++)
+                for (int j = 0; j < rowCounter; j++)
                 {
-                    for (int j = 0; j < rowCounter; j++)
-                    {
-                        jaggedArr[index][j] = contents[contentsCounter];
-                        contentsCounter++;
-                    }
-                    rowCounter = countRow2;
-                    index++;
+                    jaggedArr[index][j] = contents[contentsCounter];
+                    contentsCounter++;
                 }
-                return jaggedArr;
+                rowCounter = countRow2;
+                index++;
             }
-            catch
-            {
-                throw new ArgumentException("Number of elements in list must match array size");
-            }
+            return jaggedArr;
         }
     }
 }

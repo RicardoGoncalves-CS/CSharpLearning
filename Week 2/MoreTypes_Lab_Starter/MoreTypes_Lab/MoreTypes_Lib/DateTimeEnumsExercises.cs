@@ -9,13 +9,19 @@ namespace MoreTypes_Lib
     public class DateTimeEnumsExercises
     {
         // returns a person's age at a given date, given their birth date.
+        // TO BE COMPLETED
         public static int AgeAt(DateTime birthDate, DateTime date)
         {
-            DateTime dateOfBirth = birthDate;
-            DateTime currentDate = date;
+            int age = 0;
 
-            int age = currentDate.Year - dateOfBirth.Year;
-            
+            if(date.Day > birthDate.Day)
+            {
+                age = (date.Year - birthDate.Year) - 1;
+            }
+            else
+            {
+                age = date.Year - birthDate.Year;
+            }
 
             return Convert.ToInt32(age); 
         }
