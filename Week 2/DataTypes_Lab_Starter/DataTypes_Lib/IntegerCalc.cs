@@ -21,26 +21,14 @@ namespace DataTypes_Lib
 
         public static int Divide(int num1, int num2)
         {
-            try
-            {
-                return checked ( num1 / num2 );
-            }
-            catch
-            {
-                throw new ArgumentException("Can't divide by zero");
-            }
+            if (num2 == 0) throw new ArgumentException("Can't divide by zero");
+            else return checked(num1 / num2);
         }
 
         public static int Modulus(int num1, int num2)
         {
-            try
-            {
-                return checked ( num1 % num2 );
-            }
-            catch
-            {
-                throw new ArgumentException("Can't modulo by zero");
-            }
+            if (num2 == 0) throw new ArgumentException("Can't divide by zero");
+            else return checked(num1 % num2);
         }
     }
 }

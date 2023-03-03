@@ -11,7 +11,13 @@ namespace MoreTypes_Lib
         // returns a person's age at a given date, given their birth date.
         public static int AgeAt(DateTime birthDate, DateTime date)
         {
-            return -1;
+            DateTime dateOfBirth = birthDate;
+            DateTime currentDate = date;
+
+            int age = currentDate.Year - dateOfBirth.Year;
+            
+
+            return Convert.ToInt32(age); 
         }
         // returns a date formatted in the manner specified by the unit test
         public static string FormatDate(DateTime date)
