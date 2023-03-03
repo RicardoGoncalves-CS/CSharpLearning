@@ -40,7 +40,9 @@ public class Program
         int ali = DemoMethod(samson, alin);
         //jack and max are out of scope, they get popped off the stack
 
-        PassByReferenceDemo(alin, ali);
+        // Check values on the Debugger
+        PassByReferenceDemo(alin, out ali);
+        PassByReferenceDemo2(ref alin, out ali);
     }
 
     static int DemoMethod(int[] jack, int max)
@@ -54,5 +56,11 @@ public class Program
     static void PassByReferenceDemo(in int ricardo, out int luke)
     {
         luke = ricardo + 1;
+    }
+
+    static void PassByReferenceDemo2(ref int ricardo, out int luke) // Pass as references
+    {
+        luke = ricardo * 3;
+        ricardo++;
     }
 }
