@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 
-namespace Week2_MiniProject
+namespace MoneyProblemExercise
 {
     public class Tests
     {
