@@ -28,7 +28,7 @@ public class MoneyProblemExercise
         }
         for (int i = 0; i < currency.Length; i++)
         {
-            if (amountCurrency[i] != 0)
+            if (record[i] != 0)
             {
                 string s = $"{record[i]}: {currency[i]}";
                 output.Add(s);
