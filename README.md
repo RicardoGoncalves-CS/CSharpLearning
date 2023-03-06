@@ -5,6 +5,8 @@
 - [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
   - [Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/1_Markdown)
   - [Shell](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/2_Shell)
+
+
 - [Week 2 - C# Core](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202)
   - [Using VisualStudio](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/1_UsingVisualStudio)
   - [Unit Testing](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/2_UnitTesting)
@@ -12,6 +14,8 @@
   - [Data types](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/4_DataTypes)
   - [Memory model](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
   - [Week 2 mini project: Pair programming](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
+
+
 - [Week 3 - C# Fundamentals](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
   - [Advanced NUnit](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/1_Advanced_NUnit)
 
