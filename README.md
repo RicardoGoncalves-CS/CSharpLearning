@@ -1,3 +1,13 @@
+<img src="https://boolerang.co.uk/wp-content/uploads/job-manager-uploads/company_logo/2018/04/SG-Logo-Black.png" alt="Sparta Logo" width="200"/>
+---
+
+# TABLE OF CONTENTS
+
+## Week 1 - Business week
+
+[Week 1](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
+
+---
 # README for Sparta Repository
 
 This repository is part of Sparta Tech 205 training and will be updated on an ongoing basis.
