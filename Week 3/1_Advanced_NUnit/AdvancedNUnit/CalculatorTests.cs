@@ -40,8 +40,8 @@ namespace AdvancedNUnit
             Calculator subject = new Calculator(); // Act
             var result = subject.ToString(); // Assert
             Assert.That(result, Does.Contain("Calculator"));
-            Assert.That(result, Is.EqualTo("AdvancedUnit.Calculator"));
-            Assert.That(result, Is.EqualTo("advancedunit.calculator").IgnoreCase);
+            Assert.That(result, Is.EqualTo("AdvancedNUnit.Calculator"));
+            Assert.That(result, Is.EqualTo("advancednunit.calculator").IgnoreCase);
             Assert.That(result, Does.Not.Contain("Potato"));
             Assert.That(result, Does.StartWith("A"));
             Assert.That(result, Has.Length.EqualTo(24));
