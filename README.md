@@ -3,7 +3,7 @@
 # TABLE OF CONTENTS
 
 - [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
-  - [Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/1_MarkdownTest)
+  - [Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/1_Markdown)
   - [Shell](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/2_Shell)
 - [Week 2 - C# Core](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202)
   - [Using VisualStudio](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/1_UsingVisualStudio)
