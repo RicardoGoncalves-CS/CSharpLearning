@@ -32,6 +32,7 @@ namespace AdvancedNUnit
             Assert.That(result, Is.False);
         }
 
+        // The tests below are not for the Calculator class but to test some advanced NUnit testing
         [Test]
         public void ToString_ContainsTheStringCalculator()
         {
