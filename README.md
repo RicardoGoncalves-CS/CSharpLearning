@@ -12,7 +12,7 @@
   - [Data types](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/4_DataTypes)
   - [Memory model](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
   - [Week 2 mini project: Pair programming](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
-- [Week 3 - ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
+- [Week 3 - C# Fundamentals](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
   - [Advanced NUnit](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/1_Advanced_NUnit)
 
 ---
