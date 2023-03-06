@@ -6,7 +6,7 @@ This folder contains the following subfolders:
 - 1_Markdown
 - 2_Shell
 
-\n
+ 
 ### Subfolders description:
 
 ## **1_Markdown**
