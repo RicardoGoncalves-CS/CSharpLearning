@@ -35,6 +35,8 @@ This repository will be updated throughout the duration of the training.
 
 ---
 
+# UNDER CONSTRUCTION
+
 ## Week 2
 
 This folder contains the following folders:
