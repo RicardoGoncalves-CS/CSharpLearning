@@ -6,13 +6,13 @@ This folder contains the following folders:
 - 1_Markdown
 - 2_Shell
 
-# Description
+## Subfolders description
 
-## 1_Markdown
+### 1_Markdown
 
 Contains a file named *ExampleMarkdown.md* which is a file containing some useful syntax to format text using markdown.
 
-## 2_Shell
+### 2_Shell
 
 Contains some files created to test and experiment with Powershell commands.
 
@@ -24,11 +24,11 @@ The files contained in this folder are:
 - MyShellScript.ps1
 - gcm-date.txt
 
-### *ExampleScript.ps1*
+#### *ExampleScript.ps1*
 
 This script was provided as an example during the Powershell scripting lesson.
 
-### *MyShellScript.ps1*
+#### *MyShellScript.ps1*
 
 This script is the result of an exercise to create my own shell script.
 
