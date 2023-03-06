@@ -2,17 +2,17 @@
 
 # Week 1 repository
 
-This folder contains the following folders:
+This folder contains the following subfolders:
 - 1_Markdown
 - 2_Shell
 
 ## Subfolders description
 
-### 1_Markdown
+### *1_Markdown*
 
 Contains a file named *ExampleMarkdown.md* which is a file containing some useful syntax to format text using markdown.
 
-### 2_Shell
+### *2_Shell*
 
 Contains some files created to test and experiment with Powershell commands.
 
