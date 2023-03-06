@@ -6,6 +6,7 @@ namespace AdvancedNUnit
     {
         public double Num1 { get; set; }
         public double Num2 { get; set; }
+
         public double Add()
         {
             return Num1 + Num2;
