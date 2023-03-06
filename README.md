@@ -1,18 +1,18 @@
-<img src="https://boolerang.co.uk/wp-content/uploads/job-manager-uploads/company_logo/2018/04/SG-Logo-Black.png" alt="Sparta Logo" width="200"/>
+<img src="https://boolerang.co.uk/wp-content/uploads/job-manager-uploads/company_logo/2018/04/SG-Logo-Black.png" alt="Sparta Logo" width="300"/>
 
 # TABLE OF CONTENTS
 
-1. [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
+- [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
   - [Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/1_MarkdownTest)
   - [Shell](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/2_Shell)
-2. [Week 2 - C# Core](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202)
-  - [Using VisualStudio]([https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/1_UsingVisualStudio))
+- [Week 2 - C# Core](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202)
+  - [Using VisualStudio](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/1_UsingVisualStudio)
   - [Unit Testing](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/2_UnitTesting)
   - [Operators and Control flow](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/3_OperatorsAndControlFlow)
   - [Data types](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/4_DataTypes)
   - [Memory model](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
   - [Week 2 mini project: Pair programming](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202/5_MemoryModel)
-3. [Week 3 - ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
+- [Week 3 - ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
   - [Advanced NUnit](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/1_Advanced_NUnit)
 
 ---
