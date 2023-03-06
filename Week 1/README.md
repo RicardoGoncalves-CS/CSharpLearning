@@ -4,11 +4,11 @@
 
 This folder contains the following folders:
 
-## 1. [1_Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/1_Markdown)
+## 1_Markdown
 
 Contains a file named *ExampleMarkdown.md* which is a file containing some useful syntax to format text using markdown.
 
-## 2. [2_Shell](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/2_Shell)
+## 2_Shell
 
 Contains some files created to test and experiment with Powershell commands.
 
