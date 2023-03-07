@@ -7,21 +7,45 @@ namespace AdvancedNUnit
         [SetUp]
         public void Setup() { }
 
-        [Test]
-        public void Add_Always_ReturnsExpectedResult()
+        [TestCase(2, 4, 6)]
+        [Category("Happy Path")]
+        public void Add_Always_ReturnsExpectedResult(int x, int y, int expResult)
         {
             // Arrange
             var expectedResult = 6;
-            var subject = new Calculator { Num1 = 2, Num2 = 4 };
+            var subject = new Calculator { Num1 = x, Num2 = y };
             // Act
             var result = subject.Add();
             // Assert
-            Assert.That(result, Is.EqualTo(expectedResult), "optional failure message");
+            Assert.That(result, Is.EqualTo(expResult), "optional failure message");
             
             //Assert.AreEqual(expectedResult, result, "optional failure message");
         }
 
+        [TestCaseSource("AddCases")]
+        [Category("Happy Path")]
+        public void Add_Always_ReturnsExpectedResult_TestCaseSource(int x, int y, int expResult)
+        {
+            // Arrange
+            var expectedResult = 6;
+            var subject = new Calculator { Num1 = x, Num2 = y };
+            // Act
+            var result = subject.Add();
+            // Assert
+            Assert.That(result, Is.EqualTo(expResult), "optional failure message");
+
+            //Assert.AreEqual(expectedResult, result, "optional failure message");
+        }
+
+        // field
+        private static object[] AddCases =
+        {
+            new int[] { 2, 4, 6 },
+            new int[] { 1, 2, 3 }
+        };
+
         [Test]
+        [Category("Sad Path")]
         public void DivisibleBy3_GivenAnInputOf7_ReturnsFalse()
         {
             // Arrange
