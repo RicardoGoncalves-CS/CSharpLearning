@@ -38,6 +38,7 @@ namespace AdvancedNUnit
         }
 
         // field
+        // This must be static
         private static object[] AddCases =
         {
             new int[] { 2, 4, 6 },
