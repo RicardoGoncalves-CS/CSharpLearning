@@ -130,18 +130,7 @@ If we want to test Band 3 of the example above we would test for the values of 1
 
 ---
 
-# Week 2 repository overview
-
-This folder contains the following subfolders:
-
-- 1_UsingVisualStudio
-- 2_UnitTesting
-- 3_OperatorsAndControlFlow
-- 4_DataTypes
-- 5_MemoryModel
-- 6_Week2_MiniProject
-
-# UNDER CONSTRUCTION
+# UNDER CONSTRUCTION // INFORMATION BELOW WILL BE MOVED/DELETED
 
 ## Week 2
 
