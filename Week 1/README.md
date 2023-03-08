@@ -2,6 +2,12 @@
 
 # Week 1 Notes
 
+1. [Spartan Skills](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201#1-spartan-skills)
+2. [Git](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201#2-git)
+3. [Markdown](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201#3-markdown)
+4. [PowerShell](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201#4-powershell)
+5. [Agile & Scrum](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201#5-agile--scrum)
+
 ### 1. Spartan Skills
 
 Spartan skills cover the necessary consultancy skills to succeed as a Sparta C# consultant. 
