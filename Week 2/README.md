@@ -332,6 +332,7 @@ In C#, exceptions are represented by objects of the Exception class or one of it
 
 ```C#
 // Example of a try-catch block
+
 // Trying to read a file that doesn't exist.
 try
 {
