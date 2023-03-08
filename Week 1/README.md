@@ -97,7 +97,7 @@ Find the files created during this lesson [here](https://github.com/RicardoGonca
 
 ### 5. Agile & Scrum
   
-**Agile**
+####**Agile**
  
 Agile is a project management methodology that emphasizes flexibility, collaboration, continuous improvement and is based on a set of values and principles outlined in the Agile Manifesto, which are:
 -	Individuals and interactions over processes and tools.
@@ -125,7 +125,7 @@ The team meets regularly to review progress, identify problems, and make adjustm
  
 Agile emphasizes communication, collaboration, and teamwork, and it encourages continuous feedback and learning. Agile teams are self-organizing and cross-functional, and they are empowered to make decisions and take ownership of their work.
   
-**Scrum**
+####**Scrum**
  
 Scrum is a specific Agile framework and is commonly used in software development.
  
