@@ -196,7 +196,7 @@ var c = 10 / 3;
 var d = 9.5 / 4;	
 ```
 
-- **&& / || and  & / |** (Logical AND / OR)
+**Difference between && / &** (Logical AND)
 
 ```C#
 // Example
