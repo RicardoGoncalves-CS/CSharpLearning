@@ -208,9 +208,12 @@ bool bothStartWithA = luke.StartsWith('a') & alin.StartsWith('a');
 bool bothStartWithA = luke.StartsWith('a') && alin.StartsWith('a');
 ```
 
-**Ternary statement** a ? b : c
+**Ternary statement** 
+
+a ? b : c
 
 bool expression ? executed if true : executed if false
+
 ```C#
 // Example: If mark is greater or equal to 65 assigns “Pass” to grade, otherwise assigns “Fail”
 int mark = 30;
@@ -218,6 +221,7 @@ string grade = mark >= 65 ? “Pass” : “Fail”;
 ```
 
 Ternary statements can take more than 2 bool expressions:
+
 ```C#
 int mark = 90;
 string betterGrade = mark >= 65 ? mark >= ? “Distinction” : “Pass” : “Fail”;
@@ -252,6 +256,7 @@ switch (expression)
 Loops, or iterations refer to the repeated execution of a block of code until a certain condition is met. Iterations are used to automate repetitive tasks and make your code more efficient and less error-prone.
 
 Types of loops:
+
 ```C#
 // Example: return the highest value in a list of integers
 public static class LoopTypes
@@ -310,6 +315,7 @@ public static class LoopTypes
     }
 }
 ```
+
 ### 4. Exceptions
 
 
