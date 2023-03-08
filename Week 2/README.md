@@ -324,7 +324,7 @@ public static class LoopTypes
 
 ### 4. Exceptions
 
-An exception is an error or unexpected event that occurs during the execution of a program that interrupts its normal flow. Exceptions can be caused by a wide various factors, such as invalid input data, system errors, or unexpected conditions.
+An exception is an error or unexpected event that occurs during the execution of a program that interrupts its normal flow. Exceptions can be caused by various factors, such as invalid input data, system errors, or unexpected conditions.
 
 When an exception happens, the program will stop running and display an error message, unless it is handled. By using exceptions handling developers can write code that is more robust and less likely to crash.
 
