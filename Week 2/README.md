@@ -2,11 +2,11 @@
 
 # Week 2 Notes
 
-1. [Using Visual Studio]()
-2. [Unit Testing]()
-3. [Operators & Control flow]()
-4. [Data Types]()
-5. [Memory Model]()
+1. [Using Visual Studio](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#1-using-visual-studio)
+2. [Unit Testing](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#2-unit-testing)
+3. [Operators & Control flow](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#3-operators--control-flow)
+4. [Data Types](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#4-data-types)
+5. [Memory Model](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#5-memory-model)
 
 ### 1. Using Visual Studio
 
@@ -66,10 +66,10 @@ Assert.That(result, Is.EqualTo(expected));
 
 NUnit provide many attributes that can be used to write tests such as:
 
--	[Test]: Marks a method that represents a test.
--	[TestCase]: Marks a method with parameters as a test and provides inline arguments.
+-	**[Test]**: Marks a method that represents a test.
+-	**[TestCase]**: Marks a method with parameters as a test and provides inline arguments.
 
-[NUnit attributes webpage](https://docs.nunit.org/articles/nunit/writing-tests/attributes.html)
+Many other attributes can be found at [NUnit attributes webpage](https://docs.nunit.org/articles/nunit/writing-tests/attributes.html).
 
 ```C#
 // NUnit TestCase example
@@ -105,15 +105,15 @@ Assert.That(() => Program.MyMethod(input), Throws.TypeOf<ArgumentOutOfRangeExcep
 When creating tests, we should identify the bands that are being tested. 
 
 For example assuming that a hours of a day are 0 to 23 and we want to return different greeting depending on the time of the day we can divide it in the following bands:
--	Band 1 - 0 to 4: Evening
--	Band 2 - 5 to 11: Morning
--	Band 3 - 12 to 17: Afternoon
--	Band 4 - 18 to 23: Evening
+-	**Band 1** - 0 to 4: Evening
+-	**Band 2** - 5 to 11: Morning
+-	**Band 3** - 12 to 17: Afternoon
+-	**Band 4** - 18 to 23: Evening
 
 When writing tests, it is good practice to test 3 different values for each band. These values should be:
--	Upper bound: highest value in that band.
--	Lower bound: lowest value in that band.
--	Middle value: a value between the upper and lower bounds.
+-	*Upper bound*: highest value in that band.
+-	*Lower bound*: lowest value in that band.
+-	*Middle value*: a value between the upper and lower bounds.
 
 If we want to test Band 3 of the example above we would test for the values of 12, 17, and any value between, such as 14.
 
