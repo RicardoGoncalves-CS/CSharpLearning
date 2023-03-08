@@ -42,7 +42,7 @@ We can interact with Git by using the Git CLI Git bash.
 
 Some important commands to remember are:
 - **git init** :  initialises a git repository in the current working directory.
-- **git add <file>** : add <file> to the staging area.
+- **git add [file]** : add [file] to the staging area.
 - **git add .** : add all modified files in the working directory to the staging area.
 - **git commit -m “message”** : commits all the staged files to the repository.
 - **git status** : display the current changes in the repository.
@@ -52,12 +52,12 @@ In addition to Git there is also GitHub which is a free cloud Git service that p
 GitHub can be used independently or in combination to our local git repository, providing its remote repository capabilities. This allows the developers to store their local repository content in their remote repository and vice-versa.
  
 Some important commands to interact with the GitHub repository:
-- **git remote add origin <URL>** : set a new remote repository.
-- **git remote set-url origin <URL>** : change the remote repository.
+- **git remote add origin [URL]** : set a new remote repository.
+- **git remote set-url origin [URL]** : change the remote repository.
 - **git remote -v** : verify the remote repository URL.
-- **git push <remote-name> <remote-branch>** : push local change to the remote repository.
-- **git pull** : pull remote changes to the local repository.
-- **git clone <URL>** : copy a remote repository to a local repository in the current working directory.
+- **git push [remote-name] [remote-branch]** : push local change to the remote repository.
+- **git pull [remote-name] [remote-branch]** : pull remote changes to the local repository.
+- **git clone [URL]** : copy a remote repository to a local repository in the current working directory.
 
 The commands above are just a few useful commands to work with git and GitHub. For an extensive list and description of git commands we must refer to the [official documentation](https://git-scm.com/docs).
  
@@ -82,12 +82,12 @@ PowerShell is a command-line shell and scripting language developed by Microsoft
 Some important PowerShell commands:
 - **pwd** : prints the path of the current working directory.
 - **ls** : lists the files and directories in the current working directory.
-- **cd <directory>** : change directory to <directory>.
+- **cd [directory]** : change directory to [directory].
 - **cd ..** : change directory to the parent directory of the current working directory.
-- **md <name>** : create a new directory named <name>.
-- **cp <file> <directory>** : copy <file> to directory <directory>.
-- **mv <file> <directory>** : move <file> to directory <directory>.
-- **del <file>** : deletes <file>.
+- **md [name]** : create a new directory named [name].
+- **cp [file] [directory]** : copy [file] to directory [directory].
+- **mv [file] [directory]** : move [file] to directory [directory].
+- **del [file]** : deletes [file].
  
 [More PowerShell commands](https://devblogs.microsoft.com/scripting/table-of-basic-powershell-commands/)
 
