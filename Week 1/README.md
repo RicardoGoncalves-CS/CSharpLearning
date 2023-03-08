@@ -2,7 +2,7 @@
 
 # Week 1 Notes
 
-### Spartan Skills
+### 1. Spartan Skills
 
 Spartan skills cover the necessary consultancy skills to succeed as a Sparta C# consultant. 
 
@@ -27,7 +27,7 @@ We also learned and trained our elevator pitch to be used as a short and concise
 
  [Unpacking Interview Questions – Jacob Kaplan-Moss]( https://jacobian.org/series/unpacking-interview-questions/)
 
-### Git
+### 2. Git
 
 Git is a free and open-source Version Control System (VCS) which allows developers to keep track of changes made to their codebase, collaborate with other developers on the same project, and easily roll back to previous versions of their code if needed.
 
