@@ -5,8 +5,9 @@
 1. [Using Visual Studio](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#1-using-visual-studio)
 2. [Unit Testing](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#2-unit-testing)
 3. [Operators & Control flow](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#3-operators--control-flow)
-4. [Data Types](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#4-data-types)
-5. [Memory Model](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#5-memory-model)
+4. [Exceptions]()
+5. [Data Types](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#4-data-types)
+6. [Memory Model](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#5-memory-model)
 
 ### 1. Using Visual Studio
 
@@ -119,11 +120,195 @@ If we want to test Band 3 of the example above we would test for the values of 1
 
 ### 3. Operators & Control flow
 
+Operators are symbols or keywords that perform specific operations on one or more operands.
+
+Some commonly used operators in C#:
+
+1.	Arithmetic Operators:
+-	Addition: +
+-	Subtraction: -
+-	Multiplication: *
+-	Division: /
+-	Modulus: %
+2.	Comparison Operators:
+-	Equal to: ==
+-	Not equal to: !=
+-	Greater than: >
+-	Less than: <
+-	Greater than or equal to: >=
+-	Less than or equal to: <=
+3.	Logical Operators:
+-	And: &&
+-	Or: ||
+-	Not: !
+4.	Bitwise Operators:
+-	Bitwise AND: &
+-	Bitwise OR: |
+-	Bitwise XOR: ^
+-	Bitwise complement: ~
+-	Left shift: <<
+-	Right shift: >>
+5.	Assignment Operators:
+-	Simple assignment: =
+-	Addition assignment: +=
+-	Subtraction assignment: -=
+-	Multiplication assignment: *=
+-	Division assignment: /=
+-	Modulus assignment: %=
+-	Bitwise AND assignment: &=
+-	Bitwise OR assignment: |=
+-	Bitwise XOR assignment: ^=
+-	Left shift assignment: <<=
+-	Right shift assignment: >>=
+
+```C#
+// Assigning values to a variable
+Int x = 5
+
+// increment operator (++) increases the value by 1.
+// decrement operator (--) decreases the value by 1.
+// post increment operator: x is assigned before increment
+Int a = x++
+// here **a** has the value 5 and **x** has the value 6
+// pre increment operator: x is incremented before assignment
+Int b = ++x
+// here **b** has the value 7 and **x** has the value 7
+Int c = x—
+// here **c** has the value 7 and **x** has the value 6
+```
+
+**var** is a placeholder for the data type. The compiler evaluates the data types in the operation to infer the var type.
+
+```C#
+var c = 10 / 3;	// **c** data type will be int
+var d = 9.5 / 4;	// **d** data type will be double
+```
+
+**&& / || and  & / |** (Logical AND / OR)
+
+```C#
+// Example
+string luke = "luke"
+string alin = null;
+
+// The following example will evaluate both condition
+bool bothStartWithA = luke.StartsWith('a') & alin.StartsWith('a');
+
+//The following example will not evaluate the second condition because it asserts that the first condition is false thus the overall evaluation defaults to false
+bool bothStartWithA = luke.StartsWith('a') && alin.StartsWith('a');
+```
+
+**Ternary statement** a ? b : c
+
+bool expression ? executed if true : executed if false
+```C#
+// Example: If mark is greater or equal to 65 assigns “Pass” to grade, otherwise assigns “Fail”
+int mark = 30;
+string grade = mark >= 65 ? “Pass” : “Fail”;
+```
+
+Ternary statements can take more than 2 bool expressions:
+```C#
+int mark = 90;
+string betterGrade = mark >= 65 ? mark >= ? “Distinction” : “Pass” : “Fail”;
+```
+
+**Switch statement**
+
+A switch statement is a control statement that allows you to test a variable or expression against multiple possible values and execute different code blocks depending on which value matches.
+
+If none of the cases match the expression, then the code block associated with the **default** case is executed (if present).
+
+The switch statement can be a useful alternative to using multiple if-else statements when you need to test a single variable or expression against multiple possible values. It can help to make your code more readable and easier to maintain, especially when dealing with a large number of possible cases.
+
+```C#
+switch (expression)
+{
+    case value1:
+        // code block to be executed if expression matches value1
+        break;
+    case value2:
+        // code block to be executed if expression matches value2
+        break;
+    ...
+    default:
+        // code block to be executed if none of the cases match
+        break;
+}
+```
+
+**Loops**
+
+Loops, or iterations refer to the repeated execution of a block of code until a certain condition is met. Iterations are used to automate repetitive tasks and make your code more efficient and less error-prone.
+
+Types of loops:
+```C#
+// Example: return the highest value in a list of integers
+public static class LoopTypes
+{
+    internal static string HighestDoWhileLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+        int counter = 0;
+
+        do
+        {
+            if (nums[counter] > max) max = nums[counter];
+            counter++;
+        } while (counter < nums.Count);
+
+        return max.ToString();
+    }
+
+    internal static string HighestForeachLoop(List<int> nums)
+    {
+        // find the highest number in nums
+        int max = Int32.MinValue;
+
+        foreach(int num in nums)
+        {
+            if (num > max) max = num;
+        }
+
+        return max.ToString();
+    }
+
+    internal static string HighestForLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+
+        for(int i = 0; i < nums.Count; i++)
+        {
+            if (nums[i] > max) max = nums[i];
+        }
+
+        return max.ToString();
+    }
+
+    internal static string HighestWhileLoop(List<int> nums)
+    {
+        int max = Int32.MinValue;
+        int counter = 0;
+
+        while (counter < nums.Count)
+        {
+            if (nums[counter] > max) max = nums[counter];
+            counter++;
+        }
+
+        return max.ToString();
+    }
+}
+```
+### 4. Exceptions
 
 
-### 4. Data Types
+
+### 5. Data Types
 
 
 
-### 5. Memory Model
+### 6. Memory Model
+
+
 
