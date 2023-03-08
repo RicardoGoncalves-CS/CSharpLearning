@@ -324,7 +324,42 @@ public static class LoopTypes
 
 ### 4. Exceptions
 
+An exception is an error or unexpected event that occurs during the execution of a program that interrupts its normal flow. Exceptions can be caused by a wide various factors, such as invalid input data, system errors, or unexpected conditions.
 
+When an exception happens, the program will stop running and display an error message, unless it is handled. By using exceptions handling developers can write code that is more robust and less likely to crash.
+
+In C#, exceptions are represented by objects of the Exception class or one of its derived classes. To handle exceptions we can use a try-catch block:
+
+```C#
+// Example of a try-catch block
+// Trying to read a file that doesn't exist.
+try
+{
+var text = File.ReadAllText("HelloWorld.txt");  
+Console.WriteLine(text);
+}
+// Exceptions will be thrown in order of specificity. In this code only FileNotFoundException will be thrown
+catch (FileNotFoundException e) 
+{
+Console.WriteLine("File Not Found Exception");
+Console.WriteLine(e.Message);
+}
+// General exceptions are not advised. Exceptions are useful to informs the developer what happened allowing to implement specific types of exceptions.
+catch (Exception e) 
+{
+Console.WriteLine("Exception");
+Console.WriteLine(e.Message);
+}
+// finally always execute regardless of whether an exception occurred
+finally 
+{
+Console.WriteLine("I'm always run");
+}
+```
+
+When an exception occurs, an instance of the appropriate exception class is created, and the program's execution is transferred to the nearest catch block that can handle the exception.
+
+The order of exception types in the catch blocks must be from more specific to less specific. That means that an ArgumentException should come before a general Exception for example.
 
 ### 5. Data Types
 
