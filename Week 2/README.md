@@ -5,7 +5,7 @@
 1. [Using Visual Studio](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#1-using-visual-studio)
 2. [Unit Testing](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#2-unit-testing)
 3. [Operators & Control flow](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#3-operators--control-flow)
-4. [Exceptions]()
+4. [Exceptions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202#4-exceptions)
 5. [Data Types](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#4-data-types)
 6. [Memory Model](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%202/README.md#5-memory-model)
 
@@ -124,31 +124,35 @@ Operators are symbols or keywords that perform specific operations on one or mor
 
 Some commonly used operators in C#:
 
-1.	Arithmetic Operators:
+1.	**Arithmetic Operators**:
 -	Addition: +
 -	Subtraction: -
 -	Multiplication: *
 -	Division: /
 -	Modulus: %
-2.	Comparison Operators:
+
+2.	**Comparison Operators**:
 -	Equal to: ==
 -	Not equal to: !=
 -	Greater than: >
 -	Less than: <
 -	Greater than or equal to: >=
 -	Less than or equal to: <=
-3.	Logical Operators:
+
+3.	**Logical Operators**:
 -	And: &&
 -	Or: ||
 -	Not: !
-4.	Bitwise Operators:
+
+4.	**Bitwise Operators**:
 -	Bitwise AND: &
 -	Bitwise OR: |
 -	Bitwise XOR: ^
 -	Bitwise complement: ~
 -	Left shift: <<
 -	Right shift: >>
-5.	Assignment Operators:
+
+5.	**Assignment Operators**:
 -	Simple assignment: =
 -	Addition assignment: +=
 -	Subtraction assignment: -=
@@ -167,12 +171,15 @@ Int x = 5
 
 // increment operator (++) increases the value by 1.
 // decrement operator (--) decreases the value by 1.
+
 // post increment operator: x is assigned before increment
 Int a = x++
 // here 'a' has the value 5 and 'x' has the value 6
+
 // pre increment operator: x is incremented before assignment
 Int b = ++x
 // here 'b' has the value 7 and 'x' has the value 7
+
 Int c = x—
 // here 'c' has the value 7 and 'x' has the value 6
 ```
@@ -180,8 +187,11 @@ Int c = x—
 **var** is a placeholder for the data type. The compiler evaluates the data types in the operation to infer the var type.
 
 ```C#
-var c = 10 / 3;	    // 'c' data type will be int
-var d = 9.5 / 4;	// 'd' data type will be double
+// 'c' data type will be int
+var c = 10 / 3;	    
+
+// 'd' data type will be double
+var d = 9.5 / 4;	
 ```
 
 **&& / || and  & / |** (Logical AND / OR)
