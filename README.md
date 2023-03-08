@@ -32,3 +32,4 @@ This repository will be updated throughout the duration of the training.
 
 - [Week 3 - C# Fundamentals](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203)
   - [Advanced NUnit](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/1_Advanced_NUnit)
+  - [Test Driven Development](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/2_TestDrivenDevelopment)
