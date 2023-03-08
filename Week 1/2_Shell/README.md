@@ -1,11 +1,5 @@
 # Content
 
-The files contained in this folder are:
-
-- ExampleScript.ps1
-- MyShellScript.ps1
-- gcm-date.txt
-
 **NOTE**: to give temporary permission to execute a Powershell script we can use **set-ExecutionPolicy -scope process -executionPolicy unrestricted**
 
 ### *ExampleScript.ps1*
