@@ -1,3 +1,3 @@
 # Content
 
-*ExampleMarkdown.md* which is a file containing some useful syntax to format text using markdown.
+*ExampleMarkdown.md* contains some useful syntax examples to format text using markdown.
