@@ -134,7 +134,7 @@ Some important PowerShell commands:
 - **ls** : lists the files and directories in the current working directory.
 - **cd <directory>** : change directory to <directory>.
 - **cd ..** : change directory to the parent directory of the current working directory.
-- **cd ~** : changes directory to the user home directory.
+- **cd ~ ** : changes directory to the user home directory.
 - **md <name>** : create a new directory named <name>.
 - **cp <file> <directory>** : copy <file> to directory <directory>.
 - **mv <file> <directory>** : move <file> to directory <directory>.
@@ -181,27 +181,27 @@ Agile emphasizes communication, collaboration, and teamwork, and it encourages c
 Scrum is a specific Agile framework and is commonly used in software development.
  
 The three pillars of Scrum:
--	Transparency: Everyone presents the facts as it is and collectively collaborate for the common organizational objectives. No one has a hidden agenda.
--	Inspection: Not done by an inspector but by everyone on the Scrum team. The inspection can be done for the product, processes, people aspects, or practices.
--	Adaptation: Adaptation is about continuous improvement, to adapt based on the results of the inspection. Everyone should reflect on how to improve.
+-	*Transparency*: Everyone presents the facts as it is and collectively collaborate for the common organizational objectives. No one has a hidden agenda.
+-	*Inspection*: Not done by an inspector but by everyone on the Scrum team. The inspection can be done for the product, processes, people aspects, or practices.
+-	*Adaptation*: Adaptation is about continuous improvement, to adapt based on the results of the inspection. Everyone should reflect on how to improve.
 
 Scrum is based on a set or roles, events, and artifacts.
  
 **Scrum roles**:
--	Product Owner: responsible for defining and prioritizing the product backlog and ensuring that the team is building the right product.
--	Scrum Master: responsible for facilitating the Scrum process, removing impediments, and coaching the team.
--	Development Team: responsible for building the product and delivering working increments of the product at the end of each sprint.
+-	*Product Owner*: responsible for defining and prioritizing the product backlog and ensuring that the team is building the right product.
+-	*Scrum Master*: responsible for facilitating the Scrum process, removing impediments, and coaching the team.
+-	*Development Team*: responsible for building the product and delivering working increments of the product at the end of each sprint.
  
 **Scrum events**:
--	Sprint Planning: at the beginning of each sprint, the team meets to plan the work that will be done during the sprint.
--	Daily Scrum: a brief meeting held every day to synchronize the team's work and plan the day's activities.
--	Sprint Review: at the end of each sprint, the team presents the work that was completed during the sprint and receives feedback from stakeholders.
--	Sprint Retrospective: a meeting held after each sprint to reflect on the team's performance and identify opportunities for improvement.
+-	*Sprint Planning*: at the beginning of each sprint, the team meets to plan the work that will be done during the sprint.
+-	*Daily Scrum*: a brief meeting held every day to synchronize the team's work and plan the day's activities.
+-	*Sprint Review*: at the end of each sprint, the team presents the work that was completed during the sprint and receives feedback from stakeholders.
+-	*Sprint Retrospective*: a meeting held after each sprint to reflect on the team's performance and identify opportunities for improvement.
  
 **Scrum artifacts**:
--	Product Backlog: a prioritized list of features and requirements that the team will work on during the project.
--	Sprint Backlog: a subset of the product backlog that the team will work on during a specific sprint.
--	Increment: a working product or feature that is delivered at the end of each sprint.
+-	*Product Backlog*: a prioritized list of features and requirements that the team will work on during the project.
+-	*Sprint Backlog*: a subset of the product backlog that the team will work on during a specific sprint.
+-	*Increment*: a working product or feature that is delivered at the end of each sprint.
 
 *Other important concepts in Scrum*:
   
@@ -237,9 +237,9 @@ Acceptance criteria are used to guide the Development Team in building the produ
 A Gherkin scenario is a structured way of describing the behaviour of a software system in plain language, using a specific syntax called the Gherkin language. Gherkin is a format for specifying software requirements, acceptance criteria, and automated tests.
  
 A Gherkin scenario is typically written in a Given-When-Then format and describes a specific behaviour or interaction of the system. The format is as follows:
--	Given: A set of preconditions or initial context that must be satisfied before the behaviour can occur.
--	When: The action or event that triggers the behaviour of the system.
--	Then: The expected outcome or result of the behaviour.
+-	*Given*: A set of preconditions or initial context that must be satisfied before the behaviour can occur.
+-	*When*: The action or event that triggers the behaviour of the system.
+-	*Then*: The expected outcome or result of the behaviour.
 
 Gherkin scenarios are often used to document requirements and acceptance criteria in a way that is easily understandable by both technical and non-technical stakeholders.
 
