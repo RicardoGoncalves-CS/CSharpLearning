@@ -165,6 +165,8 @@ Some commonly used operators in C#:
 -	Left shift assignment: <<=
 -	Right shift assignment: >>=
 
+- **Assignment, increment and decrement**
+
 ```C#
 // Assigning values to a variable
 Int x = 5
@@ -194,7 +196,7 @@ var c = 10 / 3;
 var d = 9.5 / 4;	
 ```
 
-**&& / || and  & / |** (Logical AND / OR)
+- **&& / || and  & / |** (Logical AND / OR)
 
 ```C#
 // Example
@@ -208,7 +210,7 @@ bool bothStartWithA = luke.StartsWith('a') & alin.StartsWith('a');
 bool bothStartWithA = luke.StartsWith('a') && alin.StartsWith('a');
 ```
 
-**Ternary statement** 
+- **Ternary statement** 
 
 a ? b : c
 
@@ -227,7 +229,7 @@ int mark = 90;
 string betterGrade = mark >= 65 ? mark >= ? “Distinction” : “Pass” : “Fail”;
 ```
 
-**Switch statement**
+- **Switch statement**
 
 A switch statement is a control statement that allows you to test a variable or expression against multiple possible values and execute different code blocks depending on which value matches.
 
@@ -251,7 +253,7 @@ switch (expression)
 }
 ```
 
-**Loops**
+- **Loops**
 
 Loops, or iterations refer to the repeated execution of a block of code until a certain condition is met. Iterations are used to automate repetitive tasks and make your code more efficient and less error-prone.
 
