@@ -335,25 +335,25 @@ In C#, exceptions are represented by objects of the Exception class or one of it
 // Trying to read a file that doesn't exist.
 try
 {
-var text = File.ReadAllText("HelloWorld.txt");  
-Console.WriteLine(text);
+    var text = File.ReadAllText("HelloWorld.txt");  
+    Console.WriteLine(text);
 }
 // Exceptions will be thrown in order of specificity. In this code only FileNotFoundException will be thrown
 catch (FileNotFoundException e) 
 {
-Console.WriteLine("File Not Found Exception");
-Console.WriteLine(e.Message);
+    Console.WriteLine("File Not Found Exception");
+    Console.WriteLine(e.Message);
 }
 // General exceptions are not advised. Exceptions are useful to informs the developer what happened allowing to implement specific types of exceptions.
 catch (Exception e) 
 {
-Console.WriteLine("Exception");
-Console.WriteLine(e.Message);
+    Console.WriteLine("Exception");
+    Console.WriteLine(e.Message);
 }
 // finally always execute regardless of whether an exception occurred
 finally 
 {
-Console.WriteLine("I'm always run");
+    Console.WriteLine("I always run");
 }
 ```
 
