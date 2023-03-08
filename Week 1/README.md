@@ -65,7 +65,7 @@ Git also uses a very useful file named .gitignore which informs git which files 
  
 [gitignore documentation](https://git-scm.com/docs/gitignore)
 
-### Markdown
+### 3. Markdown
 
 Markdown is a markup language used to format text and is widely used for writing documentation, README files, and other content on the web as it is easily converted into HTML or other formats.
  
@@ -73,7 +73,7 @@ During our training we learned the syntax to format text which is being used to 
  
 The file created during this lesson can be found [here]( https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%201/1_Markdown/ExampleMarkdown.md).
 
-### PowerShell
+### 4. PowerShell
 
 A shell is a program that serves as an interface to access the services and functions provided by the operating system.
  
@@ -95,7 +95,7 @@ PowerShell ISE (Integrated Scripting Environment) is an IDE that provides a GUI 
 
 Find the files created during this lesson [here](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201/2_Shell).
 
-### Agile & Scrum
+### 5. Agile & Scrum
   
 **Agile**
  
