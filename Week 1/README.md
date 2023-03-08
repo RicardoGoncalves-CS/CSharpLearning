@@ -64,9 +64,7 @@ The Spartan skills to be accessed are divided into consultant and technical skil
 -	Professionalism
 -	Delivery
 
-We also learned and trained our elevator pitch to be used as a short and concise introduction of ourselves.
-
-We also covered common interview questions which include:
+We also learned and trained our elevator pitch to be used as a short and concise introduction of ourselves, and covered common interview questions which include:
 -	Tell me about yourself. (Elevator pitch)
 -	Where do you see yourself in 5 years’ time?
 -	Why did you choose Sparta Global?
