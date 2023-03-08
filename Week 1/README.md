@@ -59,10 +59,10 @@ Spartan skills cover the necessary consultancy skills to succeed as a Sparta C# 
 On this topic we learned about the importance of soft skills, how we are going to be accessed throughout the training and interviewing preparation.
 
 The Spartan skills to be accessed are divided into consultant and technical skills and can are broken down into the following behaviours:
--	Communication
--	Engagement
--	Professionalism
--	Delivery
+-	*Communication*
+-	*Engagement*
+-	*Professionalism*
+-	*Delivery*
 
 We also learned and trained our elevator pitch to be used as a short and concise introduction of ourselves, and covered common interview questions which include:
 -	Tell me about yourself. (Elevator pitch)
@@ -84,30 +84,30 @@ Git is a free and open-source Version Control System (VCS) which allows develope
 Git uses repositories (or “repo”) which is a collection of files, directories, and version history. Repositories are where all the files for a project are stored, including metadata that tracks the changes to those files over time. It works by creating snapshots (or “commits”) of the codebase at different points in time. Git supports branching allowing developers to create parallel versions (fork) of the codebase, make changes independently and merge back to the main branch when ready.
 
 There are 3 main “zones” in a repository:
--	Working directory: The directory on a developers computer where they are actively working. It contains the current version of the files in the project.
--	Staging area: Intermediate stage that contains the changes that are ready to be committed but have not yet been saved to the repository.
--	Local repository: Where the committed changes are stored. It is where branches are managed, and contains the history of all the committed changes which can be viewed by the project developers.
+-	*Working directory*: The directory on a developers computer where they are actively working. It contains the current version of the files in the project.
+-	*Staging area*: Intermediate stage that contains the changes that are ready to be committed but have not yet been saved to the repository.
+-	*Local repository*: Where the committed changes are stored. It is where branches are managed, and contains the history of all the committed changes which can be viewed by the project developers.
 
 We can interact with Git by using the Git CLI Git bash.
 
 Some important commands to remember are:
-- git init :  initialises a git repository in the current working directory.
-- git add <file> : add <file> to the staging area.
-- git add . : add all modified files in the working directory to the staging area.
-- git commit -m “message” : commits all the staged files to the repository.
-- git status : display the current changes in the repository.
+- **git init** :  initialises a git repository in the current working directory.
+- **git add <file>** : add <file> to the staging area.
+- **git add .** : add all modified files in the working directory to the staging area.
+- **git commit -m “message”** : commits all the staged files to the repository.
+- **git status** : display the current changes in the repository.
 
 In addition to Git there is also GitHub which is a free cloud Git service that provides Git functionalities remotely in an easy-to-use GUI, allowing to work on the files in our repository from anywhere as long as we have access to the internet.
  
 GitHub can be used independently or in combination to our local git repository, providing its remote repository capabilities. This allows the developers to store their local repository content in their remote repository and vice-versa.
  
 Some important commands to interact with the GitHub repository:
-- git remote add origin <URL> : set a new remote repository.
-- git remote set-url origin <URL> : change the remote repository.
-- git remote -v : verify the remote repository URL.
-- git push <remote-name> <remote-branch> : push local change to the remote repository.
-- git pull : pull remote changes to the local repository.
-- git clone <URL> : copy a remote repository to a local repository in the current working directory.
+- **git remote add origin <URL>** : set a new remote repository.
+- **git remote set-url origin <URL>** : change the remote repository.
+- **git remote -v** : verify the remote repository URL.
+- **git push <remote-name> <remote-branch>** : push local change to the remote repository.
+- **git pull** : pull remote changes to the local repository.
+- **git clone <URL>** : copy a remote repository to a local repository in the current working directory.
 
 The commands above are just a few useful commands to work with git and GitHub. For an extensive list and description of git commands we must refer to the [official documentation](https://git-scm.com/docs).
  
@@ -130,15 +130,15 @@ A shell is a program that serves as an interface to access the services and func
 PowerShell is a command-line shell and scripting language developed by Microsoft for managing and automating Windows operating systems and applications.
  
 Some important PowerShell commands:
-- pwd : prints the path of the current working directory.
-- ls : lists the files and directories in the current working directory.
-- cd <directory> : change directory to <directory>.
-- cd .. : change directory to the parent directory of the current working directory.
-- cd ~ : changes directory to the user home directory.
-- md <name> : create a new directory named <name>.
-- cp <file> <directory> : copy <file> to directory <directory>.
-- mv <file> <directory> : move <file> to directory <directory>.
-- del <file> : deletes <file>.
+- **pwd** : prints the path of the current working directory.
+- **ls** : lists the files and directories in the current working directory.
+- **cd <directory>** : change directory to <directory>.
+- **cd ..** : change directory to the parent directory of the current working directory.
+- **cd ~** : changes directory to the user home directory.
+- **md <name>** : create a new directory named <name>.
+- **cp <file> <directory>** : copy <file> to directory <directory>.
+- **mv <file> <directory>** : move <file> to directory <directory>.
+- **del <file>** : deletes <file>.
  
 [More PowerShell commands](https://devblogs.microsoft.com/scripting/table-of-basic-powershell-commands/)
 
@@ -179,7 +179,8 @@ Agile emphasizes communication, collaboration, and teamwork, and it encourages c
 **Scrum**
  
 Scrum is a specific Agile framework and is commonly used in software development.
-The three pillars of Scrum
+ 
+The three pillars of Scrum:
 -	Transparency: Everyone presents the facts as it is and collectively collaborate for the common organizational objectives. No one has a hidden agenda.
 -	Inspection: Not done by an inspector but by everyone on the Scrum team. The inspection can be done for the product, processes, people aspects, or practices.
 -	Adaptation: Adaptation is about continuous improvement, to adapt based on the results of the inspection. Everyone should reflect on how to improve.
