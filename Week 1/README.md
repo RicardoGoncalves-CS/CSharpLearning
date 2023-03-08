@@ -2,8 +2,6 @@
 
 # Week 1 Notes
 
-## Topics covered during week 1:
-
 ### Spartan Skills
 
 Spartan skills cover the necessary consultancy skills to succeed as a Sparta C# consultant. 
