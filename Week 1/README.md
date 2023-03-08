@@ -134,7 +134,6 @@ Some important PowerShell commands:
 - **ls** : lists the files and directories in the current working directory.
 - **cd <directory>** : change directory to <directory>.
 - **cd ..** : change directory to the parent directory of the current working directory.
-- **cd ~ ** : changes directory to the user home directory.
 - **md <name>** : create a new directory named <name>.
 - **cp <file> <directory>** : copy <file> to directory <directory>.
 - **mv <file> <directory>** : move <file> to directory <directory>.
