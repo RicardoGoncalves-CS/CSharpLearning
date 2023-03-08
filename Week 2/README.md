@@ -267,7 +267,8 @@ public static class LoopTypes
     {
         int max = Int32.MinValue;
         int counter = 0;
-
+        
+        // do-while loop
         do
         {
             if (nums[counter] > max) max = nums[counter];
@@ -281,7 +282,8 @@ public static class LoopTypes
     {
         // find the highest number in nums
         int max = Int32.MinValue;
-
+        
+        // foreach loop
         foreach(int num in nums)
         {
             if (num > max) max = num;
@@ -294,6 +296,7 @@ public static class LoopTypes
     {
         int max = Int32.MinValue;
 
+        // for loop
         for(int i = 0; i < nums.Count; i++)
         {
             if (nums[i] > max) max = nums[i];
@@ -307,6 +310,7 @@ public static class LoopTypes
         int max = Int32.MinValue;
         int counter = 0;
 
+        // while loop
         while (counter < nums.Count)
         {
             if (nums[counter] > max) max = nums[counter];
