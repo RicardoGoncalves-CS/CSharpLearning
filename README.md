@@ -14,6 +14,8 @@ The _**table of contents**_ is organised by week which contain the topics covere
 
 This repository will be updated throughout the duration of the training.
 
+### Each week folder contain notes on the topics covered during that week.
+
 # TABLE OF CONTENTS
 
 - [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
