@@ -169,19 +169,19 @@ Int x = 5
 // decrement operator (--) decreases the value by 1.
 // post increment operator: x is assigned before increment
 Int a = x++
-// here **a** has the value 5 and **x** has the value 6
+// here 'a' has the value 5 and 'x' has the value 6
 // pre increment operator: x is incremented before assignment
 Int b = ++x
-// here **b** has the value 7 and **x** has the value 7
+// here 'b' has the value 7 and 'x' has the value 7
 Int c = x—
-// here **c** has the value 7 and **x** has the value 6
+// here 'c' has the value 7 and 'x' has the value 6
 ```
 
 **var** is a placeholder for the data type. The compiler evaluates the data types in the operation to infer the var type.
 
 ```C#
-var c = 10 / 3;	// **c** data type will be int
-var d = 9.5 / 4;	// **d** data type will be double
+var c = 10 / 3;	    // 'c' data type will be int
+var d = 9.5 / 4;	// 'd' data type will be double
 ```
 
 **&& / || and  & / |** (Logical AND / OR)
