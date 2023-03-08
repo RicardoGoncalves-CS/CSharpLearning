@@ -165,7 +165,7 @@ Some commonly used operators in C#:
 -	Left shift assignment: <<=
 -	Right shift assignment: >>=
 
-- **Assignment, increment and decrement**
+**Assignment, increment and decrement**
 
 ```C#
 // Assigning values to a variable
