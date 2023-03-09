@@ -4,6 +4,11 @@
     {
         private string _camera;
 
+        public Hunter()
+        {
+
+        }
+
         public Hunter(string fName, string lName, string camera = "") : base(fName, lName)
         {
             _camera = camera;
