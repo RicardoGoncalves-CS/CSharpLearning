@@ -18,5 +18,10 @@
         {
             return $"{FullName} has taken a photo with their {_camera}";
         }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} Camera: {_camera}";
+        }
     }
 }

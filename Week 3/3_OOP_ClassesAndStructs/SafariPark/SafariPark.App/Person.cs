@@ -45,5 +45,10 @@
         }
 
         public string FullName => $"{FirstName } {LastName}";
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} Name: {FullName} Age: {Age}";
+        }
     }
 }

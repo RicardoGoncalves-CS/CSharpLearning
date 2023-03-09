@@ -10,8 +10,8 @@ public class VehicleTests
     {
         Vehicle v = new Vehicle();
         var result = v.Move(2);
-        Assert.AreEqual(20, v.Position);
-        Assert.AreEqual("Moving along 2 times", result);
+        Assert.That(v.Position, Is.EqualTo(20));
+        Assert.That(result, Is.EqualTo("Moving along 2 times"));
     }
 
     [Test]
@@ -19,8 +19,8 @@ public class VehicleTests
     {
         Vehicle v = new Vehicle(5, 40);
         var result = v.Move();
-        Assert.AreEqual(40, v.Position);
-        Assert.AreEqual("Moving along", result);
+        Assert.That(v.Position, Is.EqualTo(40));
+        Assert.That(result, Is.EqualTo("Moving along"));
     }
 
     [Test]
@@ -28,7 +28,7 @@ public class VehicleTests
     {
         Vehicle v = new Vehicle();
         var result = v.Move(3);
-        Assert.AreEqual("Moving along 3 times", result);
+        Assert.That(result, Is.EqualTo("Moving along 3 times"));
     }
 
     [Test]

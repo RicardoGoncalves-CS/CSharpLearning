@@ -64,3 +64,21 @@ Console.WriteLine(hunter.Shoot());
 
 Hunter h2 = new Hunter();
 Console.WriteLine(h2.Shoot());
+
+Console.WriteLine($"{hunter}");
+
+Console.WriteLine();
+
+Rectangle rect = new Rectangle(2, 3);
+Console.WriteLine(rect);
+
+Console.WriteLine();
+
+Airplane airplane = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150}; 
+airplane.Ascend(500); 
+Console.WriteLine(airplane.Move(3)); 
+Console.WriteLine(airplane); 
+airplane.Descend(200); 
+Console.WriteLine(airplane.Move()); 
+airplane.Move(); 
+Console.WriteLine(airplane);

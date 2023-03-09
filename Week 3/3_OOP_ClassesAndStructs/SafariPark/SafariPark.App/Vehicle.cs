@@ -20,7 +20,7 @@
                 _numPassengers = value;
             } 
         }
-        public int Position { get; private set; }
+        public int Position { get; protected set; }
         public int Speed { get; init; }
 
         public Vehicle()
@@ -33,13 +33,13 @@
             this.Speed = speed;
         }
 
-        public string Move()
+        public virtual string Move()
         {
             Position += Speed;
             return "Moving along";
         }
 
-        public string Move(int times)
+        public virtual string Move(int times)
         {
             Position = times * 10;
             return $"Moving along {times} times";
