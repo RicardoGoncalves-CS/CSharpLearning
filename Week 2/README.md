@@ -364,7 +364,224 @@ The order of exception types in the catch blocks must be from more specific to l
 
 ### 5. Data Types
 
+C# is both a strongly and statically typed language. This means that the programmer must declare the data type of each variable, and the compiler checks that the declared types match the data being assigned to the variable before generating the executable code. As a result, C# is type safe, which prevents changing the data type of a variable after it has been declared. C# is also memory safe, as the computer can determine the necessary memory allocation for each variable.
 
+Some of the most commonly used numeric data types in C#:
+-	**byte**: 8-bit unsigned integer (0 to 255).
+-	**sbyte**: 8-bit signed integer (-128 to 127).
+-	**short**: 16-bit signed integer (-32,768 to 32,767).
+-	**ushort**: 16-bit unsigned integer (0 to 65,535).
+-	**int**: 32-bit signed integer (-2,147,483,648 to 2,147,483,647).
+-	**uint**: 32-bit unsigned integer (0 to 4,294,967,295).
+-	**long**: 64-bit signed integer (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807).
+-	**ulong**: 64-bit unsigned integer (0 to 18,446,744,073,709,551,615).
+-	**float**: 32-bit floating-point number.
+-	**double**: 64-bit floating-point number.
+-	**decimal**: 128-bit floating-point number.
+
+Other data types:
+-	**bool**: true or false.
+-	**char**: represents a Unicode character.
+-	**string**: represents a sequence of Unicode characters.
+
+Composite data types:
+-	**Arrays**: collection of elements of the same data type.
+-	**Structs**: value type that can contain fields and methods.
+-	**Classes**: reference type that can contain fields, properties, methods, and can be used to create objects.
+
+**NOTE**: In C# data types are implemented as objects.
+
+**Overflow and underflow**
+
+Overflow and underflow refers to the event were a data type goes over its maximum or under its minimum value. When that occurs the value jumps to the opposite side of the range of values that data type support.
+
+```C#
+// Example of overflow
+
+// In the example below exampleVariable of type byte is assigned the value 255 (the maximum value for a byte)
+// By adding 1 the value of exampleVariable jumps to the first value on the opposite range of values for this data type and will be holding the value 0
+Byte exampleVariable = 255;
+exampleVariable += 1;
+```
+
+We can use the keyword **checked** to create a block where overflows and underflows occur which will throw an exception if that happens, or execute the operation normally if not.
+
+```C#
+// Example of a checked block
+
+// It will throw an exception to stop the overflow from happening
+Checked
+{
+	Byte exampleVariable = 255;
+	exampleVariable += 1;
+}
+```
+
+Suffixes in values can be used to enforce a specific data type. Some suffix examples include:
+
+```C#
+uint integralNumber = 10u;
+float floatNumber = 10.5f;
+double doubleNumber = 10.5d;
+decimal decimalNumber = 10.5m;
+ulong  longNumber = 10_000_000_000_000_000ul;
+```
+
+**NOTE**: in the code snippet above I used underscores. This are ignored but can help with readability.
+
+```C#
+// Example of suffix use
+
+float a = 2 / 5;
+float b = 2 / 5f;
+
+// In the example above ‘a’ is assigned the value 0 because a division of two integers will result in an integer value (which in this case will be 0) even if the variable the value is assigned to is a float.
+// ‘b’ is assigned the value 0.4 because the suffix ‘f’ enforces the data type of 5 to be a float, and the result of a division between an integer and a float value will result in a float.
+```
+
+**Type conversion**
+
+Type conversion refers to the act of converting a data type value to another data type. When converting data types, it’s important that the target data type can handle the data being converted. When converting data types, we can lose some data so is important to take some considerations.
+
+
+**Safe conversion** is the process of converting data types in a way that minimizes loss of data or errors.
+
+Type conversion can be implicit or explicit.
+
+Implicit type conversion occurs when one data type is automatically converted into another without special casting syntax and no data is lost during the conversion process. Usually for that to be possible the type being converted from should be smaller in size than the target data type, and they are both signed or unsigned (as the ranges are different).
+
+For example, is safe to convert from:
+-	**int** to **long**
+-	**short** to **int**
+-	**int** to **double**
+-	**uint** to **ulong**
+
+But not from:
+-	**long** to **int**
+-	**double** to **short**
+-	**int** to **uint**
+
+```C#
+// Example
+
+int originSafe = 1000;
+long targetSafe;
+
+targetSafe = originSafe;
+```
+
+[Type conversion tables in .NET](https://learn.microsoft.com/en-us/dotnet/standard/base-types/conversion-tables)
+
+**Unsafe conversion** using the casting operator:
+
+```C#
+double x = 3.14159265359;
+float y = (float)x;
+```
+
+**The Convert class**
+
+We can use the **Convert** class to convert data types. It does background checks and throw an exception if an error occurs.
+
+```C#
+// Example
+
+long a = 54444444;
+int b = Convert.ToInt32(a);
+```
+
+**Converting strings to numbers**
+
+In C# we can use **Parse** and **TryParse** methods to convert a string representation of a value into its corresponding data type.
+
+**Parse** takes a string argument and attempts to convert to the specified data type. If the string cannot be converted an exception is thrown.
+
+**TryParse** returns a Boolean value indicating if whether the conversion was successful or not. In case the conversion was successful the method also returns the converted value as an output parameter.
+
+```C#
+// Example
+
+string numString = "2023";
+int num;
+
+// Using Parse
+num = int.Parse(numString);
+Console.WriteLine(num);
+
+// Using TryParse
+if (int.TryParse(numString, out num))
+{
+    Console.WriteLine(num);
+}
+else
+{
+    Console.WriteLine("Could not convert string to integer.");
+}
+```
+
+**Strings**
+
+Strings represent a sequence of characters. Characters on a string are indexed and can be accessed individually using their index.
+
+In C# strings can be formatted using methods, concatenation, and interpolation. C# also provides the StringBuilder class which helps to build strings.
+
+Some of string methods include:
+-	ToUpper: changes the characters in a string to upper case.
+-	ToLower: changes the characters in a string to lower case.
+-	Replace: allows to replace a character in a string with another.
+-	Trim: eliminate blank spaces in a string.
+
+[Comprehensive list of string methods](https://learn.microsoft.com/en-us/dotnet/api/system.string.clone?view=net-7.0)
+
+**Concatenation** allows to join strings together and uses the + symbol to do so:
+
+```C#
+// Example of concatenation
+string fName = “James”;
+string lName = “Bond”;
+
+string fullName = fName + “ “ + lName;
+```
+
+**Interpolation** uses the $ symbol before the first “ and uses brackets to hold variables whose values will be inserted in place. The brackets also allows us to do in-place operations. For example {10 / 2} would be formatted as “5”.
+
+```C#
+// Example of interpolation
+string fName = “James”;
+string lName = “Bond”;
+
+string fullName = $”{fName} {lName}”;
+```
+
+We can use the symbol @ to print literal strings instead of the formatted version:
+```C#
+// Example of literals
+string fName = “James”;
+string lName = “Bond”;
+
+string fullName = @”{fName} {lName}”;
+```
+
+We can also use certain syntax to format the string such as **\n** for new line, and **\t** for tab.
+
+**StringBuilder**
+
+The StringBuilder class is a more efficient way to manipulate strings compared to concatenation. When we concatenate strings using the + operator a new string object is created in memory for each concatenation.
+
+StringBuilder allows to build up a string by appending string fragments without creating new string objects each time.
+
+```C#
+// Example of StringBuilder
+
+StringBuilder sb = new StringBuilder();
+
+sb.Append("Hello");
+sb.Append(" ");
+sb.Append("world!");
+sb.Replace(“world”, “everyone”);
+
+string result = sb.ToString();
+```
 
 ### 6. Memory Model
 
