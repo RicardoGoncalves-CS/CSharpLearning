@@ -580,7 +580,7 @@ sb.Append(" ");
 sb.Append("world!");
 sb.Replace(“world”, “everyone”);
 
-string result = sb.ToString();
+string result = sb.ToString();   // result = "Hello everyone!"
 ```
 
 ### 6. Memory Model
