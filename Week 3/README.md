@@ -1,11 +1,38 @@
 [Go to the root folder](https://github.com/RicardoGoncalves-CS/Sparta)
 
-# Week 3 repository overview
+# Week 3 Notes
 
-This folder contains the following subfolders:
+1. [Advanced NUnit]
+2. [Test Driven Development]
+3. [Object-Oriented Programming]
+4. [Abstraction]
+5. [Encapsulation]
+6. [Inheritance]
+7. [Polymorphism]
 
-- 1_Advanced_NUnit
+### Advanced NUnit
 
-# UNDER CONSTRUCTION
 
-Test
+
+### Test Driven Development
+
+
+
+### Object-Oriented Programming
+
+
+
+### Abstraction
+
+
+
+### Encapsulation
+
+
+
+### Inheritance
+
+
+
+### Polymorphism
+
