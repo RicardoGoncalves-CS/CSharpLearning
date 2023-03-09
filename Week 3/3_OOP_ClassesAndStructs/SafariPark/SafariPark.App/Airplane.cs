@@ -4,13 +4,13 @@
     {
         private string _airline;
 
-        public int Altitude { get; private set; } = 0;
+        public int Altitude { get; private set; }
 
         public Airplane(int capacity) : base(capacity)
         {
         }
 
-        public Airplane(int capacity, int numPassengers, string airline = "") : base(capacity, numPassengers)
+        public Airplane(int capacity, int speed, string airline = "") : base(capacity, speed)
         {
             _airline = airline;
         }

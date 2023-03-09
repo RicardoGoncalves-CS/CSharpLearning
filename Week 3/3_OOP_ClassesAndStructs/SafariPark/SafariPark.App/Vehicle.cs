@@ -20,7 +20,7 @@
                 _numPassengers = value;
             } 
         }
-        public int Position { get; protected set; }
+        public int Position { get; set; }
         public int Speed { get; init; }
 
         public Vehicle()
