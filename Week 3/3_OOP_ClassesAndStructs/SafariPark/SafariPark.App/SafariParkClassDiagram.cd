@@ -3,9 +3,10 @@
   <Class Name="SafariPark.App.Person">
     <Position X="8.75" Y="3.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAIAAAEAAAAAAAAAAAAgAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAIAAAIAEAEAAAAAAAAAAAAgAAAAAAAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="System.Object">
     <Position X="8" Y="0.75" Width="3.75" />

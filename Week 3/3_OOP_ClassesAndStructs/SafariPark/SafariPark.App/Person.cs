@@ -1,6 +1,6 @@
 ﻿namespace SafariPark.App
 {
-    public class Person
+    public class Person : IMovable
     {
         // Fields
         // readonly makes that field immutable
@@ -9,6 +9,7 @@
         private int _age;
 
         // Properties
+        public int Distance { get; set; }
         public string FirstName { get; init; } = "";
         public string LastName { get; init; } = "";
 
@@ -49,6 +50,18 @@
         public override string ToString()
         {
             return $"{base.ToString()} Name: {FullName} Age: {Age}";
+        }
+
+        public string Move()
+        {
+            Distance += 1;
+            return "Moving along";
+        }
+
+        public string Move(int times)
+        {
+            Distance += 1;
+            return $"Moving along {times} times";
         }
     }
 }

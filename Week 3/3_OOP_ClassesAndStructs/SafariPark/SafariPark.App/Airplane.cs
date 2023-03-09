@@ -27,12 +27,14 @@
 
         public override string Move()
         {
-            return $"Moving along at an altitude of {Altitude} metres.";
+            Distance += 1;
+            return $"Moving along at an altitude of {Altitude} metres";
         }
 
         public override string Move(int times)
         {
-            return $"Moving along {times} times at an altitude of {Altitude} metres.";
+            Distance += 1;
+            return $"Moving along {times} times at an altitude of {Altitude} metres";
         }
 
         public override string ToString()

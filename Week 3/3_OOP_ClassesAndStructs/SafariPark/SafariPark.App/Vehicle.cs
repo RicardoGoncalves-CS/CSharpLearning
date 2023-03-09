@@ -1,6 +1,6 @@
 ﻿namespace SafariPark.App
 {
-    public class Vehicle
+    public class Vehicle : IMovable
     {
         private int _capacity;
         private int _numPassengers;
@@ -22,6 +22,7 @@
         }
         public int Position { get; set; }
         public int Speed { get; init; }
+        public int Distance { get; set; }
 
         public Vehicle()
         {
@@ -36,6 +37,7 @@
         public virtual string Move()
         {
             Position += Speed;
+            Distance += 1;
             return "Moving along";
         }
 

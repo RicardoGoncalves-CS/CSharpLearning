@@ -1,6 +1,7 @@
 ﻿using SafariPark.App;
+using System.Runtime.CompilerServices;
 
-# region classes and structs
+#region classes and structs
 //Person cathy = new Person("Cathy", "French", 35);
 //// Getter
 //int age = cathy.Age;
@@ -57,28 +58,69 @@
 //}
 #endregion
 
-Hunter hunter = new Hunter("Marion", "Jones", "Leica") { Age = 32 };
+#region inheritance
+//Hunter hunter = new Hunter("Marion", "Jones", "Leica") { Age = 32 };
 
-Console.WriteLine(hunter.Age);
-Console.WriteLine(hunter.Shoot());
+//Console.WriteLine(hunter.Age);
+//Console.WriteLine(hunter.Shoot());
 
-Hunter h2 = new Hunter();
-Console.WriteLine(h2.Shoot());
+//Hunter h2 = new Hunter();
+//Console.WriteLine(h2.Shoot());
 
-Console.WriteLine($"{hunter}");
+//Console.WriteLine($"{hunter}");
+
+//Console.WriteLine();
+
+//Rectangle rect = new Rectangle(2, 3);
+//Console.WriteLine(rect);
+
+//Console.WriteLine();
+
+//Airplane airplane = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150}; 
+//airplane.Ascend(500); 
+//Console.WriteLine(airplane.Move(3)); 
+//Console.WriteLine(airplane); 
+//airplane.Descend(200); 
+//Console.WriteLine(airplane.Move()); 
+//airplane.Move(); 
+//Console.WriteLine(airplane);
+#endregion
+
+#region polymorphism
+
+List<IMovable> gameObjects = new List<IMovable>()
+{
+    new Person("Cathy", "French"),
+    new Airplane(400, 200, "Boeing") { NumPassengers = 55 },
+    new Vehicle(12, 20){NumPassengers = 6 },
+    new Hunter("Henry", "Hodgkins", "Pentax")
+};
+
+foreach (var movable in gameObjects)
+{
+    Console.WriteLine($"{movable.GetType()} is {movable.Move()} for a distance of {movable.Distance}");
+}
 
 Console.WriteLine();
 
-Rectangle rect = new Rectangle(2, 3);
-Console.WriteLine(rect);
+//foreach (var gameObj in gameObjects)
+//{
+//    Console.WriteLine(gameObj);
+//}
 
 Console.WriteLine();
 
-Airplane airplane = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150}; 
-airplane.Ascend(500); 
-Console.WriteLine(airplane.Move(3)); 
-Console.WriteLine(airplane); 
-airplane.Descend(200); 
-Console.WriteLine(airplane.Move()); 
-airplane.Move(); 
-Console.WriteLine(airplane);
+Person yolanda = new Person("Yolanda", "Young");
+SpartaWrite(yolanda); 
+
+void SpartaWrite(object obj)
+{
+    //var hunterObj = (Hunter)obj;
+    //Console.WriteLine(hunterObj.Shoot());
+    Console.WriteLine(obj.ToString());
+}
+
+LaserGun superLaserGun = new LaserGun("BestBrand");
+Console.WriteLine(superLaserGun.Shoot());
+
+#endregion

@@ -10,7 +10,7 @@ public class AirplaneTests
     {
         Airplane airplane = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
         airplane.Ascend(500);
-        
+
         string result = airplane.Move(3);
 
         Assert.That(result, Is.EqualTo(expected));
