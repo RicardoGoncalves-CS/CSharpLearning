@@ -1,6 +1,6 @@
 ﻿namespace SafariPark.App
 {
-    internal interface IShootable
+    public interface IShootable
     {
         string Shoot();
     }

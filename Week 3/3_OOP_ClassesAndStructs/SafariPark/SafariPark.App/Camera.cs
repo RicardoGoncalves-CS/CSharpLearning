@@ -1,22 +1,22 @@
 ﻿namespace SafariPark.App
 {
-    public abstract class Weapon : IShootable
+    public class Camera : IShootable
     {
         private string _brand;
 
-        public Weapon(string brand)
+        public Camera(string brand)
         {
             _brand = brand;
         }
 
-        public virtual string Shoot()
+        public string Shoot()
         {
-            return "Foo!!";
+            return $"Taken a photo with the {_brand} camera";
         }
 
         public override string ToString()
         {
-            return _brand;
+            return $"{_brand}";
         }
     }
 }

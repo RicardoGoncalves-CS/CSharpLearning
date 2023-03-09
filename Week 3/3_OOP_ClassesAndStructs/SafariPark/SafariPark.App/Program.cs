@@ -88,39 +88,57 @@ using System.Runtime.CompilerServices;
 
 #region polymorphism
 
-List<IMovable> gameObjects = new List<IMovable>()
-{
-    new Person("Cathy", "French"),
-    new Airplane(400, 200, "Boeing") { NumPassengers = 55 },
-    new Vehicle(12, 20){NumPassengers = 6 },
-    new Hunter("Henry", "Hodgkins", "Pentax")
-};
-
-foreach (var movable in gameObjects)
-{
-    Console.WriteLine($"{movable.GetType()} is {movable.Move()} for a distance of {movable.Distance}");
-}
-
-Console.WriteLine();
-
-//foreach (var gameObj in gameObjects)
+//List<IMovable> gameObjects = new List<IMovable>()
 //{
-//    Console.WriteLine(gameObj);
+//    new Person("Cathy", "French"),
+//    new Airplane(400, 200, "Boeing") { NumPassengers = 55 },
+//    new Vehicle(12, 20){NumPassengers = 6 },
+//    new Hunter("Henry", "Hodgkins", "Pentax")
+//};
+
+//foreach (var movable in gameObjects)
+//{
+//    Console.WriteLine($"{movable.GetType()} is {movable.Move()} for a distance of {movable.Distance}");
 //}
 
-Console.WriteLine();
+//Console.WriteLine();
 
-Person yolanda = new Person("Yolanda", "Young");
-SpartaWrite(yolanda); 
+////foreach (var gameObj in gameObjects)
+////{
+////    Console.WriteLine(gameObj);
+////}
 
-void SpartaWrite(object obj)
-{
-    //var hunterObj = (Hunter)obj;
-    //Console.WriteLine(hunterObj.Shoot());
-    Console.WriteLine(obj.ToString());
-}
+//Console.WriteLine();
 
-LaserGun superLaserGun = new LaserGun("BestBrand");
-Console.WriteLine(superLaserGun.Shoot());
+//Person yolanda = new Person("Yolanda", "Young");
+//SpartaWrite(yolanda); 
+
+//void SpartaWrite(object obj)
+//{
+//    //var hunterObj = (Hunter)obj;
+//    //Console.WriteLine(hunterObj.Shoot());
+//    Console.WriteLine(obj.ToString());
+//}
 
 #endregion
+
+# region Polymorphic shootout
+
+List<IShootable> myWeapons = new List<IShootable>()
+{
+    new LaserGun("MegaRaySupreme"),
+    new WaterPistol("SuperWaterPistols"),
+    new Hunter("Sylvester", "Stallone", new Camera("Leica")),
+    new LaserGun("TinyBlaster"),
+    new WaterPistol("WetMaker"),
+    new Camera("Canon"),
+    new Hunter("Arnold", "Schwarzenegger", new WaterPistol("HeavyDamage")),
+    new Hunter("James", "Bond", new LaserGun("SolarFlare"))
+};
+
+foreach(IShootable item in myWeapons)
+{
+    Console.WriteLine(item.Shoot());
+}
+
+# endregion
