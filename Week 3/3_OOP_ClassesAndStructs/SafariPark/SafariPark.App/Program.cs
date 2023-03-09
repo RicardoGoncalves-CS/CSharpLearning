@@ -141,4 +141,10 @@ foreach(IShootable item in myWeapons)
     Console.WriteLine(item.Shoot());
 }
 
-# endregion
+#endregion
+
+Console.WriteLine();
+
+long a = 54444444;
+int b = Convert.ToInt32(a);
+Console.WriteLine(b);

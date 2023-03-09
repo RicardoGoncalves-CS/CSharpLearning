@@ -19,8 +19,9 @@ public class Program
         {
             byte aggro2 = 0;
             Console.WriteLine("Ghandi's aggro is " + aggro2);
-            aggro2 -= 1;
-            Console.WriteLine("Ghandi's aggro is " + aggro2);
+
+            //aggro2 -= 1;
+            //Console.WriteLine("Ghandi's aggro is " + aggro2);
         }
 
         #region numeric data types
@@ -88,7 +89,7 @@ public class Program
         Console.WriteLine("studentLoanU = " + studentLoanU);
 
         // Using the Convert class
-        numCowsB = Convert.ToByte(numCows);     // The Convert class do back-ground checks and will throw an Exception
+        numCowsB = Convert.ToByte(numCows);     // The Convert class do background checks and will throw an Exception
         int myFive = Convert.ToInt32("Five");
 
         #endregion
