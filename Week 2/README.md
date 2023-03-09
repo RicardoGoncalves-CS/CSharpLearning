@@ -585,5 +585,84 @@ string result = sb.ToString();
 
 ### 6. Memory Model
 
+The memory model is the set of rules that governs how a program uses memory. It ensures that different threads in a program can safely access shared memory without interfering with each other or causing unexpected behaviour.
 
+There are two main regions in the memory model:
+- Stack: stores local variables
+- Heap: store objects and other dynamically allocated data such as strings and arrays.
 
+The C# memory model includes the following concepts:
+- Value types: these are stored on the stack and contain the actual data values. Value types include **ints**, **floats**, and **bools**.
+- Reference types: are stored on the heap and contain a reference to the memory location of the object. The reference is stored in the stack whilst the actual values are stored in the heap.
+- Garbage collection: is used to automatically free memory that is no longer in use. It periodically scans the heap to identify objects that are no longer being used, and frees the memory associated with those objects.
+
+**Value types**
+
+Value types are copied:
+
+```C#
+// Example – Both variables store the value 10 in the stack
+
+int ticket = 10;
+var price = ticket; 
+```
+
+**Reference types**
+
+Reference types copy the reference to the address in the heap that contains the value:
+
+```C#
+// Example – Both variables share the same reference to the memory address. By changing the value in one will change the value in both, as they share the same reference to the values in memory.
+// In the end of the following operation both variables will point to the values { 1, 10, 3 } stored in the heap.
+
+int[] myNumbers = { 1, 2, 3 }
+var ourNumbers = myNumbers;
+ourNumbers[1] = 10;
+```
+
+**ref** and **in** keywords
+
+The **ref** keywords is used to pass a variable by reference which means that the method that receives the parameter can modify the original value of the argument.
+
+The **in** keyword is also used to pass a variable by reference but as read-only, so the method that receives the parameter cannot modify the original value.
+
+```C#
+// Example of passing by reference
+
+void refMethod(ref int myVariable)
+{
+ myVariable = myVariable * 2;
+}
+
+void inMethod(in int myVariable)
+{
+Console.WriteLine(myVariable);
+}
+
+int main()
+{
+int value = 10;
+refMethod(ref value);    	// value is 10
+inMethod(in value);  	// outputs "10"
+}
+```
+
+**out** keyword
+
+The **out** keyword is used in method parameter declarations to indicate that the parameter is an output parameter.
+
+When a parameter is marked with the **out** keyword the method must always assign its value before returning.
+
+```C#
+// Example of the out keyword use
+
+public void Double(int input, out int output)
+{
+    output = input * 2;
+}
+
+int input = 10;
+int output;
+Double(input, out output);
+Console.WriteLine(output); 	// Output: 20
+```
