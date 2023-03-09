@@ -642,7 +642,7 @@ Console.WriteLine(myVariable);
 int main()
 {
 int value = 10;
-refMethod(ref value);    	// value is 10
+refMethod(ref value);   // value is 10
 inMethod(in value);  	// outputs "10"
 }
 ```
