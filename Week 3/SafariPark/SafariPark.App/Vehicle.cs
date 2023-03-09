@@ -35,7 +35,7 @@
 
         public string Move()
         {
-            Position = Speed;
+            Position += Speed;
             return "Moving along";
         }
 

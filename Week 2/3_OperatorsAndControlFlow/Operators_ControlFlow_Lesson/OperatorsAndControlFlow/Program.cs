@@ -37,14 +37,14 @@ public class Program
         bool apples = false;
         bool oranges = true;
 
-        // difference between & / && (logical AND). Same reason applies to logical OR
+        // difference between & / && (logical AND).
         // Single & always checks both sides of the logical operation.
         // Double && (shortcut) doesn't continue the checks if it identifies that the overall logical operation will evaluate in a certain way.
         // For example false && true -> doesn't evaluate the second part because the first part is false thus will not be able to evaluate to true.
         bool fruit = apples & oranges;
 
         /* Example
-        string luke = "luke";
+        string luke = "luke"
         string alin = null;
 
         The following example will evaluate both condition
