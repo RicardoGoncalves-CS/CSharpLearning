@@ -1,6 +1,6 @@
 ﻿namespace SafariPark.App
 {
-    public class Person : IMovable
+    public class Person : IMovable, IEquatable<Person?>, IComparable<Person?>
     {
         // Fields
         // readonly makes that field immutable
@@ -62,6 +62,56 @@
         {
             Distance += 1;
             return $"Moving along {times} times";
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Person);
+        }
+
+        // Implemented during Object comparison lesson
+        public bool Equals(Person? other)
+        {
+            return other is not null &&
+                   _age == other._age &&
+                   Distance == other.Distance &&
+                   FirstName == other.FirstName &&
+                   LastName == other.LastName &&
+                   Age == other.Age &&
+                   FullName == other.FullName;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(_age, Distance, FirstName, LastName, Age, FullName);
+        }
+
+        public int CompareTo(Person? other)
+        {
+            if (other == null) return 1;
+
+            if (LastName != other.LastName)
+            {
+                return this.LastName.CompareTo(other.LastName);
+            }
+            else if (FirstName != other.FirstName)
+            {
+                return FirstName.CompareTo(other.FirstName);
+            }
+            else 
+            {
+                return Age.CompareTo(other.Age);
+            } 
+        }
+
+        public static bool operator ==(Person? left, Person? right)
+        {
+            return EqualityComparer<Person>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Person? left, Person? right)
+        {
+            return !(left == right);
         }
     }
 }

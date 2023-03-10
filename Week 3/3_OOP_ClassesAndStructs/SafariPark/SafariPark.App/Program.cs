@@ -122,29 +122,45 @@ using System.Runtime.CompilerServices;
 
 #endregion
 
-# region Polymorphic shootout
+#region Polymorphic shootout
 
-List<IShootable> myWeapons = new List<IShootable>()
-{
-    new LaserGun("MegaRaySupreme"),
-    new WaterPistol("SuperWaterPistols"),
-    new Hunter("Sylvester", "Stallone", new Camera("Leica")),
-    new LaserGun("TinyBlaster"),
-    new WaterPistol("WetMaker"),
-    new Camera("Canon"),
-    new Hunter("Arnold", "Schwarzenegger", new WaterPistol("HeavyDamage")),
-    new Hunter("James", "Bond", new LaserGun("SolarFlare"))
-};
+//List<IShootable> myWeapons = new List<IShootable>()
+//{
+//    new LaserGun("MegaRaySupreme"),
+//    new WaterPistol("SuperWaterPistols"),
+//    new Hunter("Sylvester", "Stallone", new Camera("Leica")),
+//    new LaserGun("TinyBlaster"),
+//    new WaterPistol("WetMaker"),
+//    new Camera("Canon"),
+//    new Hunter("Arnold", "Schwarzenegger", new WaterPistol("HeavyDamage")),
+//    new Hunter("James", "Bond", new LaserGun("SolarFlare"))
+//};
 
-foreach(IShootable item in myWeapons)
-{
-    Console.WriteLine(item.Shoot());
-}
+//foreach(IShootable item in myWeapons)
+//{
+//    Console.WriteLine(item.Shoot());
+//}
 
 #endregion
 
+#region Object comparison
+
+var bobOne = new Person("Bob", "Builder") { Age = 25 };
+var bobTwo = bobOne;
+var areSame = bobOne.Equals(bobTwo);  // Both hold the same reference in the stack to the address location in the heap
+
+var bobThree = new Person("Bob", "builder") { Age = 25 };
+var areSameOneThree = bobOne.Equals(bobThree);  // Although they hold the same values they are different objects as they hold difference references in the stack
+
+var operatorEquals = bobOne == bobThree;
+var operatorNotEquals = bobOne != bobThree;
+
+var bobFour = new Person("Bob", "Builder") { Age = 23 }; 
+
+List<Person> personList = new List<Person> { bobOne, bobTwo, bobThree, bobFour };
+
+personList.Sort();
+
 Console.WriteLine();
 
-long a = 54444444;
-int b = Convert.ToInt32(a);
-Console.WriteLine(b);
+#endregion

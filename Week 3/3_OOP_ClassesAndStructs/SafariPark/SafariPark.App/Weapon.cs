@@ -11,12 +11,12 @@
 
         public virtual string Shoot()
         {
-            return "Foo!!";
+            return $"{_brand}";
         }
 
         public override string ToString()
         {
-            return _brand;
+            return $"{_brand}";
         }
     }
 }
