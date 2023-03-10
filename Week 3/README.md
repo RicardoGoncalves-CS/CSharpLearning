@@ -14,7 +14,7 @@
 
 As explained in [Week 2 Unit Testing notes](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%202#2-unit-testing) in our Sparta training we use NUnit as the testing framework for our C# applications.
 
-NUnit many features and attributes. For a comprehensive list of features and attributes please refer to [NUnit official documentation](https://docs.nunit.org/).
+For a comprehensive list of features and attributes please refer to [NUnit official documentation](https://docs.nunit.org/).
 
 The [Test] and [TestCase] attributes have been already covered during Week 2, which are used to mark methods that represent a test. During this lesson we covered some more advanced features including:
 -	**[SetUp]**: Marks a method that should run before each test method.
