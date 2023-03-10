@@ -16,7 +16,9 @@ As explained in [Week 2 Unit Testing notes](https://github.com/RicardoGoncalves-
 
 For a comprehensive list of features and attributes please refer to [NUnit official documentation](https://docs.nunit.org/).
 
-The [Test] and [TestCase] attributes have been already covered during Week 2, which are used to mark methods that represent a test. During this lesson we covered some more advanced features including:
+The [Test] and [TestCase] attributes have been already covered during Week 2, which are used to mark methods that represent a test.
+
+During this lesson we covered some more advanced features including:
 -	**[SetUp]**: Marks a method that should run before each test method.
 -	**[OneTimeSetUp]**: Marks a method that should run once before all the test methods.
 -	**[TearDown]**: Mark a method that should run after each test method is executed.
