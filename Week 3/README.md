@@ -10,7 +10,8 @@
 6. [Inheritance](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#inheritance)
 7. [Polymorphism](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#polymorphism)
 8. [SOLID Principles]()
-9. [Collections]()
+9. [Objects Comparison]()
+10. [Collections]()
 
 ### Advanced NUnit
 
@@ -100,3 +101,14 @@ public class CalculatorTests
 
 ### Polymorphism
 
+
+
+### SOLID Principles
+
+
+
+### Objects Comparison
+
+
+
+### Collections
