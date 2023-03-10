@@ -145,23 +145,23 @@ using System.Runtime.CompilerServices;
 
 #region Object comparison
 
-var bobOne = new Person("Bob", "Builder") { Age = 25 };
-var bobTwo = bobOne;
-var areSame = bobOne.Equals(bobTwo);  // Both hold the same reference in the stack to the address location in the heap
+//var bobOne = new Person("Bob", "Builder") { Age = 25 };
+//var bobTwo = bobOne;
+//var areSame = bobOne.Equals(bobTwo);  // Both hold the same reference in the stack to the address location in the heap
 
-var bobThree = new Person("Bob", "builder") { Age = 25 };
-var areSameOneThree = bobOne.Equals(bobThree);  // Although they hold the same values they are different objects as they hold difference references in the stack
+//var bobThree = new Person("Bob", "builder") { Age = 25 };
+//var areSameOneThree = bobOne.Equals(bobThree);  // Although they hold the same values they are different objects as they hold difference references in the stack
 
-var operatorEquals = bobOne == bobThree;
-var operatorNotEquals = bobOne != bobThree;
+//var operatorEquals = bobOne == bobThree;
+//var operatorNotEquals = bobOne != bobThree;
 
-var bobFour = new Person("Bob", "Builder") { Age = 23 }; 
+//var bobFour = new Person("Bob", "Builder") { Age = 23 }; 
 
-List<Person> personList = new List<Person> { bobOne, bobTwo, bobThree, bobFour };
+//List<Person> personList = new List<Person> { bobOne, bobTwo, bobThree, bobFour };
 
-personList.Sort();
+//personList.Sort();
 
-Console.WriteLine();
+//Console.WriteLine();
 
 #endregion
 

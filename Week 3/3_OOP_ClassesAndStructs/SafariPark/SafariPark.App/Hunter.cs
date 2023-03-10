@@ -24,7 +24,9 @@
 
         public override string ToString()
         {
-            return $"{base.ToString()} Camera: {Shooter.ToString}";
+            // return $"{base.ToString()} Camera: {Shooter.ToString}";
+            // return "Hunter ToString TODO"; 
+            return $"{base.ToString()}";
         }
     }
 }
