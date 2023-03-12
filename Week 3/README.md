@@ -486,17 +486,17 @@ C# collections are used to store and manipulate a group of related objects. The 
 
 Some of the commonly used collection classes in C# are:
 
-- **List<T>**: A dynamic array that can be resized and allows the addition and removal of elements.
-- **Dictionary<TKey, TValue>**: A collection of key-value pairs that allows fast lookup of values based on their keys.
-- **HashSet<T>**: A collection of unique elements that allows fast searching and retrieval.
-- **Stack<T>**: A collection that follows the Last-In-First-Out (LIFO) principle and allows adding and removing elements from the top.
-- **Queue<T>**: A collection that follows the First-In-First-Out (FIFO) principle and allows adding elements to the back and removing from the front.
-- **LinkedList<T>**: A collection that allows efficient insertion and removal of elements at any position.
-- **ObservableCollection<T>**: A collection that raises events when items are added, removed, or updated, making it useful for data binding scenarios.
+- **List**: A dynamic array that can be resized and allows the addition and removal of elements.
+- **Dictionary**: A collection of key-value pairs that allows fast lookup of values based on their keys.
+- **HashSet**: A collection of unique elements that allows fast searching and retrieval.
+- **Stack**: A collection that follows the Last-In-First-Out (LIFO) principle and allows adding and removing elements from the top.
+- **Queue**: A collection that follows the First-In-First-Out (FIFO) principle and allows adding elements to the back and removing from the front.
+- **LinkedList**: A collection that allows efficient insertion and removal of elements at any position.
+- **ObservableCollection**: A collection that raises events when items are added, removed, or updated, making it useful for data binding scenarios.
 
 To use a collection in C#, you need to create an instance of the collection class and then add or remove elements using its methods or properties.
 
-**List<T>**
+**List**
 
 In C#, **List** is one of the most commonly used collections. It is a dynamic array that can store elements of any type, such as integers, strings, objects, or other complex types. The elements in a **List** are ordered by their index, and you can access them using zero-based indexing.
 
@@ -520,7 +520,7 @@ numbers.RemoveAt(1);
 numbers.Clear();
 ```
 
-**Dictionary<TKey, TValue>**
+**Dictionary**
 
 The **Dictionary** is a collection of **key-value pairs**, similar to a hash table. It allows you to store and retrieve elements based on a unique key associated with each element.
 
@@ -560,7 +560,7 @@ foreach (KeyValuePair<string, int> kvp in ages)
 }
 ```
 
-**HashSet<T>**
+**HashSet**
 
 The **HashSet** is a type of collection that represents a set of **unique values**, similar to a mathematical set. It is implemented using a hash table, which allows for fast access and lookup times.
 
