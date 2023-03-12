@@ -192,4 +192,181 @@ foreach (var person in thePeople)
 
 Console.WriteLine();
 
+List<int> theNumbers = new List<int> { 5, 4, 3, 9, 0 };
+
+theNumbers.Add(8);
+theNumbers.Sort();
+theNumbers.RemoveRange(1, 2);
+theNumbers.Insert(2, 1);
+theNumbers.Reverse();
+theNumbers.Remove(9);
+
+foreach(int num in theNumbers)
+{
+    Console.Write($"{num}");
+}
+
+// LINKED LIST
+
+Console.WriteLine("LinkedList of people");
+
+LinkedList<Person> thePeopleLinked = new LinkedList<Person>(); 
+
+thePeopleLinked.AddFirst(helen);
+thePeopleLinked.AddLast(will); 
+
+LinkedListNode<Person> insertNode = thePeopleLinked.Find(will)!;
+
+thePeopleLinked.AddBefore(insertNode, new Person { FirstName = "Linda", LastName = "Smith", Age = 45 });
+
+// QUEUE - First In First Out
+
+Console.WriteLine("Queue of people"); 
+
+var myQueue = new Queue<Person>();
+
+myQueue.Enqueue(helen);
+myQueue.Enqueue(will);
+
+myQueue.Enqueue(new Person("Cathy")); 
+
+foreach (var q in myQueue)
+{
+    Console.WriteLine(q);
+}
+
+var first = myQueue.Peek();
+var serve = myQueue.Dequeue(); 
+
+Console.WriteLine();
+
+// STACK - First In Last Out
+
+Console.WriteLine("Stack of numbers");
+
+int[] original = new int[] { 1, 2, 3, 4, 5 };
+int[] reversed = new int[original.Length]; 
+
+var stack = new Stack<int>();
+
+// Populate the stack
+foreach (var n in original)
+{
+    stack.Push(n);
+}
+
+// Write out the stack
+foreach (var s in stack)
+{
+    Console.WriteLine(s);
+}
+
+// Populate reversed from the stack
+for (int i = 0; i < original.Length; i++)
+{
+    reversed[i] = stack.Pop();
+}
+
+Console.WriteLine();
+
+// HASHSET
+
+Console.WriteLine("HashSet of people");
+
+var peopleSet = new HashSet<Person> { helen, new Person("Jasmine", "Carter"), new Person("Andrei", "Masters") };
+
+///////////
+
+var successMartin = peopleSet.Add(        // <--
+    new Person                            // <--
+    {                                     // <--
+        FirstName = "Martin",             // <--
+        LastName = "Beard"                // <--
+    });                                   // <--
+
+var successHelen = peopleSet.Add(         // <--
+    new Person                            // <--
+    {                                     // <--
+        FirstName = "Helen",              // <--
+        LastName = "Troy",                // <--
+        Age = 22                          // <--
+    });                                   // <--
+
+
+var morePeople = new HashSet<Person>{ new Person("Cathy", "French"), new Person("Jasmine", "Carter") };
+
+peopleSet.IntersectWith(morePeople);
+
+var vehicleSet = new HashSet<Vehicle>()
+
+{
+ new Vehicle{ NumPassengers = 3, Speed = 2},
+ new Vehicle{ Speed = 100 }
+};
+
+var success = vehicleSet.Add(new Vehicle { Speed = 100 });
+
+foreach (var entry in peopleSet)
+{
+    Console.WriteLine(entry);
+}
+
+Console.WriteLine();
+
+// DICTIONARY
+
+Console.WriteLine("Dictionary of people");
+
+var personDict = new Dictionary<string, Person>
+{ 
+    {"helen", helen }, 
+    {"sherlock", new Person("Sherlock", "Holmes") {Age = 40 } } 
+}; 
+
+var p = personDict["sherlock"];
+
+personDict.Add("will", will); Console.WriteLine();
+
+/////
+
+Console.WriteLine("Dictionary problem");
+
+string input = "The cat in the hat comes back";
+input = input.Trim().ToLower(); 
+
+var countDict = new Dictionary<char, int>(); 
+
+foreach (var c in input)
+{
+    if (countDict.ContainsKey(c))
+    {
+        countDict[c]++;
+    }
+    else
+    {
+        countDict.Add(c, 1);
+    }
+}
+
+foreach (var entry in countDict)
+{
+    Console.WriteLine(entry);
+}
+
+Console.WriteLine();
+
+Console.WriteLine("Keys");
+
+foreach (var key in countDict.Keys)
+{
+    Console.Write(key + " ");
+}
+
+Console.WriteLine("\nValues");
+
+foreach (var value in countDict.Values)
+{
+    Console.Write(value + " ");
+}
+
 #endregion
