@@ -9,9 +9,9 @@
 5. [Encapsulation](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#encapsulation)
 6. [Inheritance](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#inheritance)
 7. [Polymorphism](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#polymorphism)
-8. [SOLID Principles]()
-9. [Objects Comparison]()
-10. [Collections]()
+8. [SOLID Principles](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#solid-principles)
+9. [Objects Comparison](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#objects-comparison)
+10. [Collections](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#collections)
 
 ### Advanced NUnit
 
@@ -361,7 +361,7 @@ In addition to the Equals method, C# provides other ways to compare objects, inc
 - The **ReferenceEquals** method: This method compares two objects for reference equality, i.e., it returns true if the two objects are the same instance of an object.
 - The **==** and **!=** operators: These operators can be used to compare objects for equality or inequality. By default, they check if the two objects are the same instance of an object, but they can be overloaded to provide custom equality comparison logic.
 - The **IComparable** interface: This interface defines a method CompareTo that can be used to compare two objects of the same type. The CompareTo method returns a value indicating whether the first object is less than, equal to, or greater than the second object.
-- The IEquatable interface: This interface defines a method Equals that can be used to compare two objects of the same type for equality. The Equals method returns true if the two objects are equal, false otherwise.
+- The **IEquatable** interface: This interface defines a method Equals that can be used to compare two objects of the same type for equality. The Equals method returns true if the two objects are equal, false otherwise.
 
 It is important to note that object comparison in C# can be influenced by the nature of the object being compared, and whether the object is a value type or a reference type. Value types are compared by value, whereas reference types are compared by reference. Additionally, some types, such as strings and arrays, have their own comparison methods that can be used to compare objects of that type.
 
