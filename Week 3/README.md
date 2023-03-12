@@ -182,7 +182,7 @@ In summary, abstraction is a fundamental concept in software engineering that he
 
 ### Encapsulation
 
-Encapsulation is another of the fundamental concepts of object-oriented programming, and it refers to the practice of hiding the internal details of an object and providing a clear interface for accessing and modifying its state. Encapsulation helps to protect an object's internal state from unauthorized modification, which can help to ensure the correctness and reliability of your code.
+Encapsulation refers to the practice of hiding the internal details of an object and providing a clear interface for accessing and modifying its state. Encapsulation helps to protect an object's internal state from unauthorized modification, which can help to ensure the correctness and reliability of your code.
 
 In C#, encapsulation is achieved by using access modifiers like public, protected, and internal to control access to an object's properties, fields, and methods. By making certain properties or methods private, for example, you can ensure that they can only be accessed or modified from within the object itself, which helps to prevent unintended side effects and makes your code more robust and maintainable.
 
@@ -198,12 +198,12 @@ In addition to access modifiers, encapsulation can also be achieved through the 
 ```C#
 // Example of encapsulation
 
-public  class Animal
+public abstract class Animal
 {
     private int _age;
 
     public string Name { get; set; } = "";
-    public string Sound { get; private set; } = "";
+    public string Sound { get; protected set; } = "";
 
     public int Age
     {
@@ -221,10 +221,9 @@ public  class Animal
         }
     }
 
-    public Animal(string name, string sound, int age)
+    public Animal(string name, int age)
     {
         Name = name;
-        Sound = sound;
         Age = age;
     }
 
@@ -238,10 +237,7 @@ public  class Animal
         Name = name;
     }
 
-    public void MakeSound()
-    {
-        Console.WriteLine(Sound);
-    }
+    public abstract void MakeSound();
 
     public void NewSound(string newSound)
     {
@@ -255,7 +251,7 @@ public  class Animal
 }
 ```
 
-In the example above a class **Animal** was created to demonstrate principles of encapsulation.
+In the example above an abstract class **Animal** was created to demonstrate principles of encapsulation.
 
 The class has three private fields: **_age**, **_name**, and **_sound**. 
 
@@ -263,17 +259,51 @@ The **_age** field is accessed through a public property named Age, which has a 
 
 The **_name** and **_sound** fields are accessed through public properties **Name** and **Sound**, respectively. 
 
-**Name** has both a getter and setter, while **Sound** has a getter and a private setter.
+**Name** has both a getter and setter, while **Sound** has a getter and a protected setter.
 
 The class also has several public methods for interacting with an instance of the Animal class. 
 
-**GetName()** returns the name of the animal, **Rename(string name)** sets a new name for the animal, **MakeSound()** prints out the sound the animal makes, **NewSound(string newSound)** sets a new sound for the animal, and **Birthday()** increments the age of the animal by one.
+- **GetName()**: returns the name of the animal.
+- **Rename(string name)**: sets a new name for the animal.
+- **NewSound(string newSound)**: sets a new sound for the animal.
+- **Birthday()**: increments the age of the animal by one.
+
+It also has an abstract method **MakeSound()**, which means any class that inherits from Animal must provide an implementation for this method.
 
 Overall, encapsulation is an essential concept in object-oriented programming, and it plays a critical role in ensuring the correctness and reliability of your code. By using encapsulation to protect an object's internal state and provide a clear interface for accessing and modifying it, you can make your code more secure, maintainable, and effective.
 
 ### Inheritance
 
+Inheritance enables a new class to be based on an existing class. The existing class is known as the parent or base class, and the new class is called the child or derived class. Inheritance allows the child class to inherit the properties and behaviors of the parent class, allowing for code reuse and reducing the amount of code needed to create new classes.
 
+Inheritance is represented in code by using the colon (:) symbol followed by the name of the parent class in the declaration of the child class. The child class can then access the public and protected members of the parent class, including fields, methods, and properties.
+
+Child classes can also add new members, including additional fields, methods, and properties. This ability to extend and modify the functionality of the parent class is known as inheritance's polymorphism aspect, which allows a child class to be treated as if it were an instance of the parent class.
+
+```C#
+// Example of inheritance
+
+public class Dog : Animal
+{
+    public Dog(string name, int age) : base(name, age)
+    {
+        Sound = "Woof Woof!";
+    }
+
+    public override void MakeSound()
+    {
+        Console.WriteLine(Sound);
+    }
+}
+```
+
+In this example, **Dog** is a subclass of **Animal**. The constructor for **Dog** accepts a **name** and **age**, which are passed to the constructor of **Animal** using the **base keyword**. 
+
+We also set the Sound property of the Dog instance to "Woof Woof!".
+
+The **MakeSound** method is marked with the **override keyword**, which means that it overrides the **MakeSound** method declared in the **Animal** class.
+
+Inheritance is a powerful tool that can greatly simplify the development of large-scale applications by reducing the amount of code needed to create new classes and promoting code reuse. However, it is important to use inheritance carefully to avoid creating complex and difficult-to-maintain code.
 
 ### Polymorphism
 
