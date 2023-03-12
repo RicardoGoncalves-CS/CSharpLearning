@@ -307,7 +307,32 @@ Inheritance is a powerful tool that can greatly simplify the development of larg
 
 ### Polymorphism
 
+Polymorphism allows objects of different classes to be treated as if they are of the same type. Polymorphism allows developers to write code that can work with objects of different classes in a unified manner, without having to know the specific details of each object. This can greatly simplify code and make it more flexible and reusable.
 
+There are two main types of polymorphism: 
+
+- **Overloading (compile-time polymorphism)**: method overloading allows a class to have multiple methods with the same name but different parameters.
+- **Overriding (runtime polymorphism)**: method overriding allows a subclass to provide its own implementation of a method that is already defined in its parent class.
+
+Polymorphism is often achieved through the use of interfaces or abstract classes, which define a common set of methods and properties that can be implemented in different ways by different classes. This allows objects of different classes to be treated as if they are of the same type, as long as they implement the required methods and properties.
+
+```C#
+// Example of polymorphism
+
+Dog bigDog = new Dog("Scruffy", 2);
+Cat smallCat = new Cat("Paws", 4);
+
+dog.MakeSound();    // output "Woof Woof!"
+cat.MakeSound();    // output "Meow!"
+```
+
+The example above demonstrates runtime polymorphism by using overriding on the **MakeSound()** method.
+
+Both **Dog** and **Cat** classes have a **MakeSound()** method with different implementations.
+
+The code creates objects of both **Dog** and **Cat** classes, and calls the **MakeSound()** method on each object, which produces different outputs based on the implementation of the **MakeSound()** method in each class.
+
+Overall, polymorphism is a powerful concept that enables developers to write more flexible, modular, and reusable code, and is a key aspect of object-oriented programming.
 
 ### SOLID Principles
 
