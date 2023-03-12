@@ -486,13 +486,13 @@ C# collections are used to store and manipulate a group of related objects. The 
 
 Some of the commonly used collection classes in C# are:
 
-- List<T>: A dynamic array that can be resized and allows the addition and removal of elements.
-- Dictionary<TKey, TValue>: A collection of key-value pairs that allows fast lookup of values based on their keys.
-- HashSet<T>: A collection of unique elements that allows fast searching and retrieval.
-- Stack<T>: A collection that follows the Last-In-First-Out (LIFO) principle and allows adding and removing elements from the top.
-- Queue<T>: A collection that follows the First-In-First-Out (FIFO) principle and allows adding elements to the back and removing from the front.
-- LinkedList<T>: A collection that allows efficient insertion and removal of elements at any position.
-- ObservableCollection<T>: A collection that raises events when items are added, removed, or updated, making it useful for data binding scenarios.
+- **List<T>**: A dynamic array that can be resized and allows the addition and removal of elements.
+- **Dictionary<TKey, TValue>**: A collection of key-value pairs that allows fast lookup of values based on their keys.
+- **HashSet<T>**: A collection of unique elements that allows fast searching and retrieval.
+- **Stack<T>**: A collection that follows the Last-In-First-Out (LIFO) principle and allows adding and removing elements from the top.
+- **Queue<T>**: A collection that follows the First-In-First-Out (FIFO) principle and allows adding elements to the back and removing from the front.
+- **LinkedList<T>**: A collection that allows efficient insertion and removal of elements at any position.
+- **ObservableCollection<T>**: A collection that raises events when items are added, removed, or updated, making it useful for data binding scenarios.
 
 To use a collection in C#, you need to create an instance of the collection class and then add or remove elements using its methods or properties.
 
@@ -650,6 +650,7 @@ A **LinkedList** is a collection of objects that are linked together by pointers
 
 Some of the methods used to work with a **LinkedList** include **AddFirst**, **AddLast**, **AddBefore**, **AddAfter**, **Remove**, **RemoveFirst**, and **RemoveLast**.
 
+```C#
 LinkedList<int> linkedList = new LinkedList<int>();
 
 // Add items to the list
@@ -666,5 +667,6 @@ linkedList.AddBefore(node, 1);
 
 // Remove the third item from the list
 linkedList.Remove(3);
+```
 
 One thing to keep in mind when using a **LinkedList** is that each element in the list is a separate object with its own memory allocation, which can result in higher memory usage compared to other collection types.
