@@ -8,7 +8,7 @@ namespace Week3_PairProgramming.Tests
         public void GivenUnsortedArray_Sort_ReturnSortedArray(int[] source, int[] expected)
         {
             // Act
-            BubbleArraySort.Sort(source);
+            BubbleSort.Sort(source);
 
             // Assert
             Assert.That(source, Is.EqualTo(expected));

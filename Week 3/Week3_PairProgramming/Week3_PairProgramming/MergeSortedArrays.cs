@@ -15,15 +15,24 @@
             while (i < firstArr.Length && j < secondArr.Length)
             {
                 if (firstArr[i] < secondArr[j])
+                {
                     mergedArr[k++] = firstArr[i++];
-                else
+                }
+                else 
+                {
                     mergedArr[k++] = secondArr[j++];
+                } 
             }
-            while (i < firstArr.Length)
-                mergedArr[k++] = firstArr[i++];
 
-            while (j < secondArr.Length)
+            while (i < firstArr.Length) 
+            {
+                mergedArr[k++] = firstArr[i++];
+            }
+
+            while (j < secondArr.Length) 
+            {
                 mergedArr[k++] = secondArr[j++];
+            }
 
             return mergedArr;
         }
