@@ -336,10 +336,33 @@ Overall, polymorphism is a powerful concept that enables developers to write mor
 
 ### SOLID Principles
 
+SOLID principles are a set of guidelines for object-oriented programming that help to ensure code is maintainable, reusable, and easy to understand. 
 
+The principles are:
+
+- Single Responsibility Principle (SRP): A class should have only one reason to change, meaning it should have only one responsibility. This ensures that changes to one part of the codebase won't affect other parts unnecessarily.
+- Open/Closed Principle (OCP): A class should be open for extension but closed for modification. This means that new functionality should be added through inheritance or composition rather than by modifying existing code.
+- Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types. This means that any instance of a base class should be able to be replaced by an instance of a derived class without changing the correctness of the program.
+- Interface Segregation Principle (ISP): Clients should not be forced to depend on methods they do not use. This means that interfaces should be segregated into smaller, more specific interfaces that clients can implement only the methods they need.
+- Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions. This means that code should depend on abstractions rather than concrete implementations, allowing for easier changes and updates.
+
+Following these principles can lead to code that is easier to maintain, test, and extend over time.
 
 ### Objects Comparison
 
+In C#, object comparison is the process of determining whether two objects are equal or not. There are different types of object comparison in C# depending on the context and the needs of the program.
 
+The most common way to compare objects in C# is to use the **Equals** method.
+
+The **Equals** method is inherited from the System.Object class and can be overridden in derived classes to provide custom equality comparison logic. By default, the Equals method checks if the two objects being compared refer to the same memory location, i.e., if they are the same instance of an object.
+
+In addition to the Equals method, C# provides other ways to compare objects, including:
+
+- The **ReferenceEquals** method: This method compares two objects for reference equality, i.e., it returns true if the two objects are the same instance of an object.
+- The **==** and **!=** operators: These operators can be used to compare objects for equality or inequality. By default, they check if the two objects are the same instance of an object, but they can be overloaded to provide custom equality comparison logic.
+- The **IComparable** interface: This interface defines a method CompareTo that can be used to compare two objects of the same type. The CompareTo method returns a value indicating whether the first object is less than, equal to, or greater than the second object.
+- The IEquatable interface: This interface defines a method Equals that can be used to compare two objects of the same type for equality. The Equals method returns true if the two objects are equal, false otherwise.
+
+It is important to note that object comparison in C# can be influenced by the nature of the object being compared, and whether the object is a value type or a reference type. Value types are compared by value, whereas reference types are compared by reference. Additionally, some types, such as strings and arrays, have their own comparison methods that can be used to compare objects of that type.
 
 ### Collections
