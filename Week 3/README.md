@@ -170,19 +170,106 @@ public class AbstractionExample
 
 ```
 
-In this code example, we define an abstract class Animal with abstract methods GetName() and MakeSound(). 
+In this code example, we define an abstract class **Animal** with abstract methods **GetName()** and **MakeSound()**. 
 
-We then create two concrete classes, Dog and Cat, which inherit from Animal and implement the GetName() and MakeSound() methods.
+We then create two concrete classes, **Dog** and **Cat**, which inherit from **Animal** and implement the **GetName()** and **MakeSound()** methods.
 
 By using an abstract class and methods, we are able to define a common interface for different animals, while allowing each animal to implement its own unique behavior. 
 
-We can then create instances of the Dog and Cat classes, and call their GetName() and MakeSound() methods to display their respective names and sounds.
+We can then create instances of the **Dog** and **Cat** classes, and call their **GetName()** and **MakeSound()** methods to display their respective names and sounds.
 
 In summary, abstraction is a fundamental concept in software engineering that helps to manage complexity and promote reusability by reducing complex systems to simpler, more manageable models. By focusing on the essential features of a system or object, and abstracting away unnecessary details, developers can design more effective, modular, and scalable solutions that are easier to understand and maintain.
 
 ### Encapsulation
 
+Encapsulation is another of the fundamental concepts of object-oriented programming, and it refers to the practice of hiding the internal details of an object and providing a clear interface for accessing and modifying its state. Encapsulation helps to protect an object's internal state from unauthorized modification, which can help to ensure the correctness and reliability of your code.
 
+In C#, encapsulation is achieved by using access modifiers like public, protected, and internal to control access to an object's properties, fields, and methods. By making certain properties or methods private, for example, you can ensure that they can only be accessed or modified from within the object itself, which helps to prevent unintended side effects and makes your code more robust and maintainable.
+
+**Description of access modifiers in C#**:
+
+- **public**: The code is accessible for all classes
+- **private**: The code is only accessible within the same class
+- **protected**: The code is accessible within the same class, or in a class that is inherited from that class. You will learn more about inheritance in a later chapter
+- **internal**: The code is only accessible within its own assembly, but not from another assembly. You will learn more about this in a later chapter
+
+In addition to access modifiers, encapsulation can also be achieved through the use of properties, attributes, and other language features that help to control the way that an object's state is accessed and modified. By providing a clear interface for accessing an object's properties and methods, you can make your code more readable, understandable, and reusable.
+
+```C#
+// Example of encapsulation
+
+public  class Animal
+{
+    private int _age;
+
+    public string Name { get; set; } = "";
+    public string Sound { get; private set; } = "";
+
+    public int Age
+    {
+        get
+        {
+            return _age;
+        }
+        private set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException();
+            }
+            _age = value;
+        }
+    }
+
+    public Animal(string name, string sound, int age)
+    {
+        Name = name;
+        Sound = sound;
+        Age = age;
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public void Rename(string name)
+    {
+        Name = name;
+    }
+
+    public void MakeSound()
+    {
+        Console.WriteLine(Sound);
+    }
+
+    public void NewSound(string newSound)
+    {
+        Sound = newSound;
+    }
+
+    public void Birthday()
+    {
+        Age++;
+    }
+}
+```
+
+In the example above a class **Animal** was created to demonstrate principles of encapsulation.
+
+The class has three private fields: **_age**, **_name**, and **_sound**. 
+
+The **_age** field is accessed through a public property named Age, which has a private setter and ensures that the age is not negative. 
+
+The **_name** and **_sound** fields are accessed through public properties **Name** and **Sound**, respectively. 
+
+**Name** has both a getter and setter, while **Sound** has a getter and a private setter.
+
+The class also has several public methods for interacting with an instance of the Animal class. 
+
+**GetName()** returns the name of the animal, **Rename(string name)** sets a new name for the animal, **MakeSound()** prints out the sound the animal makes, **NewSound(string newSound)** sets a new sound for the animal, and **Birthday()** increments the age of the animal by one.
+
+Overall, encapsulation is an essential concept in object-oriented programming, and it plays a critical role in ensuring the correctness and reliability of your code. By using encapsulation to protect an object's internal state and provide a clear interface for accessing and modifying it, you can make your code more secure, maintainable, and effective.
 
 ### Inheritance
 
