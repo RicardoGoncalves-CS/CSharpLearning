@@ -356,13 +356,315 @@ The most common way to compare objects in C# is to use the **Equals** method.
 
 The **Equals** method is inherited from the System.Object class and can be overridden in derived classes to provide custom equality comparison logic. By default, the Equals method checks if the two objects being compared refer to the same memory location, i.e., if they are the same instance of an object.
 
+```C#
+// Example of the use of Equals()
+
+new Dog("Buddy", 2);
+Dog dog2 = new Dog("Buddy", 2);
+Dog dog3 = dog1;
+int num1 = 10;
+int num2 = 10;
+
+// Equals
+Console.WriteLine(dog1.Equals(dog2));   // output false: compares variable references
+Console.WriteLine(dog1.Equals(dog3));   // output true: compares variable references
+Console.WriteLine(num1.Equals(num2));   // output true: compares variable values
+```
+
 In addition to the Equals method, C# provides other ways to compare objects, including:
 
-- The **ReferenceEquals** method: This method compares two objects for reference equality, i.e., it returns true if the two objects are the same instance of an object.
-- The **==** and **!=** operators: These operators can be used to compare objects for equality or inequality. By default, they check if the two objects are the same instance of an object, but they can be overloaded to provide custom equality comparison logic.
-- The **IComparable** interface: This interface defines a method CompareTo that can be used to compare two objects of the same type. The CompareTo method returns a value indicating whether the first object is less than, equal to, or greater than the second object.
-- The **IEquatable** interface: This interface defines a method Equals that can be used to compare two objects of the same type for equality. The Equals method returns true if the two objects are equal, false otherwise.
+The **ReferenceEquals** method compares two objects for reference equality, i.e., it returns true if the two objects are the same instance of an object.
+
+```C#
+// Example of the use of ReferenceEquals()
+
+Dog dog1 = new Dog("Buddy", 2);
+Dog dog2 = new Dog("Buddy", 2);
+Dog dog3 = dog1;
+
+// ReferenceEquals
+Console.WriteLine(ReferenceEquals(dog1, dog2));     // output false: compares variable references
+Console.WriteLine(ReferenceEquals(dog1, dog3));     // output true: compares variable references
+```
+
+The **==** and **!=** operators can be used to compare objects for equality or inequality. By default, they check if the two objects are the same instance of an object, but they can be overloaded to provide custom equality comparison logic.
+
+```C#
+// Example of the use of == & !=
+
+Dog dog1 = new Dog("Buddy", 2);
+Dog dog2 = new Dog("Buddy", 2);
+Dog dog3 = dog1;
+int num1 = 10;
+int num2 = 10;
+
+Console.WriteLine(dog1 == dog2);    // output false
+Console.WriteLine(dog1 == dog3);    // output true
+Console.WriteLine(num1 == num2);    // output true
+Console.WriteLine(num1 != num2);    // output false
+```
+
+The **IComparable** interface defines a method CompareTo that can be used to compare two objects of the same type. The CompareTo method returns a value indicating whether the first object is less than, equal to, or greater than the second object.
+
+```C#
+// Example of the use of IComparable
+
+public class Dog : IComparable<Dog>
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Dog(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public int CompareTo(Dog other)
+    {
+        if (other == null) return 1;
+
+        // First, compare by name
+        int nameCompare = Name.CompareTo(other.Name);
+        if (nameCompare != 0) return nameCompare;
+
+        // If the names are the same, compare by age
+        return Age.CompareTo(other.Age);
+    }
+}
+```
+
+In this example above **Dog** implements the **IComparable** interface by providing a **CompareTo** method that takes another **Dog** object as a parameter and returns an integer indicating the relationship between the two objects.
+
+The **CompareTo** method first compares the **Name** properties of the two dogs. If they are not equal, the method returns the result of the **string.CompareTo** method, which compares the two names. 
+
+If the **names** are equal, the method compares the **Age** properties of the two dogs using the **int.CompareTo** method.
+
+The **IEquatable** interface defines a method Equals that can be used to compare two objects of the same type for equality. The Equals method returns true if the two objects are equal, false otherwise.
+
+```C#
+// Example of the use of IEquatable
+
+public class Dog : IEquatable<Dog>
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Dog(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public bool Equals(Dog other)
+    {
+        if (other == null)
+            return false;
+
+        if (ReferenceEquals(this, other))
+            return true;
+
+        if (GetType() != other.GetType())
+            return false;
+
+        return Name == other.Name && Age == other.Age;
+    }
+}
+```
+
+In the example above the **Dog** class implements the **IEquatable** interface with the type parameter of **Dog**. 
+
+The **Equals** method is implemented to compare two instances of the **Dog** class for equality. The implementation first checks if the argument is null, and then checks if the two instances are the same **reference**. 
+
+If the argument is of a different type or has different values for the **Name** and **Age** properties, then the two instances are not considered equal.
 
 It is important to note that object comparison in C# can be influenced by the nature of the object being compared, and whether the object is a value type or a reference type. Value types are compared by value, whereas reference types are compared by reference. Additionally, some types, such as strings and arrays, have their own comparison methods that can be used to compare objects of that type.
 
 ### Collections
+
+C# collections are used to store and manipulate a group of related objects. The .NET framework provides a number of collection classes that implement various interfaces such as IList, IDictionary, and ICollection.
+
+Some of the commonly used collection classes in C# are:
+
+- List<T>: A dynamic array that can be resized and allows the addition and removal of elements.
+- Dictionary<TKey, TValue>: A collection of key-value pairs that allows fast lookup of values based on their keys.
+- HashSet<T>: A collection of unique elements that allows fast searching and retrieval.
+- Stack<T>: A collection that follows the Last-In-First-Out (LIFO) principle and allows adding and removing elements from the top.
+- Queue<T>: A collection that follows the First-In-First-Out (FIFO) principle and allows adding elements to the back and removing from the front.
+- LinkedList<T>: A collection that allows efficient insertion and removal of elements at any position.
+- ObservableCollection<T>: A collection that raises events when items are added, removed, or updated, making it useful for data binding scenarios.
+
+To use a collection in C#, you need to create an instance of the collection class and then add or remove elements using its methods or properties.
+
+**List<T>**
+
+In C#, **List** is one of the most commonly used collections. It is a dynamic array that can store elements of any type, such as integers, strings, objects, or other complex types. The elements in a **List** are ordered by their index, and you can access them using zero-based indexing.
+
+**List** provides many useful methods for working with collections, such as **Add**, **Contains**, **Remove**, **Insert**, **Sort**, **IndexOf**, **ToArray**, **Clear**, and more.
+
+```C#
+// Example List
+
+// Create a new list of integers
+List<int> numbers = new List<int>();
+
+// Add some numbers to the list
+numbers.Add(1);
+numbers.Add(2);
+numbers.Add(3);
+
+// Remove the second number
+numbers.RemoveAt(1);
+
+// Clear the list
+numbers.Clear();
+```
+
+**Dictionary<TKey, TValue>**
+
+The **Dictionary** is a collection of **key-value pairs**, similar to a hash table. It allows you to store and retrieve elements based on a unique key associated with each element.
+
+In a **Dictionary**, each key must be unique and can be of any data type that implements the **GetHashCode** and **Equals** methods. **Values** can also be of any data type. 
+
+A **Dictionary** is an unordered collection, meaning that the order in which the elements are added to the collection is not guaranteed to be preserved.
+
+Some useful methods to work with the **Dictionary** include **Add**, **TryGetValue**, **Remove**. We can also access the attributes **Keys** and **Values**.
+
+```C#
+// Example Dictionary
+
+Dictionary<string, int> ages = new Dictionary<string, int>();
+
+// Add key-value pairs
+ages.Add("James", 25);
+ages.Add("Philip", 30);
+ages.Add("Peter", 35);
+
+// Get value by key
+int peterAge = ages["Peter"];
+Console.WriteLine($"Peter is {peterAge} years old.");
+
+// Check if key exists
+if (ages.ContainsKey("John"))
+{
+    Console.WriteLine("John is in the dictionary.");
+}
+
+// Remove key-value pair
+ages.Remove("James");
+
+// Iterate over key-value pairs
+foreach (KeyValuePair<string, int> kvp in ages)
+{
+    Console.WriteLine($"{kvp.Key} is {kvp.Value} years old.");
+}
+```
+
+**HashSet<T>**
+
+The **HashSet** is a type of collection that represents a set of **unique values**, similar to a mathematical set. It is implemented using a hash table, which allows for fast access and lookup times.
+
+One key feature of the HashSet collection is that it does not allow duplicates. When a value is added to the **HashSet**, the collection checks if the value already exists in the set. If it does, the value is not added again and the **HashSet** remains unchanged. If the value does not exist in the set, it is added to the set.
+
+Some useful methods to work with the **HashSet** include **Add**, **Contains**, and **Remove**.
+
+```C#
+// Example HashSet
+
+HashSet<int> set1 = new HashSet<int>();
+HashSet<int> set2 = new HashSet<int>();
+
+set1.Add(1);
+set1.Add(2);
+set1.Add(3);    // set1 = { 1, 2, 3 }
+
+set2.Add(2);
+set2.Add(3);
+set2.Add(4);    // set2 = { 2, 3, 4 }
+
+// Union
+HashSet<int> union = new HashSet<int>(set1);
+union.UnionWith(set2);              // union = { 1, 2, 3, 4 }
+
+// Intersection
+HashSet<int> intersection = new HashSet<int>(set1);
+intersection.IntersectWith(set2);   // intersection = { 2, 3 }
+
+// Difference
+HashSet<int> difference = new HashSet<int>(set1);
+difference.ExceptWith(set2);        // difference = { 1 }
+```
+
+The **HashSet** collection can be useful in scenarios where we need to store unique values and perform fast lookups. It can also be used to perform set operations such as union, intersection, and difference.
+
+**Stack**
+
+A **Stack** is a collection of elements that operates on the "last in, first out" (LIFO) principle. It means that the element added most recently will be the first one to be removed. It is similar to a physical stack of objects, where the last object placed on the top of the stack is the first one to be removed.
+
+In C#, the System.Collections.Generic namespace provides a generic **Stack** class that implements the stack data structure. It provides methods like **Push**, **Pop**, **Peek**, **Clear**, and **Count**.
+
+- **Push**: add an element to the stack.
+- **Pop**: remove the most recently added element from the stack. 
+- **Peek**: retrieve the most recently added element without removing it from the stack.
+- **Clear**: remove all elements from the stack.
+- **Count**: returns the number of elements in the stack.
+
+```C#
+Stack<string> stack = new Stack<string>();
+
+stack.Push("apple");
+stack.Push("banana");
+stack.Push("cherry");
+stack.Push("date");
+stack.Pop();    // Removes the last entry on the stack ("date")
+```
+
+Stacks are useful in many applications, including parsing expressions and evaluating them, undo-redo functionality in applications, and in memory management.
+
+**Queue**
+
+A **Queue** is a data structure that implements the First-In-First-Out (FIFO) principle. It is similar to a stack, but in a queue, the first item that is added is the first one to be removed.
+
+A **Queue** is typically used in situations where we need to process elements in the order they were added. For example, in a print spooler, documents are added to the queue in the order they are received and are printed one by one in the order they were added.
+
+.NET provides a built-in Queue class that we can use to implement a **Queue** in C#. We can add elements to the end of the queue using the **Enqueue** method, and we can remove elements from the beginning of the queue using the **Dequeue** method. We can also peek at the first element in the queue without removing it using the **Peek** method.
+
+Queue<string> myQueue = new Queue<string>();
+
+// add elements to the queue
+myQueue.Enqueue("apple");
+myQueue.Enqueue("banana");
+myQueue.Enqueue("cherry");
+
+// remove and assigns the first element in the queue to firstItem
+string firstItem = myQueue.Dequeue();
+
+// peek at the first element in the queue without removing it
+string peekItem = myQueue.Peek();
+
+**LinkedList**
+
+A **LinkedList** is a collection of objects that are linked together by pointers. Each object in the list contains a reference to the next object in the list, forming a chain-like structure.
+
+**LinkedList** is a dynamic data structure, meaning that it can grow or shrink in size as needed. It is ideal for scenarios where you need to add or remove elements from the middle of the list often.
+
+Some of the methods used to work with a **LinkedList** include **AddFirst**, **AddLast**, **AddBefore**, **AddAfter**, **Remove**, **RemoveFirst**, and **RemoveLast**.
+
+LinkedList<int> linkedList = new LinkedList<int>();
+
+// Add items to the list
+linkedList.AddLast(1);
+linkedList.AddLast(2);
+linkedList.AddLast(3);
+
+// Insert an item at the beginning of the list
+linkedList.AddFirst(0);
+
+// Insert an item before the second item in the list
+LinkedListNode<int> node = linkedList.Find(2);
+linkedList.AddBefore(node, 1);
+
+// Remove the third item from the list
+linkedList.Remove(3);
+
+One thing to keep in mind when using a **LinkedList** is that each element in the list is a separate object with its own memory allocation, which can result in higher memory usage compared to other collection types.
