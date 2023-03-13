@@ -5,11 +5,9 @@
 
         public static int[] Sort(int[] bubbleArray)
         {
-            int length = bubbleArray.Length;
-
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < bubbleArray.Length; i++)
             {
-                for (int j = i + 1; j < length; j++)
+                for (int j = i + 1; j < bubbleArray.Length; j++)
                 {
                     if (bubbleArray[i] > bubbleArray[j])
                     {
