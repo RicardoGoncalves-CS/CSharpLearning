@@ -13,18 +13,18 @@ Big O notation is represented using the letter "O" followed by a function in par
 
 The most commonly used time complexity functions are:
 
-- O(1): The algorithm's runtime is constant, regardless of the input size. (For example, retrieving the value of a variable).
-- O(log n): The algorithm's runtime grows logarithmically with the input size. (For example, performing a binary search).
-- O(n): The algorithm's runtime grows linearly with the input size. (For example, iterating through an array of size n).
-- O(n log n): The algorithm's runtime grows in proportion to n times the logarithm of n. (For example, performing a merge sort)
-- O(n^2): The algorithm's runtime grows quadratically with the input size. (For example, a nested loop).
-- O(n^3): The algorithm's runtime grows cubically with the input size. (For example, a nested loop nested in a loop).
-- O(2^n): The algorithm's runtime grows exponentially with the input size. (For example, the recursive solution to find the nth Fibonacci number).
+- **O(1)**: The algorithm's runtime is constant, regardless of the input size. (For example, retrieving the value of a variable).
+- **O(log n)**: The algorithm's runtime grows logarithmically with the input size. (For example, performing a binary search).
+- **O(n)**: The algorithm's runtime grows linearly with the input size. (For example, iterating through an array of size n).
+- **O(n log n)**: The algorithm's runtime grows in proportion to n times the logarithm of n. (For example, performing a merge sort)
+- **O(n^2)**: The algorithm's runtime grows quadratically with the input size. (For example, a nested loop).
+- **O(n^3**): The algorithm's runtime grows cubically with the input size. (For example, a nested loop nested in a loop).
+- **O(2^n)**: The algorithm's runtime grows exponentially with the input size. (For example, the recursive solution to find the nth Fibonacci number).
 
 Big O notation can also be used to describe the space complexity of an algorithm, which is the amount of memory the algorithm uses as the input size grows. The most commonly used space complexity functions are:
 
-- O(1): The algorithm uses a constant amount of memory, regardless of the input size.
-- O(n): The algorithm's memory usage grows linearly with the input size.
+- **O(1)**: The algorithm uses a constant amount of memory, regardless of the input size.
+- **O(n)**: The algorithm's memory usage grows linearly with the input size.
 
 It's important to note that Big O notation describes the worst-case scenario for an algorithm, and it's possible for an algorithm to have different runtimes for different input sizes or even for the same input size. However, Big O notation is still a useful tool for comparing the efficiency of different algorithms and selecting the most appropriate one for a given problem.
 
