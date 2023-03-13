@@ -36,9 +36,19 @@ public class Program
         // RecursiveMergeSort
         int[] arr = { 4, 56, 1, 7, 23, 65, 11 };
 
-        RecursiveBinaryMergeSort.MergeSort(arr);
+        MergeSortAlgorithm.MergeSort(arr);
 
         foreach(int number in arr)
+        {
+            Console.WriteLine(number);
+        }
+
+        // MergeSort2
+        int[] arr2 = { 4, 56, 1, 7, 23, 65, 11 };
+
+        MergeSortAlgorithm2.MergeSortAlgorithm(arr2, 0, arr2.Length - 1);
+
+        foreach (int number in arr2)
         {
             Console.WriteLine(number);
         }
