@@ -50,8 +50,8 @@ public int Factorial(int n)
 }
 ```
 
-This function takes an integer n as input and returns the factorial of n. The factorial of a number is the product of all positive integers from 1 to that number. For example, the factorial of 5 is 5 x 4 x 3 x 2 x 1, which equals 120.
+This function takes an integer **n** as input and returns the factorial of **n**. The factorial of a number is the product of all positive integers from 1 to that number. For example, the factorial of 5 is 5 x 4 x 3 x 2 x 1, which equals 120.
 
-The function first checks if n is equal to 0. If it is, it returns 1 because the factorial of 0 is 1. If n is not equal to 0, the function calls itself with n-1 as the input parameter, and multiplies the result with n. This process continues until the base case is reached (i.e., n becomes 0).
+The function first checks if **n** is equal to 0. If it is, it returns 1 because the factorial of 0 is 1. If **n** is not equal to 0, the function calls itself with **n-1** as the input parameter, and multiplies the result with **n**. This process continues until the base case is reached (i.e., **n** becomes 0).
 
 Recursion can be a powerful technique for solving problems that can be broken down into smaller sub-problems. However, it is important to use recursion carefully to avoid infinite loops or stack overflow errors.
