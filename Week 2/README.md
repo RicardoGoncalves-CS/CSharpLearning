@@ -39,6 +39,13 @@ In Unit testing the developer writes test cases to test specific functionality o
 
 During this training we will be using NUnit which is an open-source unit testing framework for .NET applications. It allows to developers to write and run automated tests in C# and other programming languages supported by .NET, and can be integrated with many development environments such as Visual Studio.
 
+**F.I.R.S.T. Principles for a good Unit test**
+- **Fast**
+- **Isolated/Independent**
+- **Repeatable**
+- **Self-validating**
+- **Timely**
+
 [NUnit official website](https://nunit.org/)
 
 The 3 A’s of unit testing
