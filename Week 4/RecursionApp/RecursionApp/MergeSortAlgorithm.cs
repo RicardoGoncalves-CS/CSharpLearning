@@ -7,6 +7,8 @@
  *  It works by recursively breaking down the input array into smaller subarrays, sorting each
  *  separately and then merging them back together into a single sorted array.
  */
+
+
 public static class MergeSortAlgorithm
 {
     public static void MergeSort(int[] inputArray)
@@ -25,23 +27,23 @@ public static class MergeSortAlgorithm
         int[] rightArray = new int[length - middle];
 
         // inputArray counter
-        int i = 0;
+        int inputArrayCounter = 0;
         // rightArray counter
-        int j = 0;
+        int rightArrayCounter = 0;
 
 
-        for (; i < length; i++)
+        for (; inputArrayCounter < length; inputArrayCounter++)
         {
             // if i counter is less than middle, copies the value to leftArray
-            if(i < middle)
+            if(inputArrayCounter < middle)
             {
-                leftArray[i] = inputArray[i];
+                leftArray[inputArrayCounter] = inputArray[inputArrayCounter];
             }
             // if i counter is greater than or equal to middle, copies the value to rightArray and increments j
             else
             {
-                rightArray[j] = inputArray[i];
-                j++;
+                rightArray[rightArrayCounter] = inputArray[inputArrayCounter];
+                rightArrayCounter++;
             }
         }
 
@@ -58,36 +60,36 @@ public static class MergeSortAlgorithm
         int leftSize = inputArray.Length / 2;
         int rightSize = inputArray.Length - leftSize;
 
-        int i = 0, l = 0, r = 0;
+        int originalIndex = 0, leftIndex = 0, rightIndex = 0;
 
-        while(l < leftSize && r < rightSize)
+        while(leftIndex < leftSize && rightIndex < rightSize)
         {
-            if (leftArray[l] < rightArray[r])
+            if (leftArray[leftIndex] < rightArray[rightIndex])
             {
-                inputArray[i] = leftArray[l];
-                i++;
-                l++;
+                inputArray[originalIndex] = leftArray[leftIndex];
+                originalIndex++;
+                leftIndex++;
             }
             else
             {
-                inputArray[i] = rightArray[r];
-                i++;
-                r++;
+                inputArray[originalIndex] = rightArray[rightIndex];
+                originalIndex++;
+                rightIndex++;
             }
         }
 
-        while(l < leftSize)
+        while(leftIndex < leftSize)
         {
-            inputArray[i] = leftArray[l];
-            i++;
-            l++;
+            inputArray[originalIndex] = leftArray[leftIndex];
+            originalIndex++;
+            leftIndex++;
         }
 
-        while(r < rightSize)
+        while(rightIndex < rightSize)
         {
-            inputArray[i] = rightArray[r];
-            i++;
-            r++;
+            inputArray[originalIndex] = rightArray[rightIndex];
+            originalIndex++;
+            rightIndex++;
         }
     }
 }
