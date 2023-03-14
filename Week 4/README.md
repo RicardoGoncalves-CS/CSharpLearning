@@ -2,10 +2,10 @@
 
 # Week 4 Notes
 
-1. [Big O Notation]()
-2. [Recursion]()
-3. [Refactoring]()
-4. [Design Patterns]()
+1. [Big O Notation](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#big-o-notation)
+2. [Recursion](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#recursion)
+3. [Refactoring](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#refactoring)
+4. [Design Patterns](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#design-patterns)
 
 ### Big O Notation
 
