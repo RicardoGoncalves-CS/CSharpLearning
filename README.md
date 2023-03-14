@@ -36,3 +36,17 @@ This repository will be updated throughout the duration of the training.
   - [Advanced NUnit](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/1_Advanced_NUnit)
   - [Test Driven Development](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/2_TestDrivenDevelopment)
   - [Object-Oriented Programming](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203/3_OOP_ClassesAndStructs/SafariPark)
+  - [Abstraction](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#abstraction)
+  - [Encapsulation](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#encapsulation)
+  - [Inheritance](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#inheritance)
+  - [Polymorphism](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#polymorphism)
+  - [SOLID Principles](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#solid-principles)
+  - [Objects Comparison](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#objects-comparison)
+  - [Collections](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%203#collections)
+
+
+- [Week 4 - Advanced C#](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204)
+  - [Big O Notation](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#big-o-notation)
+  - [Recursion](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#recursion)
+  - [Refactoring](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#refactoring)
+  - [Design Patterns](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%204/README.md#design-patterns)
