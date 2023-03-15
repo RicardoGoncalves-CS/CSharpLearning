@@ -23,8 +23,13 @@ internal class Program
         newScientist.Role = "Biologist";
         newScientist.FieldOfStudy = "Biology";
 
+        Employee emp4 = EmployeeFactory.CreateEmployee("security");
+        Security newSecurity = (Security)emp4;
+        newSecurity.Name = "Joseph";
+
         Console.WriteLine($"{emp1.Name} works as {emp1.Role.ToLower()} at the {emp1.Department.ToLower()} department. His annual salary is {emp1.Salary.ToString("C")}");
         Console.WriteLine($"{emp2.Name} works as {emp2.Role.ToLower()} at the {emp2.Department.ToLower()} department. His field of study is {emp2.FieldOfStudy.ToLower()} and has an annual salary of {emp2.Salary.ToString("C")}");
         Console.WriteLine($"{newScientist.Name} works as {newScientist.Role.ToLower()} at the {newScientist.Department.ToLower()} department. His field of study is {newScientist.FieldOfStudy.ToLower()} and has an annual salary of {newScientist.Salary.ToString("C")}");
+        Console.WriteLine($"{newSecurity.Name} works as {newSecurity.Role.ToLower()} at the {newSecurity.Department.ToLower()} department. His annual salary of {newSecurity.Salary.ToString("C")}");
     }
 }

@@ -8,6 +8,8 @@ public static class EmployeeFactory
         {
             case "scientist":
                 return new Scientist();
+            case "security":
+                return new Security();
             default:
                 throw new ArgumentException("Invalid employee type");
         }
