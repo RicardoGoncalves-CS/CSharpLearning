@@ -50,3 +50,4 @@ This repository will be updated throughout the duration of the training.
   - [Recursion](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#recursion)
   - [Refactoring](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#refactoring)
   - [Design Patterns](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%204/README.md#design-patterns)
+  - [Introduction to SQL](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#introduction-to-sql)
