@@ -481,11 +481,11 @@ WHERE city = 'Montpellier'
 
 The = symbol isn’t the only comparison operator we can use in our WHERE clauses.
 
-<	Less than
-\>	More than
-<=	Less or equal to
-\>=	More or equal to
-!=	Not equal to
+- <	Less than
+- \>	More than
+- <=	Less or equal to
+- \>=	More or equal to
+- !=	Not equal to
 
 ```SQL
 SELECT *
