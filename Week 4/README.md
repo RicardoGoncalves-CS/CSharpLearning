@@ -537,7 +537,6 @@ If we don’t want to return only exact matches we can use wildcards, which act 
 
 -	_ : The underscore character substitutes a single character:
 ```SQL
--- Example
 SELECT *
 FROM customer
 WHERE firstname LIKE ‘Li_a’
@@ -545,7 +544,6 @@ WHERE firstname LIKE ‘Li_a’
 
 -	% : This substitutes zero or more characters:
 ```SQL
--- Example
 SELECT *
 FROM customer
 WHERE firstname LIKE ‘J%’
@@ -553,7 +551,6 @@ WHERE firstname LIKE ‘J%’
 
 -	[ABC] : Square brackets are used to specify multiple possible characters to match:
 ```SQL
--- Example
 SELECT *
 FROM product
 WHERE name LIKE ‘Kindle Fire [567]’
