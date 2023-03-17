@@ -1,5 +1,6 @@
 ﻿using JurassicPark.People.Employees;
 using JurassicPark.People.Visitors;
+using System.Data.SqlClient;
 
 namespace JurassicPark;
 
@@ -26,5 +27,17 @@ internal class Program
         Scientist firstScientist = new Scientist("Alan", "Grant", "American", new DateOnly(1978, 8, 22));
         Console.WriteLine($"{firstScientist}; Full name: {firstScientist.GetFullName()}; Nationality: {firstScientist.id.Nationality}; DoB: {firstScientist.GetDateOfBirth()};");
         Console.WriteLine();
+
+        connector();
+    }
+
+    public static void connector()
+    {
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\RICAR\SPARTAGIT\MORE EXERCISES\JURASSICPARK\JURASSICPARK\DATABASE\JURASSICPARK.MDF;Integrated Security=True;";
+        SqlConnection con = new SqlConnection(connectionString);
+        {
+            con.Open();
+            Console.WriteLine("Connection opened successfully.");
+        }
     }
 }

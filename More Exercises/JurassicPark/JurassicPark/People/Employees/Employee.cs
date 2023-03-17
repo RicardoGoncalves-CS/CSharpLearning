@@ -2,6 +2,6 @@
 
 internal class Employee : Person
 {
-    internal int Salary { get; set; }
+    internal decimal Salary { get; set; }
     internal string Department { get; set; }
 }
