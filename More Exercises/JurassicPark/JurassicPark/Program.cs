@@ -1,4 +1,5 @@
-﻿using JurassicPark.People.Employees;
+﻿using JurassicPark.Factories;
+using JurassicPark.People.Employees;
 using JurassicPark.People.Visitors;
 using System.Data.SqlClient;
 
@@ -11,33 +12,18 @@ internal class Program
         Console.WriteLine("Welcome to Jurassic Park!");
         Console.WriteLine();
 
-        Visitor firstVisitor = new Visitor("John", "Smith");
-
-        Console.WriteLine($"{firstVisitor}; Full name: {firstVisitor.GetFullName()}; Nationality: {firstVisitor.id.Nationality}; DoB: {firstVisitor.GetDateOfBirth()};");
+        Scientist testScientist = PersonFactory.CreateScientist("Alan", "Grant");
+        Console.WriteLine($"{testScientist}; Full name: {testScientist.GetFullName()}; Nationality: {testScientist.id.Nationality}; DoB: {testScientist.GetDateOfBirth()};");
         Console.WriteLine();
 
-        Console.WriteLine($"Updating information on {firstVisitor}");
-
-        firstVisitor.id.Nationality = "English";
-        firstVisitor.SetDateOfBirth(new DateOnly(1982, 4, 10));
-
-        Console.WriteLine($"{firstVisitor}; Full name: {firstVisitor.GetFullName()}; Nationality: {firstVisitor.id.Nationality}; DoB: {firstVisitor.GetDateOfBirth()};");
+        Visitor testVisitor = PersonFactory.CreateVisitor("William", "Wallace", "Scotland");
+        Console.WriteLine($"{testVisitor}; Full name: {testVisitor.GetFullName()}; Nationality: {testVisitor.id.Nationality}; DoB: {testVisitor.GetDateOfBirth()};");
         Console.WriteLine();
 
-        Scientist firstScientist = new Scientist("Alan", "Grant", "American", new DateOnly(1978, 8, 22));
-        Console.WriteLine($"{firstScientist}; Full name: {firstScientist.GetFullName()}; Nationality: {firstScientist.id.Nationality}; DoB: {firstScientist.GetDateOfBirth()};");
+        Visitor testEmployee = PersonFactory.CreateVisitor("Walter", "White", "American", new DateOnly(1978, 9, 17));
+        Console.WriteLine($"{testEmployee}; Full name: {testEmployee.GetFullName()}; Nationality: {testEmployee.id.Nationality}; DoB: {testEmployee.GetDateOfBirth()};");
         Console.WriteLine();
 
-        connector();
-    }
-
-    public static void connector()
-    {
-        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\RICAR\SPARTAGIT\MORE EXERCISES\JURASSICPARK\JURASSICPARK\DATABASE\JURASSICPARK.MDF;Integrated Security=True;";
-        SqlConnection con = new SqlConnection(connectionString);
-        {
-            con.Open();
-            Console.WriteLine("Connection opened successfully.");
-        }
+        Controller.Start();
     }
 }
