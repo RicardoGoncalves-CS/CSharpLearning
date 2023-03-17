@@ -2,28 +2,37 @@
 
 internal class Scientist : Employee
 {
-    internal override string FirstName { get; set; }
-    internal override string LastName { get; set; }
-    internal override string Nationality { get; set; }
-    internal override int Birthday { get; set; }
-    internal override int BirthMonth { get; set; }
-    internal override int BirthYear { get; set; }
-
-    public override string GetFullName()
+    internal string FieldOfStudy { get; set; }
+    internal string Role { get; set; }
+    public Scientist(string fName, string lName)
     {
-        return $"{FirstName} {LastName}";
+        id.FirstName = fName;
+        id.LastName = lName;
     }
 
-    public override string GetDateOfBirth()
+    public Scientist(string fName, string lName, string nationality)
     {
-        if (Birthday != 0 || BirthMonth != 0 || BirthYear != 0) return $"{Birthday}/{BirthMonth}/{BirthYear}";
-        else return "Information unavailable";
+        id.FirstName = fName;
+        id.LastName = lName;
+        id.Nationality = nationality;
     }
 
-    public override void SetDateOfBirth(DateOnly dob)
+    public Scientist(string fName, string lName, DateOnly dob)
     {
-        Birthday = dob.Day;
-        BirthMonth = dob.Month;
-        BirthYear = dob.Year;
+        id.FirstName = fName;
+        id.LastName = lName;
+        id.Birthday = dob.Day;
+        id.BirthMonth = dob.Month;
+        id.BirthYear = dob.Year;
+    }
+
+    public Scientist(string fName, string lName, string nationality, DateOnly dob)
+    {
+        id.FirstName = fName;
+        id.LastName = lName;
+        id.Nationality = nationality;
+        id.Birthday = dob.Day;
+        id.BirthMonth = dob.Month;
+        id.BirthYear = dob.Year;
     }
 }
