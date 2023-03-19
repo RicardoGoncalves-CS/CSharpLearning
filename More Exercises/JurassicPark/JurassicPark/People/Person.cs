@@ -14,7 +14,7 @@ internal abstract class Person
         if (id.Birthday != 0 && id.BirthMonth != 0 && id.BirthYear != 0) return $"{id.Birthday}/{id.BirthMonth}/{id.BirthYear}";
         else return "Information unavailable";
     }
-
+    
     internal void SetDateOfBirth(DateOnly dob)
     {
         id.Birthday = dob.Day;

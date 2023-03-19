@@ -5,7 +5,7 @@ internal class Identity
 {
     internal string FirstName { get; set; }
     internal string LastName { get; set; }
-    internal string Nationality { get; set; } = "Information not available";
+    internal string Nationality { get; set; }
     internal int Birthday { get; set; }
     internal int BirthMonth { get; set; }
     internal int BirthYear { get; set; }
