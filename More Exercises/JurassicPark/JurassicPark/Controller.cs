@@ -26,7 +26,7 @@ internal static class Controller
             }
             else if(option == "Register new visitor")
             {
-                // TODO
+                option = View.RegisterVisitorMenu();
             }
             else
             {

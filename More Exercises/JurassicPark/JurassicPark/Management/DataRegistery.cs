@@ -14,6 +14,10 @@ internal static class DataRegistery
 
         { "Register new employee", new List<string> { 
             "Register new scientist", 
+            "Main menu" } },
+
+        { "Register new visitor", new List<string> {
+            "Register new scientist",
             "Main menu" } }
     };
 

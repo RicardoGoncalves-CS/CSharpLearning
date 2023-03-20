@@ -30,4 +30,10 @@ public class View
         string choice = MenuGenerator.GenerateMenu(DataRegistery.menuOptions["Register new employee"]);
         return choice;
     }
+
+    public static string RegisterVisitorMenu()
+    {
+        string choice = MenuGenerator.GenerateMenu(DataRegistery.menuOptions["Register new visitor"]);
+        return choice;
+    }
 }

@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace JurassicPark.Management;
 
-namespace JurassicPark.Management
+internal class FilesSaver
 {
-    internal class Saver
+    internal static void Save()
     {
+        string path = null;
+
+        using (StreamWriter sw = new StreamWriter(path))
+        {
+
+        }
     }
 }
