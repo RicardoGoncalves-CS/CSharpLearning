@@ -927,12 +927,11 @@ WHERE Freight > 100 AND ShipCountry IN ('USA', 'UK')
 
 1.7 Write an SQL Statement to identify the Order Number of the Order with the highest amount of discount applied to that order.
 ```SQL
-SELECT TOP 1 o.OrderID AS "Order Number"
-FROM "Order Details" od
-JOIN Orders o
-	ON od.OrderID = o.OrderID
-GROUP BY o.OrderID, Discount
-ORDER BY Discount DESC
+SELECT TOP 2 o.OrderID, od.Quantity * od.UnitPrice * od.Discount AS "Total Discount" 
+FROM Orders o 
+JOIN "Order Details" od 
+	ON o.OrderID = od.OrderID 
+ORDER BY "Total Discount" DESC
 ```
 
 1.8 List all Employees from the Employees table and who they report to. No Excel required.
