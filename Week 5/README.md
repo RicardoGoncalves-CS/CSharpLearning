@@ -2,9 +2,9 @@
 
 # Week 5 Notes
 
-1. [SQL in C#]()
-2. [Object-Relational Mapping (ORM)]()
-3. [Entity Framework]()
+1. [SQL in C#](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#sql-in-c)
+2. [Object-Relational Mapping (ORM)](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#object-relational-mapping-orm)
+3. [Entity Framework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#entity-framework)
 
 ### SQL in C#
 
@@ -107,7 +107,7 @@ void DeleteData(SqlConnection connection)
 
 ```
 
-### Object-Relational MApping (ORM)
+### Object-Relational Mapping (ORM)
 
 Object-Relational Mapping (ORM) is a technique used in software development to bridge the gap between object-oriented programming and relational databases. ORM frameworks provide a way to map database tables to classes in your code, allowing you to work with data in an object-oriented manner.
 
