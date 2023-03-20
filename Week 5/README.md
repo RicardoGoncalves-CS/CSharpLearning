@@ -3,7 +3,8 @@
 # Week 5 Notes
 
 1. [SQL in C#]()
-2. []
+2. [Object-Relational Mapping (ORM)]()
+3. [Entity Framework]()
 
 ### SQL in C#
 
@@ -105,3 +106,74 @@ void DeleteData(SqlConnection connection)
 }
 
 ```
+
+### Object-Relational MApping (ORM)
+
+Object-Relational Mapping (ORM) is a technique used in software development to bridge the gap between object-oriented programming and relational databases. ORM frameworks provide a way to map database tables to classes in your code, allowing you to work with data in an object-oriented manner.
+
+ORM frameworks are becoming increasingly popular in C# development, as they can simplify data access and reduce the amount of code required to interact with databases. Using an ORM, developers can work with data as objects, rather than having to write complex SQL queries.
+
+Some of the key benefits of using an ORM in C# include:
+
+- Reduced development time: By abstracting away the details of working with databases, ORM frameworks can significantly reduce the amount of code required to interact with databases, allowing developers to focus on other aspects of their applications.
+- Improved maintainability: ORM frameworks provide a consistent and standardized way of working with databases, making it easier to maintain and update code over time.
+- Object-oriented programming: ORM frameworks allow developers to work with data in an object-oriented manner, making it easier to write code that is more intuitive and easier to understand.
+- Cross-platform support: Many ORM frameworks support multiple database platforms, making it easier to write code that can be run on different types of databases.
+
+### Entity Framework
+
+Entity Framework (EF) is an open-source Object-Relational Mapping (ORM) framework for .NET applications that allows developers to work with databases using .NET objects. It simplifies the process of querying and updating data in a database by allowing developers to work with database objects as .NET objects, without having to write SQL code.
+
+Entity Framework is a part of the .NET Framework, and it supports multiple database providers including SQL Server, MySQL, Oracle, and SQLite. It is widely used in .NET application development due to its ease of use and flexibility.
+
+Using Entity Framework in a C# application involves creating a DbContext class, which is responsible for managing the connection to the database and providing an interface for querying and updating data. The DbContext class includes a set of DbSet properties, which represent the tables in the database.
+
+**Scaffold-DbContext** is a command in Entity Framework Core that generates entity classes and a DbContext class based on an existing database schema. It is a tool that automates the process of creating an Entity Framework model from an existing database.
+
+When working with an existing database, developers can use Scaffold-DbContext to generate the code needed to work with the database tables and their corresponding entities in their C# application. This can save a significant amount of time and effort, as it eliminates the need for developers to manually create entity classes and mapping configurations for each table in the database.
+
+To use Scaffold-DbContext, developers can open the Package Manager Console in Visual Studio and execute the command with the necessary parameters. For example, to generate a DbContext and entity classes for a SQL Server database named "MyDatabase", the following command could be used:
+
+```C#
+Scaffold-DbContext "Server=myServer;Database=MyDatabase;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+```
+
+This command would generate a DbContext class in a file named "MyDatabaseContext.cs" and entity classes for each table in the database, in the specified output directory.
+
+Scaffold-DbContext is a powerful tool that can significantly simplify the process of working with existing databases in Entity Framework Core, and is a great way to get started with a new project that requires data access to an existing database.
+
+```C#
+// Example of operations using Entity Framework
+using (var db = new NorthwindContext())
+{
+    var customer = new Customer
+    {
+        CustomerId = "BLOGG",
+        ContactName = "Joe Bloggs",
+        CompanyName = "ToysRUs",
+        City = "Stoke-on-Trent"
+    };
+
+    db.Customers.Add(customer);                         // INSERT like command; Tracks object to be added to the database
+    db.SaveChanges();                                   // Save the object to the database
+
+    var selectedCustomer = db.Customers.Find("BLOGG");  // SELECT like command; Retrieve specified row from the db
+    Console.WriteLine(selectedCustomer);
+
+    selectedCustomer.City = "London";                   // UPDATE he city field of the specified row
+    db.SaveChanges();
+
+    db.Customers.Remove(selectedCustomer);              // DELETE the specified row
+    db.SaveChanges();
+
+    // NOTE: is necessary to use the SaveChanges() method to commit the changes
+}
+```
+
+In C#, the using keyword is used to define a scope in which an object is used and to ensure that the object is disposed of properly when it is no longer needed.
+
+In the the example above 'using (var db = new NorthwindContext())', creates a scope in which the db object is created and used. The db object is an instance of the NorthwindContext class, which is a DbContext class in Entity Framework that provides access to the underlying database.
+
+When the code execution exits the scope of the using block, the Dispose() method of the db object is automatically called, which releases the resources used by the object, such as database connections, and ensures that any pending transactions are committed or rolled back. This helps to avoid issues like connection leaks, which can cause performance and stability problems.
+
+Using the using statement with an object that implements the IDisposable interface is a common pattern in C# programming, and it is especially important when dealing with objects that use unmanaged resources, like database connections. By using the using statement, developers can ensure that the objects are disposed of correctly and efficiently, and avoid potential memory leaks and other issues.
