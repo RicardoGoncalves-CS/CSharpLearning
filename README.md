@@ -51,3 +51,8 @@ This repository will be updated throughout the duration of the training.
   - [Refactoring](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#refactoring)
   - [Design Patterns](https://github.com/RicardoGoncalves-CS/Sparta/blob/main/Week%204/README.md#design-patterns)
   - [Introduction to SQL](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%204#introduction-to-sql)
+
+- [Week 5 - Advanced C# cont.](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205)
+  - [SQL in C#](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#sql-in-c)
+  - [Object-Relational Mapping](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#object-relational-mapping-orm)
+  - [Entity Framework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#entity-framework)
