@@ -5,6 +5,10 @@
 1. [SQL in C#](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#sql-in-c)
 2. [Object-Relational Mapping (ORM)](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#object-relational-mapping-orm)
 3. [Entity Framework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#entity-framework)
+4. [LINQ]()
+5. [LINQ Query Syntax]()
+6. [LINQ Method Syntax]()
+7. [Lambda Expression]()
 
 ### SQL in C#
 
@@ -177,3 +181,114 @@ In the the example above 'using (var db = new NorthwindContext())', creates a sc
 When the code execution exits the scope of the using block, the Dispose() method of the db object is automatically called, which releases the resources used by the object, such as database connections, and ensures that any pending transactions are committed or rolled back. This helps to avoid issues like connection leaks, which can cause performance and stability problems.
 
 Using the using statement with an object that implements the IDisposable interface is a common pattern in C# programming, and it is especially important when dealing with objects that use unmanaged resources, like database connections. By using the using statement, developers can ensure that the objects are disposed of correctly and efficiently, and avoid potential memory leaks and other issues.
+
+### LINQ
+
+LINQ (Language-Integrated Query) is a powerful feature in Microsoft's .NET Framework that provides a consistent, easy-to-use syntax for querying and manipulating data from various sources, such as databases, XML files, and collections of objects. It allows developers to write queries using familiar programming constructs, like loops and conditional statements, instead of learning a new query language for each type of data source.
+
+LINQ provides a set of extension methods that can be applied to any object that implements the IEnumerable interface, which includes arrays, lists, and other collection types. These extension methods allow developers to perform operations like filtering, sorting, and grouping on the collection data using a simple and readable syntax.
+
+For example, suppose you have a list of objects representing employees, and you want to find all the employees who have a salary greater than $50,000 and sort them by their last name. In LINQ, you can write this query using a combination of the Where() and OrderBy() extension methods, like this:
+
+```C#
+var highPaidEmployees = employees
+    .Where(e => e.Salary > 50000)
+    .OrderBy(e => e.LastName);
+```
+
+This query reads as "find all employees where their salary is greater than $50,000 and order them by their last name."
+
+LINQ also supports projection, which allows developers to extract specific data from objects and return only the data they need. This can help reduce memory usage and improve performance by avoiding the creation of unnecessary objects.
+
+### LINQ Query Syntax
+
+LINQ supports a query syntax that allows developers to write queries that look more like SQL statements. Query syntax is often used for complex queries that involve multiple operations or when the query needs to be expressed more naturally.
+
+The basic structure of a LINQ query in query syntax is as follows:
+
+```C#
+from variable in collection
+[where condition]
+[orderby property [, property2] [ascending|descending]]
+[select property|object]
+```
+
+The **from** keyword introduces the source collection and the variable represents each element of the collection.
+
+The **where** keyword is optional, and it specifies a condition that filters the elements based on a Boolean expression.
+
+The **orderby** keyword is also optional and it sorts the elements in either ascending or descending order based on one or more properties.
+
+Finally, the **select** keyword is used to specify the result of the query. It can be a single property of each element, or an entire new object that is created using a projection.
+
+For example, the previous example using method syntax can be rewritten using query syntax as follows:
+
+```C#
+var highPaidEmployees = 
+    from employee in employees
+    where employee.Salary > 50000
+    orderby employee.LastName
+    select employee;
+```
+
+This query reads as "from the employees collection, select all the employees where their salary is greater than $50,000, order them by their last name, and return the entire employee object."
+
+### LINQ Method Syntax
+
+In LINQ, method syntax is the most common way of writing queries. It uses extension methods that are applied to collections to perform filtering, sorting, grouping, and projection operations on the data.
+
+The basic structure of a LINQ query in method syntax is as follows:
+
+```C#
+collection.Operation1().Operation2().Operation3()...;
+```
+
+Each operation in the chain is an extension method that takes a collection as its first argument and returns a new collection with the operation performed on it.
+
+For example, the following code snippet filters a list of numbers, sorts them in ascending order, and returns the first five numbers:
+
+```C#
+List<int> numbers = new List<int> { 10, 20, 5, 15, 30 };
+var result = numbers.Where(n => n > 10).OrderBy(n => n).Take(5);
+```
+
+The Where extension method filters the numbers based on a condition that specifies that the number should be greater than 10. The OrderBy extension method sorts the resulting sequence in ascending order based on the numbers. The Take extension method then takes the first five numbers from the sorted sequence.
+
+It is important to note that method syntax is more flexible and powerful than query syntax because it allows developers to chain together multiple operations in a single statement. It is also more efficient because the compiler can optimize the query execution by combining multiple operations into a single operation.
+
+### Lambda Expression
+
+A lambda expression is a concise way to define an anonymous function in C#. It allows developers to define a small piece of code that can be passed as an argument to a method or used as a delegate.
+
+The basic structure of a lambda expression is as follows:
+
+```C#
+(parameters) => expression
+```
+
+The parameters represent the input arguments to the lambda expression, and the expression represents the code that is executed when the lambda expression is called.
+
+For example, the following lambda expression takes two integers as input and returns their sum:
+
+```C#
+(int a, int b) => a + b
+```
+
+Lambda expressions are commonly used in LINQ queries to define predicates, projections, and sorting operations. For example, the following code snippet filters a list of strings based on a condition that checks whether the string contains the letter 'a':
+
+```C#
+List<string> strings = new List<string> { "apple", "banana", "cherry" };
+var result = strings.Where(s => s.Contains("a"));
+```
+
+The Where method takes a predicate as an argument, which is defined using a lambda expression that checks whether the string contains the letter 'a'.
+
+Lambda expressions are also used to define anonymous delegates, which are used to pass a method as an argument to another method. For example, the following code snippet defines a lambda expression that is used as an argument to the List.ForEach method to print each item in the list:
+
+```C#
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+numbers.ForEach(num => Console.WriteLine(num));
+```
+
+In this example, the lambda expression defines an anonymous delegate that takes an integer as an argument and prints it to the console.
+
