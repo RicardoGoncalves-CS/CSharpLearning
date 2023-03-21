@@ -5,10 +5,10 @@
 1. [SQL in C#](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#sql-in-c)
 2. [Object-Relational Mapping (ORM)](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#object-relational-mapping-orm)
 3. [Entity Framework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#entity-framework)
-4. [LINQ]()
-5. [LINQ Query Syntax]()
-6. [LINQ Method Syntax]()
-7. [Lambda Expression]()
+4. [LINQ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq)
+5. [LINQ Query Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-query-syntax)
+6. [LINQ Method Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-method-syntax)
+7. [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expression)
 
 ### SQL in C#
 
@@ -252,11 +252,11 @@ List<int> numbers = new List<int> { 10, 20, 5, 15, 30 };
 var result = numbers.Where(n => n > 10).OrderBy(n => n).Take(5);
 ```
 
-The Where extension method filters the numbers based on a condition that specifies that the number should be greater than 10. The OrderBy extension method sorts the resulting sequence in ascending order based on the numbers. The Take extension method then takes the first five numbers from the sorted sequence.
+The **Where** extension method filters the numbers based on a condition that specifies that the number should be greater than 10. The OrderBy extension method sorts the resulting sequence in ascending order based on the numbers. The Take extension method then takes the first five numbers from the sorted sequence.
 
 It is important to note that method syntax is more flexible and powerful than query syntax because it allows developers to chain together multiple operations in a single statement. It is also more efficient because the compiler can optimize the query execution by combining multiple operations into a single operation.
 
-### Lambda Expression
+### Lambda Expressions
 
 A lambda expression is a concise way to define an anonymous function in C#. It allows developers to define a small piece of code that can be passed as an argument to a method or used as a delegate.
 
@@ -281,7 +281,7 @@ List<string> strings = new List<string> { "apple", "banana", "cherry" };
 var result = strings.Where(s => s.Contains("a"));
 ```
 
-The Where method takes a predicate as an argument, which is defined using a lambda expression that checks whether the string contains the letter 'a'.
+The **Where** method takes a predicate as an argument, which is defined using a lambda expression that checks whether the string contains the letter 'a'.
 
 Lambda expressions are also used to define anonymous delegates, which are used to pass a method as an argument to another method. For example, the following code snippet defines a lambda expression that is used as an argument to the List.ForEach method to print each item in the list:
 
