@@ -62,6 +62,7 @@ namespace LINQ_Walkthrough
 
             Console.WriteLine("--------------------------------------");
 
+            // ORDER GROUPS BY KEY VALUE
             var studentQuery4 =
                 from student in students
                 group student by student.Last[0] into studentGroup
@@ -80,6 +81,8 @@ namespace LINQ_Walkthrough
 
             Console.WriteLine("--------------------------------------");
 
+            // LET IDENTIFIER
+            
             // studentQuery5 is an IEnumerable<string>
             // This query returns those students whose
             // first test score was higher than their
@@ -98,6 +101,8 @@ namespace LINQ_Walkthrough
 
             Console.WriteLine("--------------------------------------");
 
+            // USE METHOD SYNTAX IN A QUERY EXPRESSION
+
             var studentQuery6 =
                 from student in students
                 let totalScore = student.Scores[0] + student.Scores[1] +
@@ -108,6 +113,8 @@ namespace LINQ_Walkthrough
             Console.WriteLine("Class average score = {0}", averageScore);
 
             Console.WriteLine("--------------------------------------");
+
+            // TRANSFORM/PROJECT IN THE SELECT CLAUSE
 
             IEnumerable<string> studentQuery7 =
                 from student in students
