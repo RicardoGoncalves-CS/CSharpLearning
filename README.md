@@ -59,4 +59,5 @@ This repository will be updated throughout the duration of the training.
   - [LINQ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq)
   - [LINQ Query Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-query-syntax)
   - [LINQ Method Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-method-syntax)
-  - [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expression)
+  - [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expressions)
+  - [Model-First approach for EntityFramework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#model-first-approach-for-entityframework)
