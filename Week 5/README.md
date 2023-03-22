@@ -8,8 +8,8 @@
 4. [LINQ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq)
 5. [LINQ Query Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-query-syntax)
 6. [LINQ Method Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-method-syntax)
-7. [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expression)
-8. [Model-First approach for EntityFramework]()
+7. [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expressions)
+8. [Model-First approach for EntityFramework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#model-first-approach-for-entityframework)
 
 ### SQL in C#
 
