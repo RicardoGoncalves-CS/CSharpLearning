@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EF_ModelFirst
+namespace EF_ModelFirst.Model
 {
-    public partial class SouthwindContext: DbContext
+    public partial class SouthwindContext : DbContext
     {
         public static SouthwindContext Instance { get; } = new SouthwindContext();
 
@@ -24,6 +24,6 @@ namespace EF_ModelFirst
         }
 
 
-    
-}
+
+    }
 }

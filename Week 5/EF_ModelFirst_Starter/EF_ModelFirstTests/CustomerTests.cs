@@ -1,4 +1,4 @@
-using EF_ModelFirst;
+using EF_ModelFirst.Model;
 
 namespace EF_ModelFirstTests
 {
@@ -23,13 +23,54 @@ namespace EF_ModelFirstTests
         [Test]
         public void WhenANewCustomerIsAdded_TheNumberOfCustomersIncreasesBy1()
         {
-            Assert.Fail();
+            SouthwindContext context = new SouthwindContext();
+
+            var initialLength = context.Customers.Count();
+
+            Customer customer = new Customer();
+
+            customer.CustomerId = "TEST1";
+            customer.ContactName = "TEST1";
+            customer.City = "TEST1";
+            customer.PostalCode = "TEST1";
+            customer.Country = "TEST1";
+
+            context.Customers.Add(customer);
+            context.SaveChanges();
+
+            var finalLength = context.Customers.Count();
+
+            Assert.That(finalLength, Is.EqualTo(initialLength + 1));
         }
 
         [Test]
         public void WhenANewCustomerIsAdded_TheirDetailsAreCorrect()
         {
-            Assert.Fail();
+            SouthwindContext context = new SouthwindContext();
+
+            string id = string.Empty;
+            string name = string.Empty;
+            string city = string.Empty;
+            string postcode = string.Empty;
+            string country = string.Empty;
+
+            var customer = context.Customers
+                .Where(c => c.CustomerId == "TEST1");
+
+            foreach(var c in customer)
+            {
+                id = c.CustomerId;
+                name = c.ContactName;
+                city = c.City;
+                postcode = c.PostalCode;
+                country = c.Country;
+            };
+
+            Assert.That(id, Is.EqualTo("TEST1"));
+            Assert.That(name, Is.EqualTo("TEST1"));
+            Assert.That(city, Is.EqualTo("TEST1"));
+            Assert.That(postcode, Is.EqualTo("TEST1"));
+            Assert.That(country, Is.EqualTo("TEST1"));
         }
 
         [Test]
