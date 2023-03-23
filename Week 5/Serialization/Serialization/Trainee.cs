@@ -1,10 +1,14 @@
-﻿namespace Serialization;
+﻿using Newtonsoft.Json;
+
+namespace Serialization;
 
 public class Trainee
 {
     public string? FirstName { get; init; }
     public string? LastName { get; init; }
     public int? SpartaNo { get; init; }
+
+    [JsonIgnore]
     public string FullName => $"{FirstName} {LastName}"; // This notation is called expression body
     public override string ToString()
     {

@@ -2,7 +2,7 @@
 
 namespace Serialization;
 
-internal class SerialiserXml
+internal class SerialiserXml : ISerialiser
 {
     public void Serialise<T>(T item, string toPath)
     {
