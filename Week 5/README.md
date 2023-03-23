@@ -8,7 +8,8 @@
 4. [LINQ](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq)
 5. [LINQ Query Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-query-syntax)
 6. [LINQ Method Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-method-syntax)
-7. [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expression)
+7. [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expressions)
+8. [Model-First approach for EntityFramework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#model-first-approach-for-entityframework)
 
 ### SQL in C#
 
@@ -292,3 +293,20 @@ numbers.ForEach(num => Console.WriteLine(num));
 
 In this example, the lambda expression defines an anonymous delegate that takes an integer as an argument and prints it to the console.
 
+### Model-First approach for EntityFramework
+
+The **Model First** approach is an Object-Relational Mapping (ORM) technique that allows developers to create a new Entity Data Model (EDM) based on their application code without any existing database schema. This approach is ideal when developers want more control over the database schema and prefer to define the schema using code.
+
+In the Model First approach, developers define the Entity Framework classes and mappings in code first, and then use Entity Framework to create the database schema based on the code. Developers can define the entities, their properties, relationships, and other details, such as constraints and indexes, using code.
+
+Once the code is defined, developers can use the Entity Framework to interact with the database by querying and updating data using Entity Framework objects. The Entity Framework creates and manages the database schema, based on the code, and provides a higher-level abstraction of the database schema.
+
+The Model First approach in Entity Framework provides several benefits, such as:
+
+- Greater control: Developers have greater control over the database schema and can define it entirely in code, making it easier to manage and modify.
+- Faster development: Developers can quickly create the Entity Framework code, without needing to design and create the database schema upfront.
+- Easy customization: Developers can easily customize the Entity Framework classes and mappings to meet their specific requirements by adding business logic and customizations.
+- Code-centric approach: Developers can focus on the code first and then let Entity Framework generate the database schema based on the code, reducing the amount of manual SQL scripting required.
+- Database migration: Developers can easily update the database schema as the application evolves by generating SQL scripts that can update the database schema without data loss.
+
+In summary, the Model First approach in Entity Framework is a great option for developers who want more control over the database schema and prefer to define it using code. It provides greater control, faster development, and easier customization capabilities.
