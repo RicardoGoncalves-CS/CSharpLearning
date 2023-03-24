@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>	<!-- Must have a declaration -->
+
+ 
+
+<academy title="Sparta Global Academy">					<!-- Must have a root element -->
+	<trainer>											<!-- Contain tags; Thye must be descriptive-->
+		<name type="FullName">Nish Mandal</name>		<!-- Can have attributes such as type -->
+		<stream>Engineering</stream>
+		<course>C#SDET</course>
+		<location>Birmingham</location>
+	</trainer>
+	<trainer>
+		
+		<name>Cathy French</name>
+		<stream>Engineering</stream>
+		<course>C#DEV</course>
+		<location>Birmingham</location>
+	</trainer> 
+</academy>

@@ -1,6 +1,7 @@
-﻿using LoadingTables.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Northwind_Revisited.Models;
 
-namespace LoadingTables
+namespace Northwind_Revisited
 {
     internal class Program
     {
@@ -8,52 +9,6 @@ namespace LoadingTables
         {
             using (var db = new NorthwindContext())
             {
-                //    var ordersQuery = db.Orders
-                //        .Where(o => o.Freight > 750)
-                //        .Include(o => o.Customer)
-                //        .Include(o => o.OrderDetails)
-                //        .ThenInclude(od => od.Product);
-
-                //    foreach(var order in ordersQuery)
-                //    {
-                //        if (order.Customer != null)
-                //        {
-                //            Console.WriteLine($"Order {order.OrderId} was made by {order.Customer!.CompanyName}"); 
-                //            foreach (var detail in order.OrderDetails) 
-                //            { 
-                //                Console.WriteLine($"\t ProductId: {detail.ProductId} - " + 
-                //                    $"Product: {detail.Product.ProductName} - " + 
-                //                    $"Quantity: {detail.Quantity}"); 
-                //            }
-                //        }
-                //    }
-                var cityQuery = db.Customers
-                    .Join(
-                    db.Suppliers,
-                    c => c.City,
-                    s => s.City,
-                    (c, s) => new
-                    {
-                        Customer = c.ContactName,
-                        CustomerCompany = c.CompanyName,
-                        Supplier = s.ContactName,
-                        SupplierCompany = s.CompanyName
-                    }
-                    );
-
-                foreach (var result in cityQuery)
-                {
-                    Console.WriteLine($"Customer {result.Customer} at {result.CustomerCompany} " +
-                        $"lives in the same city as {result.Supplier} at {result.SupplierCompany}");
-                }
-
-                Console.WriteLine("---------------------------------------------");
-
-                // SQL revisited
-
-
-
-
                 // 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
 
                 var q1_1 = db.Customers
@@ -157,19 +112,11 @@ namespace LoadingTables
                 Console.WriteLine();
 
                 var q1_6 = db.Orders
-                    .Where(o => o.Freight > 100 && o.ShipCountry == "UK" || o.ShipCountry == "USA")
+                    .Where(o => o.Freight > 100 && (o.ShipCountry == "UK" || o.ShipCountry == "USA"))
                     .Count();
 
                 Console.WriteLine("1.6");
                 Console.WriteLine($"Total count: {q1_6}");
-
-
-
-
-                // 1.7 Write a method to identify the Order Number of the Order with the highest amount of discount appliedto that order.
-                Console.WriteLine();
-
-                
             }
         }
     }

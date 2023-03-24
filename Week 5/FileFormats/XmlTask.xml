@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<academy title="Academy">
+	<trainee>
+		<id type="TraineeID">0001</id>
+		<name type="FullName">Ricardo Goncalves</name>
+		<course>TECH 205</course>
+		<location>UK</location>
+	</trainee>
+	<trainee>
+		<id type="TraineeID">0002</id>
+		<name type="FullName">Byron Esson</name>
+		<course>TECH 205</course>
+		<location>UK</location>
+	</trainee>
+	<trainee>
+		<id type="TraineeID">0003</id>
+		<name type="FullName">Luke Pinder</name>
+		<course>TECH 205</course>
+		<location>UK</location>
+	</trainee>
+</academy>

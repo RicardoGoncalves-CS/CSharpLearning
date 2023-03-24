@@ -6,24 +6,27 @@ namespace AysncCake
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             Console.WriteLine("Welcome to my birthday party");
-            HaveAParty();
+            // await HaveAPartyAsync();
+            HaveAPartyAsync();
             Console.WriteLine("Thanks for a lovely party");
             Console.ReadLine();
         }
 
-        private static void HaveAParty()
+        private static async Task HaveAPartyAsync() // Async method must include async in signature
         {
             var name = "Cathy";
-            var cake = BakeCake();
+            var cakeTask = BakeCakeAsync();
             PlayPartyGames();
             OpenPresents();
+            //var cake = await cakeTask;  // body must include a await statement or use the line below
+            var cake = cakeTask.Result; // forces the program to wait for the async task at this point
             Console.WriteLine($"Happy birthday, {name}, {cake}!!");
         }
 
-        private static async Task<Cake> BakeCake()
+        private static async Task<Cake> BakeCakeAsync() // We can use Task instead of Task<T> if we are returning a void
         {
             Console.WriteLine("Cake is in the oven");
             // Thread.Sleep(TimeSpan.FromSeconds(5));

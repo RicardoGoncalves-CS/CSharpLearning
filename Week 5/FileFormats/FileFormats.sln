@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E33B3D3C-E19F-4249-938F-144C1DCA67C3}"
+	ProjectSection(SolutionItems) = preProject
+		demo.xml = demo.xml
+		demo.json = demo.json
+		demo.yaml = demo.yaml
+		XmlTask.xml = XmlTask.xml
+		JsonTask.json = JsonTask.json
+		YamlTask.yaml = YamlTask.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BE5A6A6-0B38-4888-B068-EDB5242C067A}
+	EndGlobalSection
+EndGlobal

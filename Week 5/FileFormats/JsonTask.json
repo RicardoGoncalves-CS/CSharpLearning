@@ -1,0 +1,31 @@
+{
+    "trainees" : [
+        {
+            "id" : 1,
+            "name" : "Ricardo",
+            "course" : "TECH 205",
+            "location" : "UK"
+        },
+
+        {
+            "id" : 2,
+            "name" : "Byron",
+            "course" : "TECH 205",
+            "location" : "UK"
+        },
+
+        {
+            "id" : 3,
+            "name" : "Luke",
+            "course" : "TECH 205",
+            "location" : "UK"
+        },
+
+        {
+            "id" : 4,
+            "name" : "Valentin",
+            "course" : "TECH 205",
+            "location" : "UK"
+        }
+    ]
+}
