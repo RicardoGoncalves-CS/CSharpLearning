@@ -5,12 +5,13 @@
         static void Main(string[] args)
         {
             var data = DownloadDataAsync("https://bbc.co.uk");
-            Console.WriteLine(data.Result.Substring(0, 48));
+            Console.WriteLine(data.Result.Substring(0, 100));
 
             Console.WriteLine();
 
             var factResult = ComputeFactorialAsync(10);
             Console.WriteLine(factResult.Result);
+
 
             async Task<string> DownloadDataAsync(string url)
             {
