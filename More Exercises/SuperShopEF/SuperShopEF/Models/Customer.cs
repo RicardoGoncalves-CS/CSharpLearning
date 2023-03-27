@@ -12,7 +12,7 @@ public class Customer
 
     public string? Email { get; set; }
 
-    public Address? address { get; set; }
+    public Address? Address { get; set; }
 
     public ICollection<Order> orders { get; set; } = null!;
 }

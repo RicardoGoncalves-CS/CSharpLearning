@@ -2,15 +2,15 @@
 using SuperShopData.Services;
 using System.Diagnostics;
 
-namespace SuperShopBusiness;
+namespace SuperShopBusiness.TablesManagers;
 
 public class CustomerManager
 {
-    private ICustomerService _service;
+    private IServices<Customer> _service;
 
-    public CustomerManager(ICustomerService service)
+    public CustomerManager(IServices<Customer> service)
     {
-        if(service == null)
+        if (service == null)
         {
             throw new ArgumentException("ICustomerService object cannot be null");
         }
@@ -31,7 +31,12 @@ public class CustomerManager
 
     public List<Customer> RetrieveAll()
     {
-        return _service.GetCustomersList();
+        return _service.GetEntitiesList();
+    }
+
+    public Customer GetCustomerById(int customerId)
+    {
+        return _service.GetById(customerId);
     }
 
     public void Create(string firstName, string lastName, string phone, string email, Address address)
@@ -42,14 +47,14 @@ public class CustomerManager
         customer.LastName = lastName;
         customer.Phone = phone;
         customer.Email = email;
-        customer.address = address;
+        customer.Address = address;
 
-        _service.CreateCustomer(customer);
+        _service.Create(customer);
     }
 
     public bool Update(int customerId, string firstName, string lastName, string phone, string email, Address address)
     {
-        var customer = _service.GetCostumerById(customerId);
+        var customer = _service.GetById(customerId);
 
         if (customer == null)
         {
@@ -61,11 +66,11 @@ public class CustomerManager
         customer.LastName = lastName;
         customer.Phone = phone;
         customer.Email = email;
-        customer.address = address;
+        customer.Address = address;
 
         try
         {
-            _service.SaveCustomerChanges();
+            _service.Save();
             SelectedCustomer = customer;
         }
         catch (Exception e)
@@ -78,13 +83,13 @@ public class CustomerManager
 
     public bool Delete(int customerId)
     {
-        var customer = _service.GetCostumerById(customerId);
+        var customer = _service.GetById(customerId);
         if (customer == null)
         {
             Debug.WriteLine($"Customer {customerId} not found");
             return false;
         }
-        _service.RemoveCustomer(customer);
+        _service.Remove(customer);
         return true;
     }
 }
