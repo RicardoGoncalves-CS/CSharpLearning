@@ -65,7 +65,7 @@ namespace NorthwindTests
     
 
         [Test]
-        public void Update_WhenACustomerIsUpdated_SelectedCustomerIsUpdated()
+        public void WhenACustomerIsUpdated_SelectedCustomerIsUpdated()
         {
             using (var db = new NorthwindContext())
             {

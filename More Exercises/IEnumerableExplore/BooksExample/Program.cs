@@ -6,6 +6,9 @@ internal class Program
 {
     static void Main()
     {
+        /* We can initialise our library because the Library class
+         * implements the IEnumerable interface and has an Add method;
+         */
         Library library = new Library()
         {
             new Book { Title = "Dr no", Author = "Ian Fleming" },
