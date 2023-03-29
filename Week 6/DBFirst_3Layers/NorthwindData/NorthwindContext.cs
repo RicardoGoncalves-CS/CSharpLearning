@@ -10,6 +10,7 @@ namespace NorthwindData
         {
         }
 
+        // This constructor receives options and pass it to the database
         public NorthwindContext(DbContextOptions<NorthwindContext> options)
             : base(options)
         {

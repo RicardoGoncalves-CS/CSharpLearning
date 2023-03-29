@@ -19,7 +19,6 @@ internal class Program
         CustomerManager cm = new CustomerManager();
         AddressManager am = new AddressManager();
 
-        am.Delete(1);
         //cm.Create("Alan", "Grant", "07123412123", "grantalan@mail.com", address);
 
     }
