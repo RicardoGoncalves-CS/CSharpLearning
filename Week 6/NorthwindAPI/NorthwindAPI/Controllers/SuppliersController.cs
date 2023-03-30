@@ -12,7 +12,7 @@ namespace NorthwindAPI.Controllers
     [ApiController]
     public class SuppliersController : ControllerBase
     {
-        private readonly NorthwindContext _context;
+        //private readonly NorthwindContext _context;
         private readonly ILogger _logger;
         private readonly INorthwindRepository<Supplier> _supplierRepository;
 
@@ -21,7 +21,7 @@ namespace NorthwindAPI.Controllers
             ILogger<SuppliersController> logger,
             INorthwindRepository<Supplier> supplierRepository)
         {
-            _context = context;
+            //_context = context;
             _logger = logger;
             _supplierRepository = supplierRepository;
         }
@@ -98,11 +98,11 @@ namespace NorthwindAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(supplier).State = EntityState.Modified;
+            _supplierRepository.Update(supplier);
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _supplierRepository.SaveAsync(); //_context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -131,7 +131,7 @@ namespace NorthwindAPI.Controllers
             }
 
             _supplierRepository.Add(supplier);
-            await _context.SaveChangesAsync();
+            await _supplierRepository.SaveAsync();
 
             return CreatedAtAction("GetSupplier", new { id = supplier.SupplierId }, Utils.SupplierToDTO(supplier));
         }
@@ -158,7 +158,7 @@ namespace NorthwindAPI.Controllers
             supplier.Products.Select(p => p.SupplierId = null);
 
             _supplierRepository.Remove(supplier);
-            await _context.SaveChangesAsync();
+            await _supplierRepository.SaveAsync();
 
             return NoContent();
         }
@@ -166,7 +166,6 @@ namespace NorthwindAPI.Controllers
         private bool SupplierExists(int id)
         {
             return _supplierRepository.FindAsync(id) != null;
-            //return (_context.Suppliers?.Any(e => e.SupplierId == id)).GetValueOrDefault();
         }
     }
 }
