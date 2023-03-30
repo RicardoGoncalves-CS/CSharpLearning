@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using NorthwindAPI.Data;
+using NorthwindAPI.Data.Repositories;
+using NorthwindAPI.Models;
 
 namespace NorthwindAPI;
 
@@ -23,6 +25,10 @@ public class Program
             .AddNewtonsoftJson(
             opt => opt.SerializerSettings
             .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+        builder.Services.AddScoped(typeof(INorthwindRepository<>), typeof(NorthwindRepository<>));
+
+        builder.Services.AddScoped<INorthwindRepository<Supplier>, SupplierRepository>();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         //builder.Services.AddEndpointsApiExplorer();

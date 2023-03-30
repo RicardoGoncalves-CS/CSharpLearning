@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NorthwindAPI.Data;
+using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
 using NorthwindAPI.Models.DTO;
 
@@ -17,40 +14,44 @@ namespace NorthwindAPI.Controllers
     {
         private readonly NorthwindContext _context;
         private readonly ILogger _logger;
+        private readonly INorthwindRepository<Supplier> _supplierRepository;
 
-        public SuppliersController(NorthwindContext context, ILogger<SuppliersController> logger)
+        public SuppliersController(
+            NorthwindContext context, 
+            ILogger<SuppliersController> logger,
+            INorthwindRepository<Supplier> supplierRepository)
         {
             _context = context;
             _logger = logger;
+            _supplierRepository = supplierRepository;
         }
 
         // GET: api/Suppliers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SupplierDTO>>> GetSuppliers()
         {
-          if (_context.Suppliers == null)
+          if (_supplierRepository.IsNull)
           {
               return NotFound();
           }
-            return await _context.Suppliers
-                .Include(s => s.Products)
+            return (await _supplierRepository.GetAllAsync())
                 .Select(s => Utils.SupplierToDTO(s))
-                .ToListAsync();
+                .ToList();
         }
 
         // GET: api/Suppliers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<SupplierDTO>> GetSupplier(int id)
         {
-            if (_context.Suppliers == null)
+            if (_supplierRepository.IsNull)
             {
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers
-                .Where(s => s.SupplierId == id)
-                .Include(s => s.Products)
-                .FirstOrDefaultAsync();
+            var supplier = await _supplierRepository.FindAsync(id);
+                //.Where(s => s.SupplierId == id)
+                //.Include(s => s.Products)
+                //.FirstOrDefaultAsync();
 
             if (supplier == null)
             {
@@ -66,15 +67,15 @@ namespace NorthwindAPI.Controllers
         [HttpGet("{id}/products")]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProductsBySupplier(int id)
         {
-            if (_context.Suppliers == null)
+            if (_supplierRepository.IsNull)
             {
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers
-                .Where(s => s.SupplierId == id)
-                .Include(s => s.Products)
-                .FirstOrDefaultAsync();
+            var supplier = await _supplierRepository.FindAsync(id);
+                //.Where(s => s.SupplierId == id)
+                //.Include(s => s.Products)
+                //.FirstOrDefaultAsync();
 
             if (supplier == null)
             {
@@ -124,12 +125,12 @@ namespace NorthwindAPI.Controllers
         public async Task<ActionResult<SupplierDTO>> PostSupplier(
             [Bind("CompanyName", "ContactName", "ContactTitle", "Country", "Products")] Supplier supplier)
         {
-            if (_context.Suppliers == null)
+            if (_supplierRepository.IsNull)
             {
                 return Problem("Entity set 'NorthwindContext.Suppliers'  is null.");
             }
 
-            _context.Suppliers.Add(supplier);
+            _supplierRepository.Add(supplier);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetSupplier", new { id = supplier.SupplierId }, Utils.SupplierToDTO(supplier));
@@ -139,15 +140,15 @@ namespace NorthwindAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSupplier(int id)
         {
-            if (_context.Suppliers == null)
+            if (_supplierRepository.IsNull)
             {
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers
-                .Where(s => s.SupplierId == id)
-                .Include(s => s.Products)
-                .FirstOrDefaultAsync();
+            var supplier = await _supplierRepository.FindAsync(id);
+                //.Where(s => s.SupplierId == id)
+                //.Include(s => s.Products)
+                //.FirstOrDefaultAsync();
 
             if (supplier == null)
             {
@@ -156,7 +157,7 @@ namespace NorthwindAPI.Controllers
 
             supplier.Products.Select(p => p.SupplierId = null);
 
-            _context.Suppliers.Remove(supplier);
+            _supplierRepository.Remove(supplier);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -164,7 +165,8 @@ namespace NorthwindAPI.Controllers
 
         private bool SupplierExists(int id)
         {
-            return (_context.Suppliers?.Any(e => e.SupplierId == id)).GetValueOrDefault();
+            return _supplierRepository.FindAsync(id) != null;
+            //return (_context.Suppliers?.Any(e => e.SupplierId == id)).GetValueOrDefault();
         }
     }
 }
