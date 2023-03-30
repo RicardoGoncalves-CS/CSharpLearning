@@ -5,7 +5,7 @@ namespace NorthwindAPI.Controllers
 {
     public static class Utils
     {
-        public static Models.DTO.SupplierDTO SupplierToDTO(Supplier supplier) => new Models.DTO.SupplierDTO
+        public static SupplierDTO SupplierToDTO(Supplier supplier) => new SupplierDTO
         {
             SupplierId = supplier.SupplierId,
             CompanyName = supplier.CompanyName,
