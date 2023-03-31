@@ -4,6 +4,7 @@ using NorthwindAPI.Data;
 using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
 using NorthwindAPI.Models.DTO;
+using NuGet.Protocol.Core.Types;
 
 namespace NorthwindAPI.Controllers;
 
@@ -105,7 +106,7 @@ public class SuppliersController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!SupplierExists(id))
+            if (!await SupplierExists(id))
             {
                 return NotFound();
             }
@@ -154,7 +155,8 @@ public class SuppliersController : ControllerBase
             return NotFound();
         }
 
-        supplier.Products.Select(p => p.SupplierId = null);
+        supplier.Products.Clear();
+        //supplier.Products.Select(p => p.SupplierId = null);
 
         _supplierRepository.Remove(supplier);
         await _supplierRepository.SaveAsync();
@@ -162,8 +164,13 @@ public class SuppliersController : ControllerBase
         return NoContent();
     }
 
-    private bool SupplierExists(int id)
+    //private async Task<bool> SupplierExists(int id)
+    //{
+    //    return await _supplierRepository.FindAsync(id) != null;
+    //}
+
+    private async Task<bool> SupplierExists(int id)
     {
-        return _supplierRepository.FindAsync(id) != null;
+        return (await _supplierRepository.FindAsync(id)) != null;
     }
 }
