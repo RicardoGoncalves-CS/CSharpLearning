@@ -4,6 +4,7 @@ using NorthwindAPI.Data;
 using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
 using NorthwindAPI.Models.DTO;
+using NorthwindAPI.Services;
 using NuGet.Protocol.Core.Types;
 
 namespace NorthwindAPI.Controllers;
@@ -15,15 +16,16 @@ public class SuppliersController : ControllerBase
     //private readonly NorthwindContext _context;
     private readonly ILogger _logger;
     private readonly INorthwindRepository<Supplier> _supplierRepository;
+    private readonly INorthwindService<Supplier> _supplierService;
 
     public SuppliersController(
-        NorthwindContext context, 
         ILogger<SuppliersController> logger,
-        INorthwindRepository<Supplier> supplierRepository)
+        INorthwindRepository<Supplier> supplierRepository,
+        INorthwindService<Supplier> supplierService)
     {
-        //_context = context;
         _logger = logger;
         _supplierRepository = supplierRepository;
+        _supplierService = supplierService;
     }
 
     // GET: api/Suppliers
@@ -43,23 +45,13 @@ public class SuppliersController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<SupplierDTO>> GetSupplier(int id)
     {
-        if (_supplierRepository.IsNull)
-        {
-            return NotFound();
-        }
-
-        var supplier = await _supplierRepository.FindAsync(id);
-            //.Where(s => s.SupplierId == id)
-            //.Include(s => s.Products)
-            //.FirstOrDefaultAsync();
+        var supplier = await _supplierService.GetAsync(id);
 
         if (supplier == null)
         {
-            _logger.LogWarning($"Supplier with id:{id} was not found");
             return NotFound();
         }
 
-        _logger.LogInformation($"Supplier with id:{id} was found");
         return Utils.SupplierToDTO(supplier);
     }
 

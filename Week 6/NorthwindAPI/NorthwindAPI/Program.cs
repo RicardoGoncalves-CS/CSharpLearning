@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NorthwindAPI.Data;
 using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
+using NorthwindAPI.Services;
 
 namespace NorthwindAPI;
 
@@ -27,6 +28,8 @@ public class Program
             .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
         builder.Services.AddScoped(typeof(INorthwindRepository<>), typeof(NorthwindRepository<>));
+
+        builder.Services.AddScoped(typeof(INorthwindService<>), typeof(NorthwindService<>));
 
         builder.Services.AddScoped<INorthwindRepository<Supplier>, SupplierRepository>();
 
