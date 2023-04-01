@@ -1,5 +1,7 @@
-﻿using NorthwindAPI.Controllers;
+﻿using Microsoft.EntityFrameworkCore;
+using NorthwindAPI.Controllers;
 using NorthwindAPI.Data.Repositories;
+using NorthwindAPI.Models;
 
 namespace NorthwindAPI.Services
 {
@@ -14,19 +16,48 @@ namespace NorthwindAPI.Services
             _repository = repository;
         }
 
-        public Task<bool> CreateAsync(T entity)
+        public async Task<bool> CreateAsync(T entity)
         {
-            throw new NotImplementedException();
+            if (_repository.IsNull)
+            {
+                return false;
+            }
+
+            _repository.Add(entity);
+            await _repository.SaveAsync();
+            return true;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            if (_repository.IsNull)
+            {
+                return false;
+            }
+
+            var entity = await _repository.FindAsync(id);
+
+            if (entity == null)
+            {
+                return false;
+            }
+
+            _repository.Remove(entity);
+            await _repository.SaveAsync();
+
+            return true;
         }
 
-        public Task<IEnumerable<T>?> GetAllAsync()
+        public async Task<IEnumerable<T>?> GetAllAsync()
         {
-            throw new NotImplementedException();
+            if (_repository.IsNull)
+            {
+                return null;
+            }
+
+            var entities = await _repository.GetAllAsync();
+
+            return entities;
         }
 
         public async Task<T?> GetAsync(int id)
@@ -48,9 +79,31 @@ namespace NorthwindAPI.Services
             return entity;
         }
 
-        public Task<bool> UpdateAsync(int id, T entity)
+        public async Task<bool> UpdateAsync(int id, T entity)
         {
-            throw new NotImplementedException();
+            _repository.Update(entity);
+            try
+            {
+                await _repository.SaveAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!(await EntityExists(id)))
+                {
+                    return false;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return true;
+        }
+
+        public async Task<bool> EntityExists(int id)
+        {
+            return (await _repository.FindAsync(id)) != null;
         }
     }
 }
