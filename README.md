@@ -61,3 +61,11 @@ This repository will be updated throughout the duration of the training.
   - [LINQ Method Syntax](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#linq-method-syntax)
   - [Lambda Expressions](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#lambda-expressions)
   - [Model-First approach for EntityFramework](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%205#model-first-approach-for-entityframework)
+
+- [Week 6 - API development with ASP.NET](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206)
+  - [Test Doubles & Moq](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#test-doubles--moq)
+  - [Introduction to ASP.NET](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#introdcution-to-aspnet)
+  - [API development with ASP.NET](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#api-development-with-aspnet)
+  - [RESTful API](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#restful-api)
+  - [Important API development concepts](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#important-api-development-concepts)
+  - [Service Layer](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#service-layer)

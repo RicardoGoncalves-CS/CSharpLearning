@@ -2,12 +2,12 @@
 
 # Week 6 Notes
 
-1. [Test Doubles & Moq]()
-2. [Introduction to ASP.NET]()
-3. [API development with ASP.NET]()
-4. [RESTful API]()
-5. [Important API development concepts]()
-6. [Service Layer]()
+1. [Test Doubles & Moq](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#test-doubles--moq)
+2. [Introduction to ASP.NET](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#introdcution-to-aspnet)
+3. [API development with ASP.NET](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#api-development-with-aspnet)
+4. [RESTful API](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#restful-api)
+5. [Important API development concepts](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#important-api-development-concepts)
+6. [Service Layer](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%206#service-layer)
 
 ### Test Doubles & Moq
 
