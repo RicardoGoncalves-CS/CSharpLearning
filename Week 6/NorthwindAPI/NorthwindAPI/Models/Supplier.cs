@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NorthwindAPI.Models;
 
-public partial class Supplier
+public partial class Customer
 {
     public int SupplierId { get; set; }
 

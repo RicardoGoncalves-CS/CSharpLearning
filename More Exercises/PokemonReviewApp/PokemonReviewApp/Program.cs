@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repository;
 
 namespace PokemonReviewApp;
 
@@ -13,6 +15,7 @@ public class Program
 
         builder.Services.AddControllers();
         builder.Services.AddTransient<Seed>();
+        IServiceCollection serviceCollection = builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
         builder.Services.AddDbContext<DataContext>(options =>
         {
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

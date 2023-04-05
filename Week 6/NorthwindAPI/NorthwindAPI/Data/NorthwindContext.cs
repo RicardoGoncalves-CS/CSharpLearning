@@ -20,7 +20,7 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
-    public virtual DbSet<Supplier> Suppliers { get; set; }
+    public virtual DbSet<Customer> Suppliers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -67,7 +67,7 @@ public partial class NorthwindContext : DbContext
                 .HasConstraintName("FK_Products_Suppliers");
         });
 
-        modelBuilder.Entity<Supplier>(entity =>
+        modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasIndex(e => e.CompanyName, "CompanyName");
 

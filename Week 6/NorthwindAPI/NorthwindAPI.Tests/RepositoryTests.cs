@@ -34,9 +34,9 @@ namespace NorthwindAPI.Tests
 
 
             _context.Suppliers!.AddRange(
-            new List<Supplier>
+            new List<Customer>
             {
-                 new Supplier
+                 new Customer
                  {
                  SupplierId = 1,
                  CompanyName = "Sparta Global",
@@ -45,7 +45,7 @@ namespace NorthwindAPI.Tests
                  ContactName = "Nish Mandal",
                  ContactTitle = "Manager"
                  },
-                 new Supplier {
+                 new Customer {
                  SupplierId = 2,
                  CompanyName = "Nintendo",
                  City = "Tokyo",
@@ -64,7 +64,7 @@ namespace NorthwindAPI.Tests
         {
             var result = _sut.FindAsync(1).Result;
             Assert.That(result, Is.Not.Null);
-            Assert.That(result, Is.TypeOf<Supplier>());
+            Assert.That(result, Is.TypeOf<Customer>());
             Assert.That(result.CompanyName, Is.EqualTo("Sparta Global"));
         }
 
@@ -84,7 +84,7 @@ namespace NorthwindAPI.Tests
         {
             var result = _sut.GetAllAsync().Result;
             Assert.That(result, Is.Not.Null);
-            Assert.That(result, Is.TypeOf<List<Supplier>>());
+            Assert.That(result, Is.TypeOf<List<Customer>>());
         }
 
         [Category("Happy Path")]
@@ -107,7 +107,7 @@ namespace NorthwindAPI.Tests
         [Test]
         public void Add_GivenValidParameters_AddsEntity()
         { 
-            Supplier sup = new Supplier 
+            Customer sup = new Customer 
             {
                 SupplierId = 3,
                 CompanyName = "Wavy Wines",
@@ -123,7 +123,7 @@ namespace NorthwindAPI.Tests
             var result = _sut.FindAsync(3).Result;
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result, Is.TypeOf<Supplier>());
+            Assert.That(result, Is.TypeOf<Customer>());
             Assert.That(result.ContactName, Is.EqualTo("Marcos Smith"));
         }
     }

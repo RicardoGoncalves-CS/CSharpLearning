@@ -14,8 +14,8 @@ internal class SuppliersControllerShould
     [Test]
     public async Task GetSuppliers_WhenThereAreSuppliers_ReturnsListOfSupplierDTOs()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
-        List<Supplier> suppliers = new List<Supplier> { Mock.Of<Supplier>(s => s.Products == Mock.Of<List<Product>>()) };
+        var mockService = Mock.Of<INorthwindService<Customer>>();
+        List<Customer> suppliers = new List<Customer> { Mock.Of<Customer>(s => s.Products == Mock.Of<List<Product>>()) };
         Mock
         .Get(mockService)
         .Setup(sc => sc.GetAllAsync().Result)
@@ -32,8 +32,8 @@ internal class SuppliersControllerShould
     [Test]
     public async Task GetSupplier_WhenSupplierExists_ReturnsSupplierDTO()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
-        var supplier = new Supplier { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
+        var mockService = Mock.Of<INorthwindService<Customer>>();
+        var supplier = new Customer { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
         Mock.Get(mockService)
             .Setup(s => s.GetAsync(1))
             .ReturnsAsync(supplier);
@@ -54,10 +54,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task GetSupplier_WhenSupplierDoesNotExist_ReturnsNotFound()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         Mock.Get(mockService)
             .Setup(s => s.GetAsync(It.IsAny<int>()))
-            .ReturnsAsync((Supplier?)null);
+            .ReturnsAsync((Customer?)null);
 
         var sut = new SuppliersController(mockService);
 
@@ -71,10 +71,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task GetProductsBySupplier_WhenSupplierExists_ReturnsListOfProductDTOs()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        var supplier = new Supplier
+        var supplier = new Customer
         {
             SupplierId = 1,
             CompanyName = "Mock Company",
@@ -101,10 +101,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task GetProductsBySupplier_WhenSupplierHasNoProducts_ReturnsNotFound()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        var supplier = new Supplier
+        var supplier = new Customer
         {
             SupplierId = 1,
             CompanyName = "Mock Company",
@@ -126,10 +126,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task PostSupplier_WhenSupplierExists_CreatesSupplier()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        var supplier = new Supplier
+        var supplier = new Customer
         {
             CompanyName = "Mock Company",
             ContactName = "Ricardo Goncalves",
@@ -159,10 +159,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task PostSupplier_WhenSupplierDoesntExists_AddsSupplierToSupplierTable()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        Supplier supplier = new Supplier { };
+        Customer supplier = new Customer { };
 
         Mock.Get(mockService)
             .Setup(s => s.CreateAsync(supplier))
@@ -180,10 +180,10 @@ internal class SuppliersControllerShould
     [Test]
     public async Task DeleteSupplier_WhenGivenIdOfExistingSupplier_DeletesSupplier()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        var supplier = new Supplier { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
+        var supplier = new Customer { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
 
         int supplierId = 1;
 
@@ -202,11 +202,11 @@ internal class SuppliersControllerShould
     [Test]
     public async Task PutSupplier_WhenSupplierExists_UpdatesSupplier()
     {
-        var mockService = Mock.Of<INorthwindService<Supplier>>();
+        var mockService = Mock.Of<INorthwindService<Customer>>();
         var sut = new SuppliersController(mockService);
 
-        var existingSupplier = new Supplier { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
-        var updatedSupplier = new Supplier { SupplierId = 1, CompanyName = "Updated Company", ContactName = "John" };
+        var existingSupplier = new Customer { SupplierId = 1, CompanyName = "Mock Company", ContactName = "Ricardo" };
+        var updatedSupplier = new Customer { SupplierId = 1, CompanyName = "Updated Company", ContactName = "John" };
 
         Mock.Get(mockService)
             .Setup(s => s.GetAsync(1))

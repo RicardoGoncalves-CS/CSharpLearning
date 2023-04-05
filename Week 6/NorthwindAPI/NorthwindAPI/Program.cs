@@ -31,11 +31,9 @@ public class Program
 
         builder.Services.AddScoped(typeof(INorthwindService<>), typeof(NorthwindService<>));
 
-        builder.Services.AddScoped<INorthwindRepository<Supplier>, SupplierRepository>();
+        builder.Services.AddScoped<INorthwindRepository<Customer>, SupplierRepository>();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        //builder.Services.AddEndpointsApiExplorer();
-        //builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
 
@@ -43,8 +41,6 @@ public class Program
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            //app.UseSwagger();
-            //app.UseSwaggerUI();
         }
 
         app.UseHttpsRedirection();

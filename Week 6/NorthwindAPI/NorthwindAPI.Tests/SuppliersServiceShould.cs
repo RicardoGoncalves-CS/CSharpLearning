@@ -15,7 +15,7 @@ internal class SuppliersServiceShould
     {
         var mockRepository = GetRepository();
         var mockLogger = GetLogger();
-        List<Supplier> suppliers = new List<Supplier> { It.IsAny<Supplier>() };
+        List<Customer> suppliers = new List<Customer> { It.IsAny<Customer>() };
         Mock
         .Get(mockRepository)
         .Setup(sc => sc.GetAllAsync().Result)
@@ -25,19 +25,19 @@ internal class SuppliersServiceShould
         .Setup(sc => sc.IsNull)
         .Returns(false);
 
-        var _sut = new NorthwindService<Supplier>(mockLogger, mockRepository);
+        var _sut = new NorthwindService<Customer>(mockLogger, mockRepository);
         var result = await _sut.GetAllAsync();
-        Assert.That(result, Is.InstanceOf<IEnumerable<Supplier>>());
+        Assert.That(result, Is.InstanceOf<IEnumerable<Customer>>());
     }
 
-    private static ILogger<INorthwindService<Supplier>> GetLogger()
+    private static ILogger<INorthwindService<Customer>> GetLogger()
     {
-        return Mock.Of<ILogger<INorthwindService<Supplier>>>();
+        return Mock.Of<ILogger<INorthwindService<Customer>>>();
     }
 
 
-    private static INorthwindRepository<Supplier> GetRepository()
+    private static INorthwindRepository<Customer> GetRepository()
     {
-        return Mock.Of<INorthwindRepository<Supplier>>();
+        return Mock.Of<INorthwindRepository<Customer>>();
     }
 }

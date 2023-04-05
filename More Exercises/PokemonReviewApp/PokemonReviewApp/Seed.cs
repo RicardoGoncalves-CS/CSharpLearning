@@ -3,6 +3,8 @@ using PokemonReviewApp.Models;
 
 namespace PokemonReviewApp;
 
+// To seed the database enter the following command on the terminal: dotnet run seeddata
+
 public class Seed
 {
     private readonly DataContext dataContext;

@@ -13,9 +13,9 @@ namespace NorthwindAPI.Controllers;
 [ApiController]
 public class SuppliersController : ControllerBase
 {
-    private readonly INorthwindService<Supplier> _supplierService;
+    private readonly INorthwindService<Customer> _supplierService;
 
-    public SuppliersController(INorthwindService<Supplier> supplierService)
+    public SuppliersController(INorthwindService<Customer> supplierService)
     {
         _supplierService = supplierService;
     }
@@ -62,7 +62,7 @@ public class SuppliersController : ControllerBase
     // PUT: api/Suppliers/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     public async Task<IActionResult> PutSupplier(int id,
-            [Bind("SupplierId", "CompanyName", "ContactName", "ContactTitle", "Country", "Products")] Supplier supplier)
+            [Bind("SupplierId", "CompanyName", "ContactName", "ContactTitle", "Country", "Products")] Customer supplier)
     {
         if (id != supplier.SupplierId)
         {
@@ -82,7 +82,7 @@ public class SuppliersController : ControllerBase
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
     public async Task<ActionResult<SupplierDTO>> PostSupplier(
-        [Bind("CompanyName", "ContactName", "ContactTitle", "Country", "Products")] Supplier supplier)
+        [Bind("CompanyName", "ContactName", "ContactTitle", "Country", "Products")] Customer supplier)
     {
         bool created = await _supplierService.CreateAsync(supplier);
 

@@ -27,5 +27,5 @@ public partial class Product
 
     public virtual Category? Category { get; set; }
 
-    public virtual Supplier? Supplier { get; set; }
+    public virtual Customer? Supplier { get; set; }
 }
