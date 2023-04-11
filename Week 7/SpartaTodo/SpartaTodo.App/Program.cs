@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SpartaTodo.App.Data;
+using SpartaTodo.App.Services;
 
 namespace SpartaTodo.App
 {
@@ -12,15 +13,27 @@ namespace SpartaTodo.App
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            
             builder.Services.AddDbContext<SpartaTodoContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<SpartaTodoContext>();
+
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddScoped<ITodoService, TodoService>();
+
+            builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                SeedData.Initialise(scope.ServiceProvider);
+            } 
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
