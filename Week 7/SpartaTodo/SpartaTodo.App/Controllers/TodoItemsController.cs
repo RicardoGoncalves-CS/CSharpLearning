@@ -16,7 +16,6 @@ namespace SpartaTodo.App.Controllers
     public class TodoItemsController : Controller
     {
         private readonly SpartaTodoContext _context;
-        // Adding automapper
         private readonly IMapper _mapper;
         private readonly ITodoService _service;
 
@@ -80,20 +79,12 @@ namespace SpartaTodo.App.Controllers
         // GET: TodoItems/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.TodoItems == null)
+            var response = await _service.GetDetailsAsync(id);
+            if (response.Success)
             {
-                return NotFound();
+                return View(response.Data);
             }
-
-            var todo = await _context.TodoItems.FindAsync(id);
-
-            // var todoVM = _mapper.Map<Todo>()
-
-            if (todo == null)
-            {
-                return NotFound();
-            }
-            return View(todo);
+            return Problem(response.Message);
         }
 
         // POST: TodoItems/Edit/5
@@ -101,32 +92,18 @@ namespace SpartaTodo.App.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, EditTodoViewModel editTodoVM)
+        public async Task<IActionResult> Edit(int id, TodoVM editTodoVM)
         {
-            if (id != editTodoVM.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var response = await _service.EditTodoAsync(id, editTodoVM);
+
+                if (response.Success)
                 {
-                    _context.Update(_mapper.Map<Todo>(editTodoVM));
-                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TodoExists(editTodoVM.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+
+                return Problem(response.Message);
             }
             return View(editTodoVM);
         }
@@ -135,36 +112,39 @@ namespace SpartaTodo.App.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateTodoComplete(int id, MarkCompleteViewModel markCompleteVM)
         {
-            if (id != markCompleteVM.Id)
+            var response = await _service.UpdateTodoCompleteAsync(id, markCompleteVM);
+
+            if (response.Success)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
-            var todo = await _context.TodoItems.FindAsync(id);
-            if (todo == null)
-            {
-                return NotFound();
-            }
-            todo.Complete = markCompleteVM.Complete;
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return Problem(response.Message);
         }
 
         // GET: TodoItems/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.TodoItems == null)
+            var response = await _service.GetDetailsAsync(id);
+            if (response.Success)
             {
-                return NotFound();
+                return View(response.Data);
             }
+            return Problem(response.Message);
 
-            var todo = await _context.TodoItems
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (todo == null)
-            {
-                return NotFound();
-            }
+            //if (id == null || _context.TodoItems == null)
+            //{
+            //    return NotFound();
+            //}
 
-            return View(todo);
+            //var todo = await _context.TodoItems
+            //    .FirstOrDefaultAsync(m => m.Id == id);
+            //if (todo == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return View(todo);
         }
 
         // POST: TodoItems/Delete/5
@@ -172,18 +152,28 @@ namespace SpartaTodo.App.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TodoItems == null)
+
+            var response = await _service.DeleteTodoAsync(id);
+
+            if (response.Success)
             {
-                return Problem("Entity set 'SpartaTodoContext.TodoItems'  is null.");
+                return RedirectToAction(nameof(Index));
             }
-            var todo = await _context.TodoItems.FindAsync(id);
-            if (todo != null)
-            {
-                _context.TodoItems.Remove(todo);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return Problem(response.Message);
+
+            //if (_context.TodoItems == null)
+            //{
+            //    return Problem("Entity set 'SpartaTodoContext.TodoItems'  is null.");
+            //}
+            //var todo = await _context.TodoItems.FindAsync(id);
+            //if (todo != null)
+            //{
+            //    _context.TodoItems.Remove(todo);
+            //}
+
+            //await _context.SaveChangesAsync();
+            //return RedirectToAction(nameof(Index));
         }
 
         private bool TodoExists(int id)

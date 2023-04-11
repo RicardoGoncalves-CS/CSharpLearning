@@ -8,9 +8,8 @@ namespace SpartaTodo.App.Services
         Task<ServiceResponse<IEnumerable<TodoVM>>> GetTodoItemsAsync(string? filter = null);
         Task<ServiceResponse<TodoVM>> GetDetailsAsync(int? id);
         Task<ServiceResponse<bool>> CreateTodoAsync(CreateTodoViewModel createTodoVM);
-        //Task<ServiceResponse<TodoVM>> CreateTodoAsync(CreateTodoViewModel createTodoVM);
-        //Task<TodoVM> EditTodoAsync(int? id, TodoVM todoVM);
-        //Task<TodoVM> UpdateTodoCompleteAsync(int id, MarkCompleteViewModel markCompleteVM);
-        //Task<TodoVM> DeleteTodoAsync(int? id);
+        Task<ServiceResponse<bool>> EditTodoAsync(int? id, TodoVM todoVM);
+        Task<ServiceResponse<bool>> DeleteTodoAsync(int? id);
+        Task<ServiceResponse<bool>> UpdateTodoCompleteAsync(int id, MarkCompleteViewModel markCompleteVM);
     }
 }

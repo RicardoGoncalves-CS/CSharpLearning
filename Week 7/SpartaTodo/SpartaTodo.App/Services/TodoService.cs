@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Azure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SpartaTodo.App.Data;
@@ -34,19 +36,68 @@ namespace SpartaTodo.App.Services
             _context.Add(todo);
             await _context.SaveChangesAsync();
 
-            response.Data = true;
+            response.Success = true;
             return response;
         }
 
 
-        public Task<TodoVM> DeleteTodoAsync(int? id)
+        public async Task<ServiceResponse<bool>> DeleteTodoAsync(int? id)
         {
-            throw new NotImplementedException();
+            var response = new ServiceResponse<bool>();
+
+            if (_context.TodoItems == null)
+            {
+                response.Success = false;
+                response.Message = "Invalid Todo item!";
+                return response;
+            }
+
+            var todo = await _context.TodoItems.FindAsync(id);
+
+            if (todo != null)
+            {
+                _context.TodoItems.Remove(todo);
+            }
+
+            await _context.SaveChangesAsync();
+            response.Success = true;
+            return response;
+
+            //return RedirectToAction(nameof(Index));
         }
 
-        public Task<ServiceResponse<TodoVM>> EditTodoAsync(int? id, TodoVM todoVM)
+        public async Task<ServiceResponse<bool>> EditTodoAsync(int? id, TodoVM todoVM)
         {
-            throw new NotImplementedException();
+            var response = new ServiceResponse<bool>();
+
+            if (id != todoVM.Id)
+            {
+                response.Success = false;
+                response.Message = "There are no Todo items to do!";
+                return response;
+            }
+
+            try
+            {
+                _context.Update(_mapper.Map<Todo>(todoVM));
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TodoExists(todoVM.Id))
+                {
+                    response.Success = false;
+                    response.Message = "There are no Todo items to do!";
+                    return response;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            response.Success = true;
+            return response;
         }
 
         public async Task<ServiceResponse<TodoVM>> GetDetailsAsync(int? id)
@@ -97,9 +148,35 @@ namespace SpartaTodo.App.Services
             return response;
         }
 
-        public Task<TodoVM> UpdateTodoCompleteAsync(int id, MarkCompleteViewModel markCompleteVM)
+        public async Task<ServiceResponse<bool>> UpdateTodoCompleteAsync(int id, MarkCompleteViewModel markCompleteVM)
         {
-            throw new NotImplementedException();
+            var response = new ServiceResponse<bool>();
+
+            if (id != markCompleteVM.Id)
+            {
+                response.Success = false;
+                response.Message = "There are no Todo items to do!";
+                return response;
+            }
+
+            var todo = await _context.TodoItems.FindAsync(id);
+
+            if (todo == null)
+            {
+                response.Success = false;
+                response.Message = "There are no Todo items to do!";
+                return response;
+            }
+
+            todo.Complete = markCompleteVM.Complete;
+            await _context.SaveChangesAsync();
+            response.Success = true;
+            return response;
+        }
+
+        private bool TodoExists(int id)
+        {
+            return (_context.TodoItems?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
