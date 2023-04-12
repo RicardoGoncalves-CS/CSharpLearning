@@ -170,6 +170,7 @@ namespace SpartaTodo.App.Services
 
             todo.Complete = markCompleteVM.Complete;
             await _context.SaveChangesAsync();
+
             response.Success = true;
             return response;
         }
