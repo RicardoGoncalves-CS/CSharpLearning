@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Final_Project.Models.TraineeProfile>
+
+@{
+    ViewData["Title"] = "Trainee Profiles";
+}
+
+@if (!User.IsInRole("Admin") && !User.IsInRole("Trainer"))
+{
+    Context.Response.Redirect("/");
+}
+
+<div class="container-xxl page-header page-header-trainee-profile" style="background-color: #e23565">
+    <div class="container text-center">
+        <h1 class="text-white animated zoomIn mb-3">Trainee Profiles</h1>
+        <p class="lead text-white">List of all the trainees and profiles to view</p>
+    </div>
+</div>
+
+<table class="table table-bordered table-hover border-dark">
+    <thead>
+        <tr class="table-danger border-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.Spartan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spartan!.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spartan!.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spartan!.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spartan!.Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spartan!.UserName)
+            </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" role="button" class="btn bg-main">Details</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

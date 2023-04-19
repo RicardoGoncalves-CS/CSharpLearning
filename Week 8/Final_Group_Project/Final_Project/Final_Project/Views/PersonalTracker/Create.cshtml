@@ -1,0 +1,74 @@
+﻿@model Final_Project.Models.PersonalTracker
+
+@{
+    ViewData["Title"] = "Create";
+}
+@if(!User.Identity.IsAuthenticated)
+{
+    Context.Response.Redirect("/");
+}
+
+<div class="container-xxl page-header page-header-trainee-profile" style="background-color: #e23565">
+    <div class="container text-center">
+        <h1 class="text-white animated zoomIn mb-3">Create New Tracker</h1>
+        <p class="lead text-white">Create a new tracker entry for trainee progress.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3 mb-3">
+                <label asp-for="Title" class="control-label fw-bold"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3 mb-3">
+                <label asp-for="StopSelfFeedback" class="control-label fw-bold"></label>
+                <textarea asp-for="StopSelfFeedback" class="form-control"></textarea>
+                <span asp-validation-for="StopSelfFeedback" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="StartSelfFeedback" class="control-label fw-bold"></label>
+                <textarea asp-for="StartSelfFeedback" class="form-control"></textarea>
+                <span asp-validation-for="StartSelfFeedback" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="ContinueSelfFeedback" class="control-label fw-bold"></label>
+                <textarea asp-for="ContinueSelfFeedback" class="form-control"></textarea>
+                <span asp-validation-for="ContinueSelfFeedback" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="CommentsSelfFeedback" class="control-label fw-bold"></label>
+                <textarea asp-for="CommentsSelfFeedback" class="form-control"></textarea>
+                <span asp-validation-for="CommentsSelfFeedback" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="TechnicalSkills" class="control-label fw-bold"></label>
+                <select asp-for="TechnicalSkills">
+                    <option value="Unskilled">Unskilled</option>
+                    <option value="Low Skilled">Low Skilled</option>
+                    <option value="Partially Skilled">Partially Skilled</option>
+                    <option value="Skilled">Skilled</option>
+                </select>
+            </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ConsultantSkills" class="control-label fw-bold"></label>
+                <select asp-for="ConsultantSkills">
+                <option value="Unskilled">Unskilled</option>
+                <option value="Low Skilled">Low Skilled</option>
+                <option value="Partially Skilled">Partially Skilled</option>
+                <option value="Skilled">Skilled</option>
+                </select>
+                </div>
+            <div class="form-group mb-3">
+                <input type="submit" value="Create" class="btn bg-main" />
+                <a asp-action="Index" role="button" class="btn btn-dark">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
