@@ -1,11 +1,5 @@
 Below you can find a _**table of contents**_ with hyperlinks to the appropriate folders to help navigate my repository.
 
-The _**table of contents**_ is organised by week which contain the topics covered during that week.
-
-This repository will be updated throughout the duration of the training.
-
-**NOTE: Each week folder contain notes on the topics covered during that week. The notes in each of these folders are organised by the order it was covered during the lessons.**
-
 # TABLE OF CONTENTS
 
 - [Week 1 - Business week](https://github.com/RicardoGoncalves-CS/Sparta/tree/main/Week%201)
