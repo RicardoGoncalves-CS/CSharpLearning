@@ -1,13 +1,3 @@
-<img src="https://boolerang.co.uk/wp-content/uploads/job-manager-uploads/company_logo/2018/04/SG-Logo-Black.png" alt="Sparta Logo" width="300"/>
-
----
-
-Welcome to my personal repository for Sparta Tech 205 C# Developer training!
-
-Here you can find the files created during the course of my training with Sparta. 
-
-I'm always open to advice and suggestions on how to improve, be it in terms of code, communication, structure, language or any other aspect relevant to my professional and/or personal development, so I truly welcome and am grateful for any feedback, suggestion or advice that could help me.
-
 Below you can find a _**table of contents**_ with hyperlinks to the appropriate folders to help navigate my repository.
 
 The _**table of contents**_ is organised by week which contain the topics covered during that week.
